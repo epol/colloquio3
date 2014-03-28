@@ -93,9 +93,9 @@ $\leftrightarrow$ funzioni $d_A$
   \begin{itemize}
   \item La funzione $x \rightarrow d_A(x)$ è 1-Lipschitz (e quindi
     $C^1$)
-  \item $d_{A\cup B} = \min\set{d_A,d_B}$
+  \item $d_{A\cup B}(x) = \min\set{d_A(x),d_B(x)}$
   \item $\set{x:d_A(x) = 0} = \bar A$
-  \item $d_A \equiv 0 \Rightarrow $ è denso
+  \item $d_A \equiv 0 \Rightarrow $ è denso in $\Omega$
   \item $d_{\bar A} = d_A$
   \item $A\subseteq B \Rightarrow d_A \ge d_B$
   \item $\bar A \subseteq \bar B \Leftrightarrow d_A \ge d_B$
@@ -103,8 +103,9 @@ $\leftrightarrow$ funzioni $d_A$
 \end{mypro}
 \begin{proof} [Dimostrazione di $\set{x:d_A(x) = 0} = \bar A$]
   \`E ovvio che $x\in \bar A \Rightarrow d_A(x) = 0$ perché 
-  \[ \forall \varepsilon > 0\; \exists y \in a \cap
-  B(x,\varepsilon) \Rightarrow d_A(x) \le d(x,y) < \varepsilon \]
+  \[ \forall \varepsilon > 0\; \exists y \in a \cap B(x,\varepsilon)
+  \Rightarrow \forall \varepsilon > 0 \; d_A(x) \le d(x,y) <
+  \varepsilon \]
 
   Sia $x\not\in \bar A$, allora esiste $\varepsilon>0$ tale che
   $B(x,\varepsilon) \cap A = \emptyset$. Allora $d_A(x) \ge
@@ -163,21 +164,14 @@ $\leftrightarrow$ funzioni $d_A$
   In uno spazio vettoriale di dimensione finita il lemma vale
   chiedenso solo che $A$ sia chiuso, infatti tutti i punti $a_n$ della
   successione data dall'$\inf$ stanno in 
-  \[ a_n \in A \cap \bar B(x,2*\delta) \]
+  \[ a_n \in A \cap \bar B(x,2\delta) \]
   Che è chiusa perché intersezione di chiusi, è limitata e quindi
   anche compatta. Da qui si conclude in modo analogo al lemma.
 \end{mynot}
 
 
-\begin{myoss}
-  Usare le funzioni $d_A$ per classificare gli insiemi significa
-  vederli a meno di chiusure, quindi quozientiamo per
-  \[ A \sim B \Leftrightarrow \bar A = \bar B \] 
-\end{myoss}
-
-
 \begin{mydef}[Distanza di Hausdorff]
-  Dati due insiemi $A,B \subseteq \Omega$ definiamo
+  Dati due insiemi $A,C \subseteq \Omega$ definiamo
   \[ d_H (A,C) = \norm{ d_A - d_C } _\infty = \sup _{x\in \Omega}
   \set {d_A(x) - d_C(x)}\]
 \end{mydef}
@@ -196,7 +190,7 @@ Notazione: definiamo (con un abuso di linguaggio):
       d_A (x) }$
   \item $d_H (A,C) = \inf \set{\delta : A \subseteq C + \bar B
     _\delta \wedge C \subseteq A + \bar B_\delta} = \max \set{\inf
-    \set{\delta : A \subseteq C + \bar B _\delta }, \set{\delta : C
+    \set{\delta : A \subseteq C + \bar B _\delta }, \inf \set{\delta : C
       \subseteq A + \bar B _\delta }}  $
   \end{enumerate}
 \end{mypro}
@@ -208,9 +202,12 @@ Notazione: definiamo (con un abuso di linguaggio):
   Se $\sup _{x\in A} d_C(x) = \alpha$ allora
   \[ \forall x \in A \; d_C (x) \le \alpha \Rightarrow \pa{\forall
     \varepsilon > 0 \exists y \in C \mid d(x,y) < \alpha +
-    \varepsilon} \Rightarrow \pa{\forall \varepsilon > 0 \; A
-    \subseteq C + \bar B _{\alpha + \varepsilon}} \Rightarrow \inf
-  \set{ \delta : A \subseteq C + \bar B _{\delta}} \le \alpha \]
+    \varepsilon} \Rightarrow \pa{\forall \varepsilon > 0 \; x
+    \in C + \bar B _{\alpha + \varepsilon}}\]
+  Valendo questa relazione $\forall x \in A$ si ha
+  \[ \pa{\forall \varepsilon > 0 \; A \subseteq C + \bar B _{\alpha +
+      \varepsilon}} \Rightarrow \inf \set{ \delta : A \subseteq C +
+    \bar B _{\delta}} \le \alpha \]
 
   D'altra parte se $\varepsilon > 0$ allora $\exists x \in A$ tale che
   $d_C(x) > \alpha - \varepsilon$. Allora
@@ -236,14 +233,15 @@ Notazione: definiamo (con un abuso di linguaggio):
   Caso generale: sia $x\in \Omega$, supponiamo wlog $d_A(x) \ge d_C(x)$
   (l'altro caso vale per simmetria). Quindi$\abs{d_A(x)-d_C(x)} =
   d_A(x)-d_C(x)$. Scegliendo $y \in C$ tale che $d(x,y) < d_C(x) +
-  \varepsilon$ si ha
+  \varepsilon$ (con $\varepsilon > 0$) si ha
   \[ d_A(x)-d_C(x) \le d_A(y) + d(x,y) - d_C(x) < d_A(y) + d_C(x) +
-  \varepsilon -d_C(x) \]
+  \varepsilon -d_C(x) = d_A(y) + \varepsilon\]
   Per $\varepsilon \rightarrow 0$ si ha $d_A(x) \le \delta$.
 
   Dimostriamo ora che il $\sup_{x\in \Omega} \abs{d_A(x)-d_C(x)} \ge
-  \delta$. Per farlo supponiamo wlog $\delta \max \set{\sup _{x\in A}
-    d_C (x) , \sup _{x\in C} d_A (x) } = \set{\sup _{x\in A} d_C (x)}$
+  \delta$. Per farlo supponiamo wlog 
+  \[ \delta = \max \set{\sup _{x\in A} d_C (x) , \sup _{x\in C} d_A
+    (x) } = \sup _{x\in A} d_C (x) \] 
   (nell'altro caso si conclude con un ragionamento analogo).
 
   Quindi esiste $\pa{x_n}_{n\in\mathbb{N}}$, $x_n\in A$ tale che
@@ -252,6 +250,17 @@ Notazione: definiamo (con un abuso di linguaggio):
   Facendo tendere $n$ all'infinito si ha la disuguaglianza cercata da
   cui la tesi.
 \end{proof}
+
+\begin{myoss}
+  Usare le funzioni $d_A$ per classificare gli insiemi significa
+  vederli a meno di chiusure, quindi quozientiamo per
+  \[ A \sim B \Leftrightarrow \bar A = \bar B \] 
+
+  Osserviamo anche che, quindi, la distanza di Hausdoff passa bene al
+  quoziente usando la definizione 1.
+\end{myoss}
+
+
 
 
 
