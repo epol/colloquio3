@@ -102,7 +102,9 @@ $\leftrightarrow$ funzioni $d_A$
   \end{itemize}
 \end{mypro}
 \begin{proof} [Dimostrazione di $\set{x:d_A(x) = 0} = \bar A$]
-  \`E ovvio che $x\in A \Rightarrow d_A(x) = 0$
+  \`E ovvio che $x\in \bar A \Rightarrow d_A(x) = 0$ perché 
+  \[ \forall \varepsilon > 0\; \exists y \in a \cap
+  B(x,\varepsilon) \Rightarrow d_A(x) \le d(x,y) < \varepsilon \]
 
   Sia $x\not\in \bar A$, allora esiste $\varepsilon>0$ tale che
   $B(x,\varepsilon) \cap A = \emptyset$. Allora $d_A(x) \ge
@@ -120,6 +122,52 @@ $\leftrightarrow$ funzioni $d_A$
   la disuguaglianza è verificata perché stiamo facendo l'$\inf$ su due
   insiemi contenuti.  
 \end{proof}
+
+
+\begin{mylem}
+  Se $A$ è compatto allora l'$\inf$ della definizione di $d_A$ è in
+  realtà un $\min$, cioè:
+  \[ \forall x \in \Omega \; \exists y \in A \ :\ d(y,x) = d_A(x) \]
+\end{mylem}
+\begin{proof}
+  Se $d_A(x) = \delta$ allora esiste $\pa{a_n}_{n\in \mathbb{N}}$ con
+  $a_n \in A$ tale che
+  \[ d(a_n,x) < \delta + \frac{1}{n} \] 
+  Ma, per compattezza, estraiamo una sottosuccessione
+  $\pa{a_{n_k}}_{k\in \mathbb{N}}$ che converge ad un punto in $A$ che
+  chiamiamo $\bar a$.  Allora, scelto $n_k$ tale che $d(a_{n_k},\bar
+  a) < \frac{1}{n}$ e che $n_k > n$ si ha
+  \[ d(x,\bar a) \le d\pa{x,a_{n_k}} + d\pa{a_{n_k}, \bar a} \le
+  \frac{1}{n_k} + \frac{1}{n} \le \frac{2}{n} \]
+  Per $n \to \infty$ si ha $d(x,\bar a) \le \delta$, ma $\bar a \in A$
+  dà la disuguaglianza opposta da cui $\bar a$ è il punto cercato.
+\end{proof}
+
+\begin{mynot}
+  Se $A$ non è compatto ma è un chiuso allora, in generale, il lemma
+  precedente non è verificato. Costriuisco un controesempio in $l^2$
+  
+  Sia, per $n\in \mathbb{N}$ $a_n$ la successione con $1+\frac{1}{n}$
+  all'$n$-esimo posto e $0$ altrove. Sia $A = \set{a_n : n\in
+    \mathbb{N}}$. Si pu\`o dimostrare che $A$ \`e chiuso utilizzando
+  la propriet\`a $\bar A = \set {d_A = 0}$.
+
+  Considero l'origine:
+  \[ d_A(O) = \inf _{n\in \mathbb{N}} \norm{a_n}_2 = \inf _{n\in
+    \mathbb{N}} \pa{1+\frac{1}{n}}^2 = 1 \]
+  Però $\forall n\in \mathbb{N}\; d(O,a_n) > 1$ e quindi non si
+  raggiunge il minimo per nessun punto.  
+\end{mynot}
+
+\begin{mynot}
+  In uno spazio vettoriale di dimensione finita il lemma vale
+  chiedenso solo che $A$ sia chiuso, infatti tutti i punti $a_n$ della
+  successione data dall'$\inf$ stanno in 
+  \[ a_n \in A \cap \bar B(x,2*\delta) \]
+  Che è chiusa perché intersezione di chiusi, è limitata e quindi
+  anche compatta. Da qui si conclude in modo analogo al lemma.
+\end{mynot}
+
 
 \begin{myoss}
   Usare le funzioni $d_A$ per classificare gli insiemi significa
@@ -139,10 +187,9 @@ Notazione: definiamo (con un abuso di linguaggio):
   d(x,y) \le \varepsilon }\]
 
 \begin{mypro}
-  Se $A, C$ sono \sout{chiusi} compatti\footnote{Uso la compattezza
-    per estrarre sottosucessioni convergenti dai punti dati
-    dagl'$\inf$} le seguenti definizioni sono equivalenti
-  \begin{itemize}
+  Se $A, C$ sono \sout{compatti} \sout{chiusi} le seguenti definizioni
+  sono equivalenti
+  \begin{enumerate}
   \item $ d_H (A,C) = \norm{ d_A - d_C } _\infty = \sup _{x\in \Omega}
     \set {d_A(x) - d_C(x)}$
   \item $d_H(A,C) = \max \set{\sup _{x\in A} d_C (x) , \sup _{x\in C}
@@ -151,31 +198,81 @@ Notazione: definiamo (con un abuso di linguaggio):
     _\delta \wedge C \subseteq A + \bar B_\delta} = \max \set{\inf
     \set{\delta : A \subseteq C + \bar B _\delta }, \set{\delta : C
       \subseteq A + \bar B _\delta }}  $
-  \end{itemize}
+  \end{enumerate}
 \end{mypro}
 
-\begin{mylem}
-  Se $A,C$ sono compatti allora gli $\inf$ e i $\sup$ precedenti sono
-  dei $\min$ e $\max$
-\end{mylem}
 \begin{proof}
-  Consideriamo la definizione di $d_A$, se $d_A(x) = \delta$ allora esiste
-  $\pa{a_n}_{n\in \mathbb{N}}$ con $a_n \in A$ tale che
-  \[ d(a_n,x) < \delta + \frac{1}{n} \] Ma, per compattezza, estraiamo
-  una sottosuccessione $\pa{a_{n_k}}_{k\in \mathbb{N}}$ che converge
-  ad un punto in $A$ che chiamiamo $\bar a$.  Allora, scelto $n_k$
-  tale che $d(a_{n_k},\bar a) < \frac{1}{n}$ e che $n_k > n$ si ha
-  \[ d(x,\bar a) \le d\pa{x,a_{n_k}} + d\pa{a_{n_k}, \bar a} \le
-  \frac{1}{n_k} + \frac{1}{n} \le \frac{2}{n} \]
-  Per $n \to \infty$ si ha $d(x,\bar a) \le \delta$, ma $\bar a \in A$
-  dà la disuguaglianza opposta da cui $\bar a$ è il punto cercato.
+  \textbf{$2 \sim 3$} Basta dimostrare che $\sup _{x\in A} d_C(x) =
+  \inf \set{ \delta : A \subseteq C + \bar B _{\delta}}$.
 
+  Se $\sup _{x\in A} d_C(x) = \alpha$ allora
+  \[ \forall x \in A \; d_C (x) \le \alpha \Rightarrow \pa{\forall
+    \varepsilon > 0 \exists y \in C \mid d(x,y) < \alpha +
+    \varepsilon} \Rightarrow \pa{\forall \varepsilon > 0 \; A
+    \subseteq C + \bar B _{\alpha + \varepsilon}} \Rightarrow \inf
+  \set{ \delta : A \subseteq C + \bar B _{\delta}} \le \alpha \]
+
+  D'altra parte se $\varepsilon > 0$ allora $\exists x \in A$ tale che
+  $d_C(x) > \alpha - \varepsilon$. Allora
+  \[ \alpha - \varepsilon < \inf_{y\in C}\set{d(x,y)} \Rightarrow
+  \forall y \in C\; d(x,y) > \alpha - \varepsilon \Rightarrow x\not\in
+  C + \bar B_{\alpha - \varepsilon} \Rightarrow \inf \set{ \delta : A
+    \subseteq C + \bar B _{\delta}} \ge \alpha - \varepsilon\]
+  Per $\varepsilon \rightarrow 0$ si ha quindi l'altra disuguaglianza
+  ottenendo la tesi.
+
+  \textbf{$1\sim 2$}
+  Sia $\max \set{\sup _{x\in A} d_C (x) , \sup _{x\in C} d_A (x) } =
+  \delta$.
+  
+  Voglio valutare $\sup_{x\in \Omega} \abs{d_A(x)-d_C(x)}$.
+
+  Primo caso: $x\in A$. Allora
+  \[ d_A(x) = 0 \Rightarrow \abs{d_A(x)-d_C(x)} = d_C(x) \le \sup
+  _{x\in A} d_C (x) \le \delta \]
+  Secondo caso: $x\in C$, in modo analogo al caso precedente otteniamo
+  $\abs{d_A(x)-d_C(x)} \le \delta$.
+  
+  Caso generale: sia $x\in \Omega$, supponiamo wlog $d_A(x) \ge d_C(x)$
+  (l'altro caso vale per simmetria). Quindi$\abs{d_A(x)-d_C(x)} =
+  d_A(x)-d_C(x)$. Scegliendo $y \in C$ tale che $d(x,y) < d_C(x) +
+  \varepsilon$ si ha
+  \[ d_A(x)-d_C(x) \le d_A(y) + d(x,y) - d_C(x) < d_A(y) + d_C(x) +
+  \varepsilon -d_C(x) \]
+  Per $\varepsilon \rightarrow 0$ si ha $d_A(x) \le \delta$.
+
+  Dimostriamo ora che il $\sup_{x\in \Omega} \abs{d_A(x)-d_C(x)} \ge
+  \delta$. Per farlo supponiamo wlog $\delta \max \set{\sup _{x\in A}
+    d_C (x) , \sup _{x\in C} d_A (x) } = \set{\sup _{x\in A} d_C (x)}$
+  (nell'altro caso si conclude con un ragionamento analogo).
+
+  Quindi esiste $\pa{x_n}_{n\in\mathbb{N}}$, $x_n\in A$ tale che
+  $d_C(x_n) > \delta - \frac{1}{n}$. Ma allora
+  \[ \abs{d_A(x_n) - d_C(x_n)} = d_C(x_n) > \delta - \frac{1}{n} \]
+  Facendo tendere $n$ all'infinito si ha la disuguaglianza cercata da
+  cui la tesi.
 \end{proof}
+
+
+
+
+
+
+
+
+
+
+
 
 
 \newpage
 
-Cose possibili da fare
+Cose possibili da fare:
+
+\begin{itemize}
+\item Vedere quando, nelle definizioni di $d_H$ gli $\inf$ e $\sup$ si
+  possono trasformare in $\min$ e $\max$.
+\end{itemize}
 
 
 
@@ -192,10 +289,19 @@ Trovare le ipotesi giuste per:
 Ipotesi: $\mathbb{R}^N$
 
 I chiusi e limitati sono compatti, quindi riesco a trasformare gli
-$\inf$ in $\min$ mettendomi in una palla $B(y,d+\varepsilon)$ quando
+$\inf$ in $\min$ mettendomi in una palla $B(y,2*d+\varepsilon)$ quando
 lavoro con chiusi
 
 
+\newpage
+Cose saltate che potrebbero essere inserite
+\begin{itemize}
+\item skeleton
+  \begin{itemize}
+  \item caratterizzazione coi punti dove non esiste il gradiente di
+    $d_A$
+  \end{itemize}
+\end{itemize}
 
 
 \end{document}
