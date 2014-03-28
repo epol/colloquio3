@@ -1,0 +1,202 @@
+\documentclass[a4paper,10pt]{article}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{xfrac}
+\usepackage[all]{xy}
+\usepackage{mathtools}
+\usepackage{graphicx}
+\usepackage{fullpage}
+\usepackage{hyperref}
+\usepackage[utf8x]{inputenc}
+\usepackage[italian]{babel}
+
+\usepackage{ulem}
+
+\setlength{\parindent}{0in}
+
+\theoremstyle{plain}
+\newtheorem{myteo}{Teorema}[section]
+\newtheorem{mylem}{Lemma}[section]
+\newtheorem{mypro}{Proposizione}[section]
+\newtheorem{mycor}{Corollario}[section]
+\newtheorem*{myteo*}{Teorema}
+\newtheorem*{mylem*}{Lemma}
+\newtheorem*{mypro*}{Proposizione}
+\newtheorem*{mycor*}{Corollario}
+
+\theoremstyle{definition}
+\newtheorem{mydef}{Definizione}[section]
+\newtheorem{myes}{Esempio}[section]
+\newtheorem{myex}{Esercizio}[section]
+\newtheorem*{mydef*}{Definizione}
+\newtheorem*{myes*}{Esempio}
+\newtheorem*{myex*}{Esercizio}
+
+\theoremstyle{remark}
+\newtheorem{mynot}{Nota}[section]
+\newtheorem{myoss}{Osservazione}[section]
+\newtheorem*{mynot*}{Nota}
+\newtheorem*{myoss*}{Osservazione}
+
+\newcommand{\obar}[1]{\overline{#1}}
+\newcommand{\ubar}[1]{\underline{#1}}
+
+\newcommand{\set}[1]{\left\{#1\right\}}
+\newcommand{\pa}[1]{\left(#1\right)}
+\newcommand{\ang}[1]{\left<#1\right>}
+\newcommand{\bra}[1]{\left[#1\right]}
+\newcommand{\abs}[1]{\left|#1\right|}
+\newcommand{\norm}[1]{\left\|#1\right\|}
+
+\newcommand{\pfrac}[2]{\pa{\frac{#1}{#2}}}
+\newcommand{\bfrac}[2]{\bra{\frac{#1}{#2}}}
+\newcommand{\psfrac}[2]{\pa{\sfrac{#1}{#2}}}
+\newcommand{\bsfrac}[2]{\bra{\sfrac{#1}{#2}}}
+
+\newcommand{\der}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\pder}[2]{\pfrac{\partial #1}{\partial #2}}
+\newcommand{\sder}[2]{\sfrac{\partial #1}{\partial #2}}
+\newcommand{\psder}[2]{\psfrac{\partial #1}{\partial #2}}
+
+\newcommand{\intl}{\int \limits}
+
+\DeclareMathOperator{\de}{d}
+\DeclareMathOperator{\id}{Id}
+
+
+\title{Colloquio 3 - appunti1}
+\author{Enrico Polesel}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+Ipotesi: $(M,d)$ spazio metrico
+
+Ipotesi: $\Omega \subseteq M$
+
+\begin{mydef}[Distanza di un punto da un insieme]
+\[  d_A (x) := \inf _{y \in A} d(x,y) \] 
+\end{mydef}
+
+\textbf{Idea:} forme $\leftrightarrow$ sottoinsiemi chiusi
+$\leftrightarrow$ funzioni $d_A$
+
+\begin{mydef}[Spazio di forme]
+  \[ C_d(\Omega) = \set{d_A : A \subseteq \Omega} \]
+\end{mydef}
+
+\begin{mypro}[Proprietà della distanza punto-insieme]
+  Vale:
+  \begin{itemize}
+  \item La funzione $x \rightarrow d_A(x)$ è 1-Lipschitz (e quindi
+    $C^1$)
+  \item $d_{A\cup B} = \min\set{d_A,d_B}$
+  \item $\set{x:d_A(x) = 0} = \bar A$
+  \item $d_A \equiv 0 \Rightarrow $ è denso
+  \item $d_{\bar A} = d_A$
+  \item $A\subseteq B \Rightarrow d_A \ge d_B$
+  \item $\bar A \subseteq \bar B \Leftrightarrow d_A \ge d_B$
+  \end{itemize}
+\end{mypro}
+\begin{proof} [Dimostrazione di $\set{x:d_A(x) = 0} = \bar A$]
+  \`E ovvio che $x\in A \Rightarrow d_A(x) = 0$
+
+  Sia $x\not\in \bar A$, allora esiste $\varepsilon>0$ tale che
+  $B(x,\varepsilon) \cap A = \emptyset$. Allora $d_A(x) \ge
+  \varepsilon$.
+\end{proof}
+
+\begin{proof}[Dimostrazione di $\bar A \subseteq \bar B
+  \Leftrightarrow d_A \ge d_B$]
+  Essendo $d_B \ge 0$ si ha che $d_A = 0 \Rightarrow d_B = 0$. Ma
+  questo significa che 
+  \[ x \in \bar A \Rightarrow x \in \bar B \]
+
+  Se $\bar A \subseteq \bar B$ assumiamo wlog $A = \bar A, B = \bar B$
+  (le funzioni distanza non cambiano passando alla chiusura). Allora
+  la disuguaglianza è verificata perché stiamo facendo l'$\inf$ su due
+  insiemi contenuti.  
+\end{proof}
+
+\begin{myoss}
+  Usare le funzioni $d_A$ per classificare gli insiemi significa
+  vederli a meno di chiusure, quindi quozientiamo per
+  \[ A \sim B \Leftrightarrow \bar A = \bar B \] 
+\end{myoss}
+
+
+\begin{mydef}[Distanza di Hausdorff]
+  Dati due insiemi $A,B \subseteq \Omega$ definiamo
+  \[ d_H (A,C) = \norm{ d_A - d_C } _\infty = \sup _{x\in \Omega}
+  \set {d_A(x) - d_C(x)}\]
+\end{mydef}
+
+Notazione: definiamo (con un abuso di linguaggio):
+\[ A + \bar B_\varepsilon := \set{ x \in \Omega : \exists y \in A :
+  d(x,y) \le \varepsilon }\]
+
+\begin{mypro}
+  Se $A, C$ sono \sout{chiusi} compatti\footnote{Uso la compattezza
+    per estrarre sottosucessioni convergenti dai punti dati
+    dagl'$\inf$} le seguenti definizioni sono equivalenti
+  \begin{itemize}
+  \item $ d_H (A,C) = \norm{ d_A - d_C } _\infty = \sup _{x\in \Omega}
+    \set {d_A(x) - d_C(x)}$
+  \item $d_H(A,C) = \max \set{\sup _{x\in A} d_C (x) , \sup _{x\in C}
+      d_A (x) }$
+  \item $d_H (A,C) = \inf \set{\delta : A \subseteq C + \bar B
+    _\delta \wedge C \subseteq A + \bar B_\delta} = \max \set{\inf
+    \set{\delta : A \subseteq C + \bar B _\delta }, \set{\delta : C
+      \subseteq A + \bar B _\delta }}  $
+  \end{itemize}
+\end{mypro}
+
+\begin{mylem}
+  Se $A,C$ sono compatti allora gli $\inf$ e i $\sup$ precedenti sono
+  dei $\min$ e $\max$
+\end{mylem}
+\begin{proof}
+  Consideriamo la definizione di $d_A$, se $d_A(x) = \delta$ allora esiste
+  $\pa{a_n}_{n\in \mathbb{N}}$ con $a_n \in A$ tale che
+  \[ d(a_n,x) < \delta + \frac{1}{n} \] Ma, per compattezza, estraiamo
+  una sottosuccessione $\pa{a_{n_k}}_{k\in \mathbb{N}}$ che converge
+  ad un punto in $A$ che chiamiamo $\bar a$.  Allora, scelto $n_k$
+  tale che $d(a_{n_k},\bar a) < \frac{1}{n}$ e che $n_k > n$ si ha
+  \[ d(x,\bar a) \le d\pa{x,a_{n_k}} + d\pa{a_{n_k}, \bar a} \le
+  \frac{1}{n_k} + \frac{1}{n} \le \frac{2}{n} \]
+  Per $n \to \infty$ si ha $d(x,\bar a) \le \delta$, ma $\bar a \in A$
+  dà la disuguaglianza opposta da cui $\bar a$ è il punto cercato.
+
+\end{proof}
+
+
+\newpage
+
+Cose possibili da fare
+
+
+
+\newpage
+
+Trovare le ipotesi giuste per:
+\begin{itemize}
+\item ???? $d_A$ è Frechet differenziabile q.o. e $\abs{\nabla d_A}
+  \le 1$
+\end{itemize}
+
+
+\newpage
+Ipotesi: $\mathbb{R}^N$
+
+I chiusi e limitati sono compatti, quindi riesco a trasformare gli
+$\inf$ in $\min$ mettendomi in una palla $B(y,d+\varepsilon)$ quando
+lavoro con chiusi
+
+
+
+
+\end{document}
+
