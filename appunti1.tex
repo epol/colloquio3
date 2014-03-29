@@ -99,6 +99,7 @@ $\leftrightarrow$ funzioni $d_A$
   \item $d_{\bar A} = d_A$
   \item $A\subseteq B \Rightarrow d_A \ge d_B$
   \item $\bar A \subseteq \bar B \Leftrightarrow d_A \ge d_B$
+  \item $d_A = d_B \Leftrightarrow \bar A = \bar B$
   \end{itemize}
 \end{mypro}
 \begin{proof} [Dimostrazione di $\set{x:d_A(x) = 0} = \bar A$]
@@ -171,10 +172,37 @@ $\leftrightarrow$ funzioni $d_A$
 \end{mynot}
 
 
+\begin{myoss}
+  Usare le funzioni $d_A$ per classificare gli insiemi significa
+  vederli a meno di chiusure, quindi quozientiamo per
+  \[ A \approx B \Leftrightarrow \bar A = \bar B \] 
+
+  È ovvio che possiamo prendere come rappresentate di una classe
+  l'\textit{unica} chiusura di ogni insieme, quindi abbiamo
+  \[ \sfrac{\set{A \subseteq \Omega}}{\approx} \cong C(\omega) := \set{A
+    \subseteq \Omega,\ A\text{ chiuso}} \]
+\end{myoss}
+\begin{mypro}
+  \[ C(\Omega) \cong C_d(\Omega) \]
+  \[ A \rightarrow d_A \]
+\end{mypro}
+\begin{proof}
+  La mappa è sicuramente ben definita e surgettiva per come è definito
+  $C_d(\Omega)$. Per l'iniettività ci basta osservare che se $d_A =
+  d_B$ con $A,B \in C(\Omega)$ allora $\bar A = \bar B$, ma $A$ e $B$
+  sono chiusi da cui la tesi.
+\end{proof}
+
+
+
 \begin{mydef}[Distanza di Hausdorff]
   Dati due insiemi $A,C \subseteq \Omega$ definiamo
-  \[ d_H (A,C) = \norm{ d_A - d_C } _\infty = \sup _{x\in \Omega}
-  \set {d_A(x) - d_C(x)}\]
+%  \[ d_H (A,C) = \norm{ d_A - d_C } _\infty = \sup _{x\in \Omega}
+%  \set {d_A(x) - d_C(x)}\]
+%
+%  Anzi, la definisco come:
+  \[ d_H(A,C) = \max \set{\sup _{x\in A} d_C (x) , \sup _{x\in C} d_A
+    (x) } \]
 \end{mydef}
 
 Notazione: definiamo (con un abuso di linguaggio):
@@ -252,14 +280,108 @@ Notazione: definiamo (con un abuso di linguaggio):
   cui la tesi.
 \end{proof}
 
+\begin{mycor}
+  La relazione $C(\Omega) \cong C_d(\Omega)$ è un'isometria usando su
+  $C_d(\Omega)$ la distanza di Hausdorff su $C(\Omega)$ e la norma
+  infinito su $C_d(\Omega)$
+\end{mycor}
+
 \begin{myoss}
-  Usare le funzioni $d_A$ per classificare gli insiemi significa
-  vederli a meno di chiusure, quindi quozientiamo per
-  \[ A \sim B \Leftrightarrow \bar A = \bar B \] 
-
-  Osserviamo anche che, quindi, la distanza di Hausdoff passa bene al
-  quoziente usando la definizione 1.
+  La distanza di Hausorff è definita, in realtà, su $\set{A \subseteq
+    \Omega}$, su questo spazio, però, non è una distanza perché non
+  distingue tra un insieme e la sua chiusura, quozientando per la
+  relazione $\cong$ otteniamo una distanza in $C(\Omega)$.
 \end{myoss}
+\begin{proof}
+  È ovvio che $d_H \ge 0$ e che $d_H(A,C) = d_H(C,A)$.
+
+  Dimostriamo che $d_H(A,C) = 0 \Leftrightarrow A = C$: questo vale se
+  $\norm{d_A - d_C}_\infty = 0$ che equivale a dire $d_A = d_C$ e
+  quindi $\bar A = \bar C$ da cui un'implicazione perché $A,C$ sono
+  chiusi, l'altra implicazione è invece ovvia.
+
+  Per la triangolare osserviamo che, dati $A,B,C \subseteq \Omega$
+  chiusi si ha
+  \[ \abs{d_A(x) - d_C(x)} \le \abs{d_A(x) - d_B(x)} + \abs{d_B(x) -
+    d_C(x)} \le d_H(A,B) + d_H(B,C) \]
+  Da cui la tesi passando all'estremo superiore per $x\in \Omega$.
+\end{proof}
+
+Vogliamo studiare ora le propriet\`a di $C(\Omega) = C_d(\Omega)$ come
+spazio metrico, iniziamo con la completezza:
+
+\begin{myteo}[Completezza{\cite[Proposizione 4.4.2]{ambrosio2000selected}}]
+  Se $(\Omega,d)$ è completo allora $\pa{C(\Omega),d_H}$ è completo.
+\end{myteo}
+\begin{proof}
+  Sia $\pa{C_n}_{n\in \mathbb{N}} \subseteq C(\Omega)$ una successione
+  di Cauchy rispetto a $d_H$, allora esiste $\pa{N_k}_{k\in
+    \mathbb{N}}$ crescete tale che 
+  \[ \forall n,m \ge N_k\;\; d_H(C_n,C_M) < 2^{-k} \] Scegliamo
+  $x_1\in C_{N_1}$, siccome $d_H(C_{N_1},C_{N_2}) < \sfrac{1}{2}
+  \Rightarrow d_{C_{N_2}}(x_1) < \sfrac{1}{2}$ allora esiste $x_2\in
+  C_{N_2}$ tale che $d(x_1,x_2) < \sfrac{1}{2}$. Induttivamente
+  possiamo scegliere una successione $\pa{x_k}_{k\in \mathbb{N}}$ tale
+  che $d(x_k,d_{k+1})<2^{-k}$ che è quindi di Cauchy e, per
+  completezza di $\Omega$, converge ad un qualche $\bar x\in \Omega$.
+
+  Definiamo ora 
+  \[ D_k:= \obar{ \bigcup_{j \ge k} C_{N_j}} \]
+  $\forall j \ge k$ si ha $x_j\in D_k$ e quindi, siccome $D_k$ è
+  chiuso, $\forall k\; x\in D_k$.
+
+  Sia $C:=\bigcap _k D_k$, questo insieme è chiuso (perché
+  intersezione di chiusi) e non vuoto (perché $\bar x\in
+  C$). Dimostriamo che $C$ è il limite cercato dando una maggiorazione
+  di $d_H(C,C_{N_k})$.
+
+  \[ x\in C \Rightarrow x \in D_k \Rightarrow d_{C_{N_k}}(x) \le
+  \frac{1}{2^k} \]
+  Dove nell'ultima implicazione usiamo il fatto che $\forall j \ge k
+  \; d_H(C_{N_k},C_{N_j}) < \frac{1}{2}$ ottenendo la disuguaglianza
+  $\forall x \in \bigcup_{j \ge k} C_{N_j}$, ma per la triangolare di
+  $d_{C_k}$ questa disuguaglianza vale passando alla chiusura.
+  
+  D'altra parte $\forall j\ge k$, sempre per $d_H(C_{N_j},C_{N_k}) <
+  \frac{1}{2^k}$
+  \[ \forall x \in C_{C_{N_k}}\; d_{C_{N_j}}(x) < \frac{1}{2^k}
+  \Rightarrow d_{D_{j}}(x) < \frac{1}{2^k} \]
+  Mettendo insieme le due disuguaglianze si ottiene
+  \[ d_H(C_{N_k},C) < \frac{1}{2^k} \]
+  
+  Ma allora $\forall k \in \mathbb{N}$ si ha $\forall n \ge N_k$
+  \[ d_H(C_n,C) \le d_H(C_n,C_{N_k}) + d_H(C_{N_k},C) \le
+  \frac{1}{2^k} + \frac{1}{2^k} = \frac{1}{2^{k-1}} \]
+  Da cui la tesi per l'arbitrarietà di $k$
+\end{proof}
+
+Diamo un risultato di compattezza:
+\begin{myteo}[Blaschke{\cite[Teorema 4.4.6]{ambrosio2000selected}}]
+  Se $\Omega$ è compatto allora $C(\Omega)$ è compatto nella metrica
+  di Hausdorff
+\end{myteo}
+\begin{proof}
+  Siccome $\Omega$ è compatto allora è completo e totalmente limitato,
+  se dimostriamo che anche $C(\Omega)$ è totalmente limitato abbiamo
+  la tesi perché il teorema precedente ci da la completezza di
+  $C(\Omega)$.
+
+  Dato $\varepsilon >0$ sia $F\subseteq E$ insieme finito dei centri di
+  una $\varepsilon$-rete che ricopre $E$. Vogliamo dimostrare che
+  $\mathcal{F}:= \mathcal{P}(F)$ è l'insieme dei centri di una
+  $\varepsilon$-rete finita che ricopre $C(\Omega)$ secondo $d_H$.
+
+  Sia $C\in C(\Omega)$, siccome è chiuso è anche compatto. Considero
+  le palle aperte di centro $F\cap C$ e raggio $\varepsilon$, questo è
+  un ricoprimento di $C$ e ne estraggo quindi un sottoricoprimento
+  finito di centri $D=\set{d_1,...,d_n} \in \mathcal{F}$. Per
+  costruzione del sottoricoprimento si ha $C \subseteq D +
+  \bar B_\varepsilon$, d'altra parte $D \subseteq C$. Quindi
+  \[ \forall C \in C(\Omega)\; \exists D \in \mathcal{F}\text{ t.c. }
+  d_H(C,D) < \varepsilon \]
+  Cioè abbiamo trovato una $\varepsilon$-rete in $C(\Omega)$ da cui la
+  totale limitatezza.
+\end{proof}
 
 
 
@@ -269,10 +391,20 @@ Notazione: definiamo (con un abuso di linguaggio):
 
 
 
+\newpage
+
+\bibliographystyle{alpha}
+\bibliography{Selected_Topics_on_Analysis_in_Metric_Sp}
 
 
+\newpage
 
+\textbf{What??}
 
+\begin{itemize}
+\item Ambrosio-Tilli, definizione 4.4.2 (distanza di hausdorff): tutte le
+  distanze vengono troncate a $1$ ($d'_H = \min\set{1,d_H}$). Why??
+\end{itemize}
 
 
 \newpage
@@ -311,6 +443,8 @@ Cose saltate che potrebbero essere inserite
   \item caratterizzazione coi punti dove non esiste il gradiente di
     $d_A$
   \end{itemize}
+\item Convergenza di kuratowski (ambrosio tilli p.77) è implicata
+  dalla Hausdorff ed è equivalente in compatti
 \end{itemize}
 
 
