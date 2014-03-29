@@ -383,6 +383,41 @@ Diamo un risultato di compattezza:
   totale limitatezza.
 \end{proof}
 
+Mostro ora un risultato di connessione, per farlo premetto un lemma
+
+\begin{mylem}
+  Dati $A,B \subseteq \Omega$ chiusi con $A$ compatto e supponiamo che
+  \[ \inf _{x\in A} d_B(x) = 0 \]
+  Allora $A\cup B$ è connesso
+\end{mylem}
+\begin{proof}
+  Sia $\pa{x_n}_{n\in \mathbb{N}} \subseteq A$ tale che $\forall n\;
+  d_B(x_n) < \frac{1}{n}$. Siccome $A$ è compatto si ha che, a meno di
+  passare a sottosuccessioni, $x_n \to \bar x \in A$. Si verifica
+  facilmente che $d_B(x) = 0$. Ma $B$ è chiuso, quindi $x\in B$ da cui 
+  \[ A \cap B \supseteq \set{x} \neq \emptyset \]
+  Essendo $A,B$ connessi si ha la tesi.
+\end{proof}
+
+\begin{mypro}
+  Sia $\Omega$ compatto e $\pa{C_n} \subseteq C(\Omega)$ successione
+  di Cauchy tale che ogni $C_n$ è compatto. Allora se $C_n \to C$
+  nella metrica di Hausorff $C$ è connesso
+\end{mypro}
+\begin{proof}
+  Supponiamo, per assurdo che $A,A'$ siano due componenti connesse
+  distinte di $C$ (potrebbero essercene anche altre). Devono essere
+  chiuse perché componenti connesse di un chiuso e compatte perché
+  contenute in un compatto.
+
+  Sia $\delta = \inf _{x\in A} d_{A'}(x)$ per la proposizione
+  precedente $\delta \neq 0$. Siccome $C_n \to C$ deve esistere $\bar
+  n$ tale che $\forall n \ge \bar n$ si abbia ($(A\cup A')+B_{\delta/4}$)
+  
+  NOO funziona solo se ci sono solo due componenti connesse!! Forse
+  passando alla coppia che minimizza $\inf$ bla bla? Sicuri che esista
+  davvero? (e che l'inf non faccia 0) TODO
+\end{proof}
 
 
 
