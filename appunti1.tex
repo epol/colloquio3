@@ -398,28 +398,41 @@ Mostro ora un risultato di connessione, per farlo premetto un lemma
   \[ A \cap B \supseteq \set{x} \neq \emptyset \]
   Essendo $A,B$ connessi si ha la tesi.
 \end{proof}
+\begin{mycor}
+  Due componenti connesse distinte chiuse e compatte hanno distanza di
+  Hausdorff non nulla.
+\end{mycor}
 
 \begin{mypro}
-  Sia $\Omega$ compatto e $\pa{C_n} \subseteq C(\Omega)$ successione
-  di Cauchy tale che ogni $C_n$ è compatto. Allora se $C_n \to C$
-  nella metrica di Hausorff $C$ è connesso
+  La funzione $f:\; C(\Omega) \rightarrow \mathbb{N} \cup \set{+\infty}$
+  che ad un chiuso associa il numero delle sue componenti connesse è
+  semicontinua inferiormente
 \end{mypro}
 \begin{proof}
-  Supponiamo, per assurdo che $A,A'$ siano due componenti connesse
-  distinte di $C$ (potrebbero essercene anche altre). Devono essere
-  chiuse perché componenti connesse di un chiuso e compatte perché
-  contenute in un compatto.
+  Dobbiamo dimostrare che la controimmagine di $\left(n-1,
+    +\infty\right]$ è continua qualunque sia $n>0$, questo equivale a
+  dimostrare che la controimmagine di $\bra{n,+\infty}$ è aperta.
 
-  Sia $\delta = \inf _{x\in A} d_{A'}(x)$ per la proposizione
-  precedente $\delta \neq 0$. Siccome $C_n \to C$ deve esistere $\bar
-  n$ tale che $\forall n \ge \bar n$ si abbia ($(A\cup A')+B_{\delta/4}$)
-  
-  NOO funziona solo se ci sono solo due componenti connesse!! Forse
-  passando alla coppia che minimizza $\inf$ bla bla? Sicuri che esista
-  davvero? (e che l'inf non faccia 0) TODO
+  Chiamiamo $I = f^{-1}\pa{\bra{n,+\infty}}$.
+
+  Sia quindi $A \in I$, vogliamo dimostrare che esiste un intorno
+  aperto di $A$ in $I$.
+
+  Se troviamo $\varepsilon$ tale che $A + \bar B_{\varepsilon} \in I$
+  allora ogni $D \subseteq A + \bar B_{\varepsilon}$ avrà almeno $n$
+  componenti connesse, quindi anche questo varrà anche per $\set{D \in
+    C(\Omega):\; d_H(A,D) < \varepsilon}$ per la relazione
+  \[ \set{D \in C(\Omega):\; d_H(A,D) < \varepsilon} \subseteq \set{D
+    \in C(\Omega):\; D \subseteq A + \bar B_{\varepsilon}} \]
+
+  Scegliamo quindi $n$ componenti connesse in $A$ (esistono perché
+  $A\in I$, per il lemma precedente le loro distanze di Hausdorff sono
+  non nulle, sia $\delta$ il minimo di queste distanze e scegliamo
+  $\varepsilon = \sfrac{\delta}{3}$.
+
+  No, è ancora sbagliata perché potrei avere una componente connessa
+  che fa da ``ponte''.
 \end{proof}
-
-
 
 
 
