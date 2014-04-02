@@ -425,15 +425,36 @@ Mostro ora un risultato di connessione, per farlo premetto un lemma
   \[ \set{D \in C(\Omega):\; d_H(A,D) < \varepsilon} \subseteq \set{D
     \in C(\Omega):\; D \subseteq A + \bar B_{\varepsilon}} \]
 
-  Scegliamo quindi $n$ componenti connesse in $A$ (esistono perché
-  $A\in I$, per il lemma precedente le loro distanze di Hausdorff sono
-  non nulle, sia $\delta$ il minimo di queste distanze e scegliamo
-  $\varepsilon = \sfrac{\delta}{3}$.
+  Separiamo le componenti connesse in $n$ gruppi includendole in $n$
+  aperti in $\Omega$ connessi $A_1,A_2,...,A_n$ tali che le loro
+  chiusure non si intersechino a due a due. Iniziamo prendendo un
+  aperto che contenga tutte le componenti connesse, per esempio
+  $\Omega$, se $n=1$ abbiamo finito, altrimenti (per la definizione di
+  connessione) possiamo dividere questo aperto in due aperti con le
+  proprietà richieste. Iteriamo questa costruzione dividendo ogni
+  volta un aperto che contiene più di una componente connessa
+  fermandoci quando otteniamo $n$ insiemi. Possiamo arrivare ad
+  otterne $n$ perché, per ipotesi, $A$ ha almeno $n$ componenti
+  connesse. Inoltre, per costruzione, $A \subseteq A_1 \cup A_2 \cup
+  ... \cup A_n$.
 
-  No, è ancora sbagliata perché potrei avere una componente connessa
-  che fa da ``ponte''.
+  Per il lemma precedente le distanze di Hausdorff reciproche di $A_1,
+  ..., A_n$ sono non nulle, sia $\delta$ il minimo di queste distanze
+  e scegliamo $\varepsilon = \sfrac{\delta}{3}$. Ma allora questo è il
+  $\varepsilon$ cercato, infatti $\pa{A_1\cup ... \cup A_n} + \bar B
+  _\varepsilon$ ha ancora $n$ componenti connesse e di conseguenza le
+  ha anche $A + \bar B_{\varepsilon}$ per la relazione
+  \[ A + \bar B_{\varepsilon} \subseteq \pa{A_1\cup ... \cup A_n} +
+  \bar B_\varepsilon\]
 \end{proof}
-
+\begin{mynot}
+  Secondo me questa costruzione non funziona davvero, almeno non
+  così. Bisogna usare da qualche parte l'ipotesi di compattezza di
+  $\Omega$.
+\end{mynot}
+\begin{mycor}
+  Limite di insiemi connessi è connesso.
+\end{mycor}
 
 
 
