@@ -16,27 +16,29 @@
 
 \setlength{\parindent}{0in}
 
+\newcounter{counter1}
+
 \theoremstyle{plain}
-\newtheorem{myteo}{Teorema}[section]
-\newtheorem{mylem}{Lemma}[section]
-\newtheorem{mypro}{Proposizione}[section]
-\newtheorem{mycor}{Corollario}[section]
+\newtheorem{myteo}[counter1]{Teorema}
+\newtheorem{mylem}[counter1]{Lemma}
+\newtheorem{mypro}[counter1]{Proposizione}
+\newtheorem{mycor}[counter1]{Corollario}
 \newtheorem*{myteo*}{Teorema}
 \newtheorem*{mylem*}{Lemma}
 \newtheorem*{mypro*}{Proposizione}
 \newtheorem*{mycor*}{Corollario}
 
 \theoremstyle{definition}
-\newtheorem{mydef}{Definizione}[section]
-\newtheorem{myes}{Esempio}[section]
-\newtheorem{myex}{Esercizio}[section]
+\newtheorem{mydef}[counter1]{Definizione}
+\newtheorem{myes}[counter1]{Esempio}
+\newtheorem{myex}[counter1]{Esercizio}
 \newtheorem*{mydef*}{Definizione}
 \newtheorem*{myes*}{Esempio}
 \newtheorem*{myex*}{Esercizio}
 
 \theoremstyle{remark}
-\newtheorem{mynot}{Nota}[section]
-\newtheorem{myoss}{Osservazione}[section]
+\newtheorem{mynot}[counter1]{Nota}
+\newtheorem{myoss}[counter1]{Osservazione}
 \newtheorem*{mynot*}{Nota}
 \newtheorem*{myoss*}{Osservazione}
 
