@@ -75,6 +75,8 @@
 \begin{document}
 \maketitle
 
+\section{Distanza di Hausorff}
+
 Ipotesi: $(M,d)$ spazio metrico
 
 Ipotesi: $\Omega \subseteq M$
@@ -385,7 +387,11 @@ Diamo un risultato di compattezza:
   totale limitatezza.
 \end{proof}
 
-Mostro ora un risultato di connessione, per farlo premetto un lemma
+La compattezza di $C(\Omega)$ è molto comoda, infatti ci dice che
+tutte le funzioni semicontinue inferiormente ammettono minimo.
+
+Mostro, per esempio, che il numero di componenti connesse è una
+funzione s.c.i. in $C(\Omega)$, inzio con un lemma.
 
 \begin{mylem}
   Dati $A,B \subseteq \Omega$ chiusi con $A$ compatto e supponiamo che
@@ -453,10 +459,15 @@ Mostro ora un risultato di connessione, per farlo premetto un lemma
   Secondo me questa costruzione non funziona davvero, almeno non
   così. Bisogna usare da qualche parte l'ipotesi di compattezza di
   $\Omega$.
+
+  Ma perché ho detto che posso trovare due chiusi disgiunti che
+  separano l'insieme? TODO.
 \end{mynot}
 \begin{mycor}
   Limite di insiemi connessi è connesso.
 \end{mycor}
+
+TODO: l'area invece non è così.
 
 
 
