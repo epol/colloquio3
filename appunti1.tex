@@ -66,6 +66,7 @@
 
 \DeclareMathOperator{\de}{d}
 \DeclareMathOperator{\id}{Id}
+\DeclareMathOperator{\len}{len}
 
 
 \title{Colloquio 3 - appunti1}
@@ -469,14 +470,82 @@ funzione s.c.i. in $C(\Omega)$, inzio con un lemma.
 
 TODO: l'area invece non è così.
 
+\section{Geodetiche}
 
+Sia ancora $(M,d)$ uno spazio metrico dove vogliamo definire le
+geodetiche, per farlo inziiamo definendo la lunghezza di una curva
+$\gamma :\; \bra{a,b} \to M$
+\begin{mydef}[Lunghezza di una curva]
+  \[ \len^d \gamma := \sup _{\mathcal{P}_{fin}(\bra{a,b}) \ni T =
+    \set{t_1 \le t_2 \le ... \le t_n}} \sum_{i=1}^n d\pa{
+    \gamma\pa{t_{i-1}}, \gamma\pa{t_i}} \]
+\end{mydef}
 
+Chiamiamo $\Gamma (x,y) = \set{\gamma:\; \bra{a,b} \to M \mid
+  \gamma(a) = x, \gamma(b) = y}$
+
+\begin{mydef}[Distanza geodetica indotta]
+  \[ d^g (x,y) := \inf _{\gamma \in \Gamma(x,y)} \len^d \gamma \]
+\end{mydef}
+
+\begin{myoss}
+  Dalla triangolare otteniamo che 
+  \[ \forall \gamma \in \Gamma(x,y) \; \len^d \gamma \ge d(x,y) \]
+  Passando all'$\inf$ ottentiamo quindi
+  \[ d^g(x,y) \ge d(x,y) \]
+  Comunque scegliamo $x,y \in M$.
+\end{myoss}
+
+In generale non vale l'uguaglianza, e cambia anche la
+topologia. Mostro che un compatto opportuno $M \subseteq \mathbb{R}^2$
+con la metrica euclidea indotta non è compatto nella topologia delle
+geodetiche.
+
+\begin{myes}[{\cite[Esempio 2.1]{DuciMennucci2007}}]
+  Sia $E = \bra{0,1} \times \pa{ \set{0} \cup \set{ \frac{1}{n} \mid n
+      > 0} }$ e $\psi(\rho,\theta) = \rho
+  \pa{\cos(\theta),\sin(\theta)}$. Considero quindi $M = \psi(E)$.
+
+  $M$ è unione di segmenti di lunghezza $1$, passanti per l'origine
+  con inclinazione decrescente che tendono al segmento orrizzontale
+  (accumolandosi). %TODO: disegno
+
+  $M$ è compatto nella metrica euclidea, nella metrica indotta dalle
+  geodetiche, però, $M$ non è più compatto, infatti i punti $x_n =
+  \psi(1,\frac{1}{n})$ non posso ammettere una sottosuccessione
+  convergente essendo, per ogni $n\neq m$, $d^g(x_n,y_m) = 2$.
+\end{myes}
+
+Questo non esclude che in alcuni casi $d = d^g$, per esempio
+\begin{mypro}
+  $\pa{d^g}^g = d^g$
+\end{mypro}
+\begin{proof}
+  Basta dimostrare che $\forall x,y \in M$ si ha $\pa{d^g}^g(x,y) \le
+  d^g(x,y)$.
+
+  Sia $\tilde\gamma \in \Gamma(x,y)$ tale che $\len ^d \tilde\gamma <
+  d^g(x,y) + \varepsilon$, voglio stimare la sua lunghezza in $d^g$,
+  prendo quindi $\set{t_0,t_1,...,t_n} \subseteq \bra{a,b}$ tale che
+  \[ \sum _{i=1} ^n d^g(\tilde\gamma(t_{i-1}),\tilde\gamma(t_i)) \ge
+  \len ^{d^g} \tilde\gamma - \varepsilon \] Per la relazione $d\le
+  d^g$ ho:
+  \[ \len ^{d^g} \tilde\gamma \le \varepsilon + \sum _{i=1} ^n
+  d^g(\tilde\gamma(t_{i-1}),\tilde\gamma(t_i)) \le \varepsilon + \sum
+  _{i=1} ^n d(\tilde\gamma(t_{i-1}),\tilde\gamma(t_i)) \le \varepsilon
+  + \len ^d \tilde\gamma < 2 \varepsilon + d^g(x,y) \]
+
+  Quindi
+  \[ \pa{d^g}^g (x,y) = \inf _{\gamma \in \Gamma(x,y)} \len ^{d^g}
+  \gamma \le \len ^{d^g} \tilde\gamma \le 2 \varepsilon + d^g(x,y) \]
+  Mandando $\varepsilon \to 0$ si ha la tesi.
+\end{proof}
 
 
 \newpage
 
 \bibliographystyle{alpha}
-\bibliography{Selected_Topics_on_Analysis_in_Metric_Sp}
+\bibliography{Selected_Topics_on_Analysis_in_Metric_Sp,Banach-like_metrics_and_metrics_of_compact_sets}
 
 
 \newpage
