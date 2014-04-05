@@ -474,6 +474,10 @@ funzione s.c.i. in $C(\Omega)$, inzio con un lemma.
 
   Ma perché ho detto che posso trovare due chiusi disgiunti che
   separano l'insieme? TODO.
+
+  TODO: Delfour, Zolesio lo fanno, capire perché dicono che se
+  funziona per finite componenti connesse allora funziona anche per
+  infinite.
 \end{mynot}
 \begin{mycor}
   Limite di insiemi connessi è connesso.
@@ -552,11 +556,49 @@ Questo non esclude che in alcuni casi $d = d^g$, per esempio
   Mandando $\varepsilon \to 0$ si ha la tesi.
 \end{proof}
 
+\begin{mydef}[Metrica intrinseca]
+  Se la distanza $d$ è tale che $d = d^g$ si dice che $(M,d)$ è una
+  metrica intrinseca
+\end{mydef}
+
+\begin{mydef}[Convessità di Menger]
+  Uno spazio metrico $M$ si dice convesso secondo Menger se, dati
+  comunque $x,y \in M$ distinti esiste $z\neq x,y$ tale che
+  \[ d(x,z) + d(z,y) = d(x,y) \]
+\end{mydef}
+
+Sotto opportune ipotesi uno spazio è convesso secondo Menger se e solo
+se la metrica è intrinseca ed esiste sempre la geodetica fra due
+punti. Cioè vale il seguente teorema:
+
+\begin{myteo}[{\cite[Teorema 2.6.2]{papadopoulos2013metric}}]
+  Sia $M,d$ uno spazio metrico in cui ogni palla chiusa è
+  compatta. Allora le seguenti condizioni sono equivalenti:
+  \begin{enumerate}
+  \item $M$ è convesso secondo Menger
+  \item $\forall x,y \in M$ esiste $z\in M$ tale che 
+    \[ d(x,z) = d(y,z) = \frac{1}{2} d(x,y) \]
+  \item $\forall x,y \in M$ e $\forall \lambda \in \bra{0,1}$ esiste
+    $z\in M$ tale che $d(x,z) = \lambda d(x,y)$, $d(y,z) = (1-\lambda)
+    d(x,y)$ 
+  \item Dati $x,y \in M$ esiste $\gamma \in \Gamma(x,y)$ tale che
+    $\len ^d (\gamma) = d(x,y)$
+  \end{enumerate}
+\end{myteo}
+\begin{proof}
+  TODO
+\end{proof}
+
+Vogliamo applicare il teorema precedente a $C(\Omega),d_H$ per
+dimostrare che $d_H$ è intrinseca ed esiste sempre la geodetica.
+
+Reference: \cite[p.12-14]{DuciMennucci2007}
+
 
 \newpage
 
 \bibliographystyle{alpha}
-\bibliography{Selected_Topics_on_Analysis_in_Metric_Sp,Banach-like_metrics_and_metrics_of_compact_sets}
+\bibliography{Selected_Topics_on_Analysis_in_Metric_Sp,Banach-like_metrics_and_metrics_of_compact_sets,Metric_Spaces_Convexity_and_Nonpositive}
 
 
 \newpage
