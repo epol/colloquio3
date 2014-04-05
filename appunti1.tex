@@ -311,6 +311,16 @@ Notazione: definiamo (con un abuso di linguaggio):
     d_C(x)} \le d_H(A,B) + d_H(B,C) \]
   Da cui la tesi passando all'estremo superiore per $x\in \Omega$.
 \end{proof}
+\begin{myoss}
+  Per come l'abbiamo definita, la distanza di Hausdorff ha valori in
+  $\mathbb{R}_0^+ \cup \set{+\infty}$ quindi non sarebbe davvero una
+  distanza. Possiamo ovviare a questo problema in due modi:
+  \begin{itemize}
+  \item Chiedendo $\Omega$ limitato 
+  \item Prendendo come distanza fra $A$ e $C$ il valore $\min\set{ d_H
+      (A,C) , M}$ con $M >0$
+  \end{itemize}
+\end{myoss}
 
 Vogliamo studiare ora le propriet\`a di $C(\Omega) = C_d(\Omega)$ come
 spazio metrico, iniziamo con la completezza:
