@@ -82,7 +82,7 @@ Ipotesi: $(M,d)$ spazio metrico completo\footnote{TODO: decidere se
   togliere l'ipotesi di completezza e metterla in tutti gli enunciati
   che la richiedono}
 
-Ipotesi: $\Omega \subseteq M$
+Ipotesi: $\Omega \subseteq M$ chiuso
 
 \begin{mydef}[Distanza di un punto da un insieme]
 \[  d_A (x) := \inf _{y \in A} d(x,y) \] 
@@ -92,14 +92,14 @@ Ipotesi: $\Omega \subseteq M$
 $\leftrightarrow$ funzioni $d_A$
 
 \begin{mydef}[Spazio di forme]
-  \[ C_d(\Omega) = \set{d_A : A \subseteq \Omega} \]
+  \[ C_d(\Omega) = \set{d_A : A \subseteq \Omega,\; A \neq \emptyset} \]
 \end{mydef}
 
 \begin{mypro}[Proprietà della distanza punto-insieme]
   Vale:
   \begin{itemize}
   \item La funzione $x \rightarrow d_A(x)$ è 1-Lipschitz (e quindi
-    $C^1$)
+    continua)
   \item $d_{A\cup B}(x) = \min\set{d_A(x),d_B(x)}$
   \item $\set{x:d_A(x) = 0} = \bar A$
   \item $d_A \equiv 0 \Rightarrow $ è denso in $\Omega$
@@ -134,22 +134,36 @@ $\leftrightarrow$ funzioni $d_A$
 
 
 \begin{mylem}
-  Se $A$ è compatto allora l'$\inf$ della definizione di $d_A$ è in
-  realtà un $\min$, cioè:
+  Se $A$ è compatto e completo allora l'$\inf$ della definizione di
+  $d_A$ è in realtà un $\min$, cioè:
   \[ \forall x \in \Omega \; \exists y \in A \ :\ d(y,x) = d_A(x) \]
 \end{mylem}
+% \begin{proof}
+%   Se $d_A(x) = \delta$ allora esiste $\pa{a_n}_{n\in \mathbb{N}}$ con
+%   $a_n \in A$ tale che
+%   \[ d(a_n,x) < \delta + \frac{1}{n} \] 
+%   Ma, per compattezza, estraiamo una sottosuccessione
+%   $\pa{a_{n_k}}_{k\in \mathbb{N}}$ che converge ad un punto in $A$ che
+%   chiamiamo $\bar a$.  Allora, scelto $n_k$ tale che $d(a_{n_k},\bar
+%   a) < \frac{1}{n}$ e che $n_k > n$ si ha
+%   \[ d(x,\bar a) \le d\pa{x,a_{n_k}} + d\pa{a_{n_k}, \bar a} \le
+%   \frac{1}{n_k} + \frac{1}{n} \le \frac{2}{n} \]
+%   Per $n \to \infty$ si ha $d(x,\bar a) \le \delta$, ma $\bar a \in A$
+%   dà la disuguaglianza opposta da cui $\bar a$ è il punto cercato.
+% \end{proof}
 \begin{proof}
-  Se $d_A(x) = \delta$ allora esiste $\pa{a_n}_{n\in \mathbb{N}}$ con
-  $a_n \in A$ tale che
-  \[ d(a_n,x) < \delta + \frac{1}{n} \] 
-  Ma, per compattezza, estraiamo una sottosuccessione
-  $\pa{a_{n_k}}_{k\in \mathbb{N}}$ che converge ad un punto in $A$ che
-  chiamiamo $\bar a$.  Allora, scelto $n_k$ tale che $d(a_{n_k},\bar
-  a) < \frac{1}{n}$ e che $n_k > n$ si ha
-  \[ d(x,\bar a) \le d\pa{x,a_{n_k}} + d\pa{a_{n_k}, \bar a} \le
-  \frac{1}{n_k} + \frac{1}{n} \le \frac{2}{n} \]
-  Per $n \to \infty$ si ha $d(x,\bar a) \le \delta$, ma $\bar a \in A$
-  dà la disuguaglianza opposta da cui $\bar a$ è il punto cercato.
+  $d_A$ è una funzione continua su un compatto, quindi ha minimo.
+\end{proof}
+
+\begin{mylem}\label{lem:pallechiusecompattemin}
+  Se in $M$ le palle chiuse sono compatte, dato $A$ chiuso l'$\inf$
+  della definizione di $d_A$ è un minimo.
+\end{mylem}
+\begin{proof}
+  Dato $x\in M$ supponiamo $d_A(x) < \infty$ (altrimenti la tesi è
+  ovvia). Allora è evidente che possiamo cercare tale minimo in 
+  \[ A \cap \bar B\pa{x,2 d_A(x)} \]
+  che è compatto per ipotesi.
 \end{proof}
 
 \begin{mynot}
@@ -171,11 +185,8 @@ $\leftrightarrow$ funzioni $d_A$
 
 \begin{mynot}
   In uno spazio vettoriale di dimensione finita il lemma vale
-  chiedenso solo che $A$ sia chiuso, infatti tutti i punti $a_n$ della
-  successione data dall'$\inf$ stanno in 
-  \[ a_n \in A \cap \bar B(x,2\delta) \]
-  Che è chiusa perché intersezione di chiusi, è limitata e quindi
-  anche compatta. Da qui si conclude in modo analogo al lemma.
+  chiedenso solo che $A$ sia chiuso applicando il lemma
+  \ref{lem:pallechiusecompattemin}.
 \end{mynot}
 
 
@@ -186,17 +197,17 @@ $\leftrightarrow$ funzioni $d_A$
 
   È ovvio che possiamo prendere come rappresentate di una classe
   l'\textit{unica} chiusura di ogni insieme, quindi abbiamo
-  \[ \sfrac{\set{A \subseteq \Omega}}{\approx} \cong C(\omega) := \set{A
-    \subseteq \Omega,\ A\text{ chiuso}} \]
+  \[ \sfrac{\set{A \subseteq \Omega}}{\approx} \cong C_s(\omega) := \set{A
+    \subseteq \Omega,\ A\text{ chiuso},\; A\neq \emptyset} \]
 \end{myoss}
 \begin{mypro}
-  \[ C(\Omega) \cong C_d(\Omega) \]
+  \[ C_s(\Omega) \cong C_d(\Omega) \]
   \[ A \rightarrow d_A \]
 \end{mypro}
 \begin{proof}
   La mappa è sicuramente ben definita e surgettiva per come è definito
   $C_d(\Omega)$. Per l'iniettività ci basta osservare che se $d_A =
-  d_B$ con $A,B \in C(\Omega)$ allora $\bar A = \bar B$, ma $A$ e $B$
+  d_B$ con $A,B \in C_s(\Omega)$ allora $\bar A = \bar B$, ma $A$ e $B$
   sono chiusi da cui la tesi.
 \end{proof}
 
@@ -212,9 +223,14 @@ $\leftrightarrow$ funzioni $d_A$
     (x) } \]
 \end{mydef}
 
+In seguito dimostrerò che $d_H$ è una funzione distanza
+
 Notazione: definiamo (con un abuso di linguaggio):
 \[ A + \bar B_\varepsilon := \set{ x \in \Omega : \exists y \in A :
   d(x,y) \le \varepsilon }\]
+Questa uguaglianza vale, infatti, in $R^N$ e, più in generale, in
+spazi vettoriali reali.
+
 
 \begin{mypro}
   Se $A, C$ sono \sout{compatti} \sout{chiusi} le seguenti definizioni
@@ -236,7 +252,7 @@ Notazione: definiamo (con un abuso di linguaggio):
   \inf \set{ \delta : A \subseteq C + \bar B _{\delta}}$.
 
   Se $\sup _{x\in A} d_C(x) = \alpha$ allora
-  \[ \forall x \in A \; d_C (x) \le \alpha \Rightarrow \pa{\forall
+  \[ \forall x \in A, \; d_C (x) \le \alpha \Rightarrow \pa{\forall
     \varepsilon > 0 \exists y \in C \mid d(x,y) < \alpha +
     \varepsilon} \Rightarrow \pa{\forall \varepsilon > 0 \; x
     \in C + \bar B _{\alpha + \varepsilon}}\]
@@ -272,7 +288,8 @@ Notazione: definiamo (con un abuso di linguaggio):
   \varepsilon$ (con $\varepsilon > 0$) si ha
   \[ d_A(x)-d_C(x) \le d_A(y) + d(x,y) - d_C(x) < d_A(y) + d_C(x) +
   \varepsilon -d_C(x) = d_A(y) + \varepsilon\]
-  Per $\varepsilon \rightarrow 0$ si ha $d_A(x) \le \delta$.
+  Per $\varepsilon \rightarrow 0$ si ha $d_A(x) - d_C(x) \le d_A(x)
+  \le \delta$.
 
   Dimostriamo ora che il $\sup_{x\in \Omega} \abs{d_A(x)-d_C(x)} \ge
   \delta$. Per farlo supponiamo wlog 
@@ -287,17 +304,11 @@ Notazione: definiamo (con un abuso di linguaggio):
   cui la tesi.
 \end{proof}
 
-\begin{mycor}
-  La relazione $C(\Omega) \cong C_d(\Omega)$ è un'isometria usando su
-  $C_d(\Omega)$ la distanza di Hausdorff su $C(\Omega)$ e la norma
-  infinito su $C_d(\Omega)$
-\end{mycor}
-
 \begin{myoss}
   La distanza di Hausorff è definita, in realtà, su $\set{A \subseteq
     \Omega}$, su questo spazio, però, non è una distanza perché non
   distingue tra un insieme e la sua chiusura, quozientando per la
-  relazione $\cong$ otteniamo una distanza in $C(\Omega)$.
+  relazione $\cong$ otteniamo una distanza in $C_s(\Omega)$.
 \end{myoss}
 \begin{proof}
   È ovvio che $d_H \ge 0$ e che $d_H(A,C) = d_H(C,A)$.
@@ -313,10 +324,18 @@ Notazione: definiamo (con un abuso di linguaggio):
     d_C(x)} \le d_H(A,B) + d_H(B,C) \]
   Da cui la tesi passando all'estremo superiore per $x\in \Omega$.
 \end{proof}
+
+\begin{mycor}
+  La relazione $C_s(\Omega) \cong C_d(\Omega)$ è un'isometria usando su
+  $C_d(\Omega)$ la distanza di Hausdorff su $C_s(\Omega)$ e la norma
+  infinito su $C_d(\Omega)$
+\end{mycor}
+
 \begin{myoss}
   Per come l'abbiamo definita, la distanza di Hausdorff ha valori in
-  $\mathbb{R}_0^+ \cup \set{+\infty}$ quindi non sarebbe davvero una
-  distanza. Possiamo ovviare a questo problema in due modi:
+  $\mathbb{R}_0^+ \cup \set{+\infty}$.
+
+  Se questo è un problema possiamo aggirarlo in due modi:
   \begin{itemize}
   \item Chiedendo $\Omega$ limitato 
   \item Prendendo come distanza fra $A$ e $C$ il valore $\min\set{ d_H
@@ -324,17 +343,17 @@ Notazione: definiamo (con un abuso di linguaggio):
   \end{itemize}
 \end{myoss}
 
-Vogliamo studiare ora le propriet\`a di $C(\Omega) = C_d(\Omega)$ come
+Vogliamo studiare ora le propriet\`a di $C_s(\Omega) = C_d(\Omega)$ come
 spazio metrico, iniziamo con la completezza:
 
 \begin{myteo}[Completezza{\cite[Proposizione 4.4.2]{ambrosio2000selected}}]
-  Se $(\Omega,d)$ è completo allora $\pa{C(\Omega),d_H}$ è completo.
+  Se $(\Omega,d)$ è completo allora $\pa{C_s(\Omega),d_H}$ è completo.
 \end{myteo}
 \begin{proof}
-  Sia $\pa{C_n}_{n\in \mathbb{N}} \subseteq C(\Omega)$ una successione
+  Sia $\pa{C_n}_{n\in \mathbb{N}} \subseteq C_s(\Omega)$ una successione
   di Cauchy rispetto a $d_H$, allora esiste $\pa{N_k}_{k\in
     \mathbb{N}}$ crescete tale che 
-  \[ \forall n,m \ge N_k\;\; d_H(C_n,C_M) < 2^{-k} \] Scegliamo
+  \[ \forall n,m \ge N_k\;\; d_H(C_n,C_m) < 2^{-k} \] Scegliamo
   $x_1\in C_{N_1}$, siccome $d_H(C_{N_1},C_{N_2}) < \sfrac{1}{2}
   \Rightarrow d_{C_{N_2}}(x_1) < \sfrac{1}{2}$ allora esiste $x_2\in
   C_{N_2}$ tale che $d(x_1,x_2) < \sfrac{1}{2}$. Induttivamente
@@ -345,7 +364,7 @@ spazio metrico, iniziamo con la completezza:
   Definiamo ora 
   \[ D_k:= \obar{ \bigcup_{j \ge k} C_{N_j}} \]
   $\forall j \ge k$ si ha $x_j\in D_k$ e quindi, siccome $D_k$ è
-  chiuso, $\forall k\; x\in D_k$.
+  chiuso, $\forall k\;\; \bar x\in D_k$.
 
   Sia $C:=\bigcap _k D_k$, questo insieme è chiuso (perché
   intersezione di chiusi) e non vuoto (perché $\bar x\in
@@ -374,62 +393,60 @@ spazio metrico, iniziamo con la completezza:
 
 Diamo un risultato di compattezza:
 \begin{myteo}[Blaschke{\cite[Teorema 4.4.6]{ambrosio2000selected}}]
-  Se $\Omega$ è compatto allora $C(\Omega)$ è compatto nella metrica
+  Se $\Omega$ è compatto allora $C_s(\Omega)$ è compatto nella metrica
   di Hausdorff
 \end{myteo}
 \begin{proof}
   Siccome $\Omega$ è compatto allora è completo e totalmente limitato,
-  se dimostriamo che anche $C(\Omega)$ è totalmente limitato abbiamo
+  se dimostriamo che anche $C_s(\Omega)$ è totalmente limitato abbiamo
   la tesi perché il teorema precedente ci da la completezza di
-  $C(\Omega)$.
+  $C_s(\Omega)$.
 
-  Dato $\varepsilon >0$ sia $F\subseteq E$ insieme finito dei centri di
-  una $\varepsilon$-rete che ricopre $E$. Vogliamo dimostrare che
+  Dato $\varepsilon >0$ sia $F\subseteq \Omega$ insieme finito dei centri di
+  una $\varepsilon$-rete che ricopre $\Omega$. Vogliamo dimostrare che
   $\mathcal{F}:= \mathcal{P}(F)$ è l'insieme dei centri di una
-  $\varepsilon$-rete finita che ricopre $C(\Omega)$ secondo $d_H$.
+  $\varepsilon$-rete finita che ricopre $C_s(\Omega)$ secondo $d_H$.
 
-  Sia $C\in C(\Omega)$, siccome è chiuso è anche compatto. Considero
+  Sia $C\in C_s(\Omega)$, siccome è chiuso è anche compatto. Considero
   le palle aperte di centro $F\cap C$ e raggio $\varepsilon$, questo è
   un ricoprimento di $C$ e ne estraggo quindi un sottoricoprimento
   finito di centri $D=\set{d_1,...,d_n} \in \mathcal{F}$. Per
   costruzione del sottoricoprimento si ha $C \subseteq D +
   \bar B_\varepsilon$, d'altra parte $D \subseteq C$. Quindi
-  \[ \forall C \in C(\Omega)\; \exists D \in \mathcal{F}\text{ t.c. }
+  \[ \forall C \in C_s(\Omega)\; \exists D \in \mathcal{F}\text{ t.c. }
   d_H(C,D) < \varepsilon \]
-  Cioè abbiamo trovato una $\varepsilon$-rete in $C(\Omega)$ da cui la
+  Cioè abbiamo trovato una $\varepsilon$-rete in $C_s(\Omega)$ da cui la
   totale limitatezza.
 \end{proof}
 
-La compattezza di $C(\Omega)$ è molto comoda, infatti ci dice che
+La compattezza di $C_s(\Omega)$ è molto comoda, infatti ci dice che
 tutte le funzioni semicontinue inferiormente ammettono minimo.
 
 Mostro, per esempio, che il numero di componenti connesse è una
-funzione s.c.i. in $C(\Omega)$, inzio con un lemma.
+funzione s.c.i. in $C_s(\Omega)$, inzio con un lemma.
 
 \begin{mylem}
-  Dati $A,B \subseteq \Omega$ chiusi con $A$ compatto e supponiamo che
-  \[ \inf _{x\in A} d_B(x) = 0 \]
-  Allora $A\cup B$ è connesso
+  Dati $A,B \subseteq \Omega$ chiusi con almeno uno dei due compatto e
+  $A \cap B \neq \emptyset$ allora
+  \[ \inf _{x\in A} d_B(x) = \inf _{(x,y) \in A\times B} d(x,y) = \inf
+  _{y\in B} d_A(y) >0 \]
 \end{mylem}
 \begin{proof}
-  Sia $\pa{x_n}_{n\in \mathbb{N}} \subseteq A$ tale che $\forall n\;
-  d_B(x_n) < \frac{1}{n}$. Siccome $A$ è compatto si ha che, a meno di
-  passare a sottosuccessioni, $x_n \to \bar x \in A$. Si verifica
-  facilmente che $d_B(x) = 0$. Ma $B$ è chiuso, quindi $x\in B$ da cui 
-  \[ A \cap B \supseteq \set{x} \neq \emptyset \]
-  Essendo $A,B$ connessi si ha la tesi.
+  Sia $A$ compatto, allora $x \to d_B(x)$ ha minimo in $A$, sia $\bar
+  x \in A$ tale minimo. Se $d_B(\bar x) = 0$ allora $\bar x \in \bar B = B$
+  contro l'ipotesi $A \cap B = \emptyset$
 \end{proof}
-\begin{mycor}
-  Due componenti connesse distinte chiuse e compatte hanno distanza di
-  Hausdorff non nulla.
-\end{mycor}
+
+Sia $K(\Omega) = \set{K\subseteq \Omega :\; K \text{ compatto}}$.
 
 \begin{mypro}
-  La funzione $f:\; C(\Omega) \rightarrow \mathbb{N} \cup \set{+\infty}$
+  La funzione $f:\; K(\Omega) \rightarrow \mathbb{N} \cup \set{+\infty}$
   che ad un chiuso associa il numero delle sue componenti connesse è
   semicontinua inferiormente
 \end{mypro}
 \begin{proof}
+  TODO: appliccare correzioni Mennucci.
+
   Dobbiamo dimostrare che la controimmagine di $\left(n-1,
     +\infty\right]$ è continua qualunque sia $n>0$, questo equivale a
   dimostrare che la controimmagine di $\bra{n,+\infty}$ è aperta.
@@ -498,7 +515,7 @@ $\gamma :\; \bra{a,b} \to M$
 \end{mydef}
 
 Chiamiamo $\Gamma (x,y) = \set{\gamma:\; \bra{a,b} \to M \mid
-  \gamma(a) = x, \gamma(b) = y}$
+  \gamma(a) = x, \gamma(b) = y,\; \gamma \text{ continua}}$
 
 \begin{mydef}[Distanza geodetica indotta]
   \[ d^g (x,y) := \inf _{\gamma \in \Gamma(x,y)} \len^d \gamma \]
