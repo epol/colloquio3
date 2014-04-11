@@ -445,8 +445,6 @@ Sia $K(\Omega) = \set{K\subseteq \Omega :\; K \text{ compatto}}$.
   semicontinua inferiormente
 \end{mypro}
 \begin{proof}
-  TODO: appliccare correzioni Mennucci.
-
   Dobbiamo dimostrare che la controimmagine di $\left(n-1,
     +\infty\right]$ è continua qualunque sia $n>0$, questo equivale a
   dimostrare che la controimmagine di $\bra{n,+\infty}$ è aperta.
@@ -464,39 +462,34 @@ Sia $K(\Omega) = \set{K\subseteq \Omega :\; K \text{ compatto}}$.
     \in C(\Omega):\; D \subseteq A + \bar B_{\varepsilon}} \]
 
   Separiamo le componenti connesse in $n$ gruppi includendole in $n$
-  aperti in $\Omega$ connessi $A_1,A_2,...,A_n$ tali che le loro
-  chiusure non si intersechino a due a due. Iniziamo prendendo un
-  aperto che contenga tutte le componenti connesse, per esempio
-  $\Omega$, se $n=1$ abbiamo finito, altrimenti (per la definizione di
-  connessione) possiamo dividere questo aperto in due aperti con le
-  proprietà richieste. Iteriamo questa costruzione dividendo ogni
-  volta un aperto che contiene più di una componente connessa
-  fermandoci quando otteniamo $n$ insiemi. Possiamo arrivare ad
-  otterne $n$ perché, per ipotesi, $A$ ha almeno $n$ componenti
-  connesse. Inoltre, per costruzione, $A \subseteq A_1 \cup A_2 \cup
-  ... \cup A_n$.
+  chiusi $A_1,A_2,...,A_n$ (chiusi nella topologia di $\Omega$) tali
+  che non si intersechino a due a due. Iniziamo prendendo un chiuso
+  che contenga tutte le componenti connesse, cioè $A$, se $n=1$
+  abbiamo finito, altrimenti (per la definizione di connessione)
+  possiamo dividere questo chiuso in due chiusi con le proprietà
+  richieste, infatti esistono $\tilde A_1, \tilde A_2$ aperti e chiusi
+  nella topologia indotta in $A$ tali che $A = \tilde A_1 \cup \tilde
+  A_2$ e che $\tilde A_1 \cap \tilde A_2 = \emptyset$, ma siccome $A$
+  è chiuso in $\Omega$ si ha che $\tilde A_1, \tilde A_2$ sono chiusi
+  nella topologia di $\Omega$.
 
-  Per il lemma precedente le distanze di Hausdorff reciproche di $A_1,
+  Iteriamo questa costruzione dividendo ogni volta un chiuso che
+  contiene più di una componente connessa fermandoci quando otteniamo
+  $n$ insiemi. Possiamo arrivare ad otterne $n$ perché, per ipotesi,
+  $A$ ha almeno $n$ componenti connesse. Inoltre, per costruzione, $A
+  = A_1 \cup A_2 \cup ... \cup A_n$.
+
+  Avendo $A_1,A_2,..., A_n \subseteq A$ chiusi ed essendo $A$ compatto
+  per ipotesi allora anche gli $A_1, ..., A_n$ sono compatti e quindi
+  per il lemma precedente le distanze di Hausdorff reciproche di $A_1,
   ..., A_n$ sono non nulle, sia $\delta$ il minimo di queste distanze
   e scegliamo $\varepsilon = \sfrac{\delta}{3}$. Ma allora questo è il
   $\varepsilon$ cercato, infatti $\pa{A_1\cup ... \cup A_n} + \bar B
-  _\varepsilon$ ha ancora $n$ componenti connesse e di conseguenza le
-  ha anche $A + \bar B_{\varepsilon}$ per la relazione
-  \[ A + \bar B_{\varepsilon} \subseteq \pa{A_1\cup ... \cup A_n} +
-  \bar B_\varepsilon\]
+  _\varepsilon$ ha ancora almeno $n$ componenti connesse e di
+  conseguenza le ha anche $A + \bar B_{\varepsilon}$ per la relazione
+  \[ A + \bar B_{\varepsilon} = \pa{A_1\cup ... \cup A_n} + \bar
+  B_\varepsilon\]
 \end{proof}
-\begin{mynot}
-  Secondo me questa costruzione non funziona davvero, almeno non
-  così. Bisogna usare da qualche parte l'ipotesi di compattezza di
-  $\Omega$.
-
-  Ma perché ho detto che posso trovare due chiusi disgiunti che
-  separano l'insieme? TODO.
-
-  TODO: Delfour, Zolesio lo fanno, capire perché dicono che se
-  funziona per finite componenti connesse allora funziona anche per
-  infinite.
-\end{mynot}
 \begin{mycor}
   Limite di insiemi connessi è connesso.
 \end{mycor}
@@ -579,11 +572,30 @@ Questo non esclude che in alcuni casi $d = d^g$, per esempio
   metrica intrinseca
 \end{mydef}
 
+Per i prossimi risultati userò questi fatti facilemente dimostrabili:
+\begin{mylem}
+  Se $\tilde \gamma \in \Gamma (x,y)$ con $\len ^d (\tilde \gamma) = L
+  < \infty$ e $\tilde \gamma : \; \bra {a,b} \to M$ allora si può
+  riparametrizzare $\tilde gamma$ in $\gamma : \bra{0,L} \to M$ con la
+  proprietà $\len ^d(\gamma_{| \bra{0,t}} = t$.
+\end{mylem}
+% \begin{proof}
+%   Considero la funzione $t:\bra{a,b} \to \bra{0,L}$ tale che $t(s) =
+%   \len ^d (\gamma_{|\bra{0,s}})$ questa funzione è evidentemente
+%   crescente e si può verificare che è continua. Quindi posso definire
+%   \[ \gamma = \tilde \gamma \circ f^{-1} \]
+% \end{proof}
+
+
+
+
+
 \begin{mydef}[Convessità di Menger]
   Uno spazio metrico $M$ si dice convesso secondo Menger se, dati
   comunque $x,y \in M$ distinti esiste $z\neq x,y$ tale che
   \[ d(x,z) + d(z,y) = d(x,y) \]
 \end{mydef}
+
 
 Sotto opportune ipotesi uno spazio è convesso secondo Menger se e solo
 se la metrica è intrinseca ed esiste sempre la geodetica fra due
