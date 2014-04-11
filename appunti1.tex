@@ -574,6 +574,12 @@ Questo non esclude che in alcuni casi $d = d^g$, per esempio
 
 Per i prossimi risultati userò questi fatti facilemente dimostrabili:
 \begin{mylem}
+  Data $\gamma:\; \bra{a,b} \to M$ continua si ha $\forall c \in
+  \pa{a,b}$
+  \[ \len ^d (\gamma_{|\bra{a,c}}) +  \len ^d (\gamma_{|\bra{c,b}}) = 
+  \len ^d (\gamma) \] 
+\end{mylem}
+\begin{mylem}
   Se $\tilde \gamma \in \Gamma (x,y)$ con $\len ^d (\tilde \gamma) = L
   < \infty$ e $\tilde \gamma : \; \bra {a,b} \to M$ allora si può
   riparametrizzare $\tilde gamma$ in $\gamma : \bra{0,L} \to M$ con la
@@ -585,9 +591,21 @@ Per i prossimi risultati userò questi fatti facilemente dimostrabili:
 %   crescente e si può verificare che è continua. Quindi posso definire
 %   \[ \gamma = \tilde \gamma \circ f^{-1} \]
 % \end{proof}
+\begin{mylem}
+  Con la riparametrizzazione del lemma precedente si ha, presi $0 \le
+  t < s \le \len ^d (\gamma)$
+  \[ \len ^d (\gamma _{|\bra{t,s}}) = s - t \]
+\end{mylem}
 
-
-
+E ora un risultato sulla relazione tra intrinsecità di $(M,d)$ e
+quella di $\pa{C_s(M),d_H}$
+\begin{mypro}
+  La metrica di $(M,d)$ è intinseca se e solo se è intrinseca la
+  metrica di $(C_s(M),d_H)$
+\end{mypro}
+\begin{proof}
+  
+\end{proof}
 
 
 \begin{mydef}[Convessità di Menger]
