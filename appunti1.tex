@@ -619,7 +619,7 @@ quella di $\pa{C_s(M),d_H}$
   \[ P = \set{(x,y)\in A\times C:\; d(x,y) < \mu + \varepsilon} \]
   Si ha che proiettando $P$ sulle prime componenti troviamo $A$ e
   proiettandolo sulla seconda troviamo $C$ (in generale però $P \neq A
-  \times C$.  Siccome $\forall (x,y) \in P\; d^g(x,y) = d(x,y) \le \mu
+  \times C$).  Siccome $\forall (x,y) \in P\; d^g(x,y) = d(x,y) \le \mu
   + \varepsilon$ (perché la metrica è intrinseca) possiamo dire che
   $\forall (x,y) \exists \gamma_{(x,y)}$ tale che $\len ^d \gamma \le
   \mu + 2 \varepsilon$. Scegliamo una curva per ogni coppia di punti e
@@ -627,9 +627,9 @@ quella di $\pa{C_s(M),d_H}$
   \[ \Gamma = \set{\gamma _{(x,y)} :\; (x,y) \in P} \]
 
   Senza perdere di generalità possiamo chiedere che, se la curva
-  $\gamma \in \Gamma$ ha lunghezza $\alpha_{(x,y)} (\mu + 2
+  $\gamma \in \Gamma$ ha lunghezza $\alpha (\mu + 2
   \varepsilon )$, allora $\len ^d \pa{ \gamma _{|\bra{s,t}}} = \alpha
-  _{(x,y)} (t-s)$. Tutte le curve $\gamma$ avranno domino $\bra{0,\mu
+  (t-s)$. Tutte le curve $\gamma$ avranno domino $\bra{0,\mu
     + 2 \varepsilon}$
 
   Definiamo ora, al variare di $t\in \bra{0,\mu + 2 \varepsilon}$
@@ -645,7 +645,7 @@ quella di $\pa{C_s(M),d_H}$
   $d_H(\bar G(s),\bar G(t)) = d_H(G(s),G(t)) \le t-s$:
   \[ \forall \gamma(s) \in G(s) \; d_{G(t)}(\gamma(s)) = \inf _{y \in
     G(t)} d(\gamma(s),y) \le d(\gamma(s),\gamma(t)) = \alpha
-  _{\gamma} (t-s) \le (t-s) \]
+  _{\gamma} (t-s) \le t-s \]
   Ripetendo lo stesso ragionamento per $G(s)$ otteniamo
   \[ d_H(G(s), G(t)) = \max\set{\sup_{x\in G(t)} d_{G(s)}(x) , \sup
     _{x\in G(s)} (x) d_{G(t)} } \le t-s \]
