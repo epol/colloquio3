@@ -633,12 +633,73 @@ quella di $\pa{C_s(M),d_H}$
     + 2 \varepsilon}$
 
   Definiamo ora, al variare di $t\in \bra{0,\mu + 2 \varepsilon}$
-  \[ G(t) = \set{\gamma (t) | \; \gamma \in \Gamma} \]
+  \[ G(t) = \set{\gamma (t) | \; \gamma \in \Gamma} \;\;\;\; \bar G(t)
+  = \obar{ G(t)} \]
 
-  \`E evidente che $G(0) = A$ e $G(\mu + 2 \varepsilon) = C$, vogliamo
-  ora dimostrare che $G:\; \bra{0,\mu + 2 \varepsilon} \to \set{ S
-    \subseteq M}$ ha immagine in $C_s(M)$, \`e continua e ha lunghezza
-  minore di $\mu + 2 \varespsilon$
+  \`E evidente che $\bar G(0) = A$ e $\bar G(\mu + 2 \varepsilon) =
+  C$, vogliamo ora dimostrare che $\bar G:\; \bra{0,\mu + 2
+    \varepsilon} \to C_s(M)$, \`e continua e ha lunghezza minore di
+  $\mu + 2 \varepsilon$.
+  
+  Dimostriamo che $\forall s<t \in \bra{0,\mu + 2 \varepsilon}$ si ha
+  $d_H(\bar G(s),\bar G(t)) = d_H(G(s),G(t)) \le t-s$:
+  \[ \forall \gamma(s) \in G(s) \; d_{G(t)}(\gamma(s)) = \inf _{y \in
+    G(t)} d(\gamma(s),y) \le d(\gamma(s),\gamma(t)) = \alpha
+  _{\gamma} (t-s) \le (t-s) \]
+  Ripetendo lo stesso ragionamento per $G(s)$ otteniamo
+  \[ d_H(G(s), G(t)) = \max\set{\sup_{x\in G(t)} d_{G(s)}(x) , \sup
+    _{x\in G(s)} (x) d_{G(t)} } \le t-s \]
+  Questo implica che $\bar G$ è $1$-Lipschitz e quindi
+  continua. D'altra parte si ha che per ogni $t_0< t_1< ... < t_n \in
+  \bra{0,\mu + 2 \varepsilon}$ 
+  \[ \sum _{i=1} ^n d_H(\bar G(t_{i-1}), \bar G(t_i)) \le \sum _{i=1}
+  ^n (t_i - t_{i-1}) = t_n - t_0 \le \mu + 2\varepsilon \]
+  Quindi $\len ^{d_H}(\bar G) \le \mu + 2 \varepsilon$.
+  Essendo $\bar G$ una curva continua in $C_s(M)$ che congiunge $A$ e
+  $C$ si ha $d_H ^g (A,C) \le \mu + 2\varepsilon $, quindi
+  \[ \mu = d_H (A,C) \le d_H^g(A,C) \le \mu + 2\varepsilon \]
+  Mandando $\varepsilon \to 0$ si ha l'uguaglianza cercata.
+
+  Dimostriamo l'altra implicazione: siano $a,c\in M$ e sia $\mu =
+  d(a,c)$ consideriamo i razionali nella forma
+  \[ Q = \set{ \mu \frac{k}{2^n}|\; 0< k <2^n\; k\text{ dispari}} \cup
+  \set{0,\mu}\]
+
+  E definiamo, induttivamente $\tilde \gamma:\; Q \to M$ in modo che
+  $d(\tilde \gamma (t), \tilde \gamma (s)) < \abs{s-t} + \varepsilon
+  \frac{\abs{s-t}}{\mu}$.
+
+  Iniziamo definendo $\tilde\gamma \pa{\mu \frac{0}{2^0}} = a$, $\tilde\gamma
+  \pa{\mu \frac{1}{2^0}} = c$, è evidente la proprietà sulla distanza.
+
+  Supponendo di aver definito $\tilde \gamma (\mu \frac{k}{2^{n-1}})$
+  con $0 \le k \le 2^{n-1}$ definiamo $\tilde \gamma$ per $\mu
+  \frac{k}{2^n}$ con $k$ dispari. Per ipotesi induttiva sono definiti
+  $x = \tilde \gamma\pa{\mu \frac{k-1}{2^n}}$ e $y = \tilde
+  \gamma\pa{\mu \frac{k+1}{2^n}}$, sia quindi $G$ una curva nella
+  metrica di Hausdorff che congiunge gli insiemi $\set{x}$ e $\set{y}$
+  di lunghezza minore di $\frac{k+1}{2^n} - \frac{k-1}{2^n} +
+  \frac{\varepsilon}{2^{n-1}} = \frac{1}{2^{n-1}} +
+  \frac{\varepsilon}{2^{n-1}}$ (lo possiamo fare perché $d\pa{x,y} <
+  \frac{\mu}{2^{n-1}} + \frac{\varepsilon}{2^{n-1}}$, la
+  disuguaglianza è stretta, $d_H(\set{x},\set{y}) = d(x,y)$ e la
+  metrica $d_H$ è intrinseca) e parametrizzata in modo che $d_H(G(s),
+  G(t)) = \abs{t-s}$ con $G(0) = x$. Scegliamo allora un punto $z =
+  \tilde \gamma \pa{\frac{k}{2^n}}$ in $G\pa{\frac{1}{2^n}}$, si deve
+  avere necessariamente che $d(x,z) \le \frac{\mu}{2^n} +
+  \frac{\varepsilon}{2^n}$ e $d(y,z) \le \frac{\mu}{2^n} +
+  \frac{\varepsilon}{2^n}$. La disuguaglianza con gli altri punti già
+  scelti vale applicando la proprietà triangolare.
+
+  Abbiamo quindi definito una curva $\tilde \gamma: \; Q \to M$, data
+  la stima sulla distanza dei punti nell'immagine possiamo estendere
+  questa funzione, per continuità, ad una curva $\gamma: \bra{0,\mu}
+  \to M$ continua. Usando ancora la stima sulla distanza dei punti
+  possiamo maggiorare la lunghezza di questa curva con $\mu +
+  \varepsilon$, quindi
+  \[ \mu = d(a,c) \le d^g(a,c) \le \len^d (\gamma) \le \mu +
+  \varepsilon \]
+  Mandando $\varepsilon$ a zero si ha l'altra implicazione.
 \end{proof}
 
 \newpage
