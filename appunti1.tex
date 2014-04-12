@@ -604,10 +604,32 @@ quella di $\pa{C_s(M),d_H}$
   metrica di $(C_s(M),d_H)$
 \end{mypro}
 \begin{proof}
-  
+  Iniziamo dimostrando che $(M,d)$ intrinseca implica $(C_s(M),d_H)$
+  inrinseca.
+
+  Siano $A,C \in C_s(M)$ e sia $\mu = d_H(A,C)$ e scegliamo
+  $\varepsilon >0$, allora (per la definizione di $d_H$) possiamo dire
+  che
+  \[ \forall x \in A\; \exists y \in C \mid d(x,y) < \mu +
+  \varepsilon \]
+  Analogamente per $C$:
+  \[ \forall y \in C\; \exists x \in A \mid d(x,y) < \mu +
+  \varepsilon \]
+  Quindi, detto
+  \[ P = \set{(x,y)\in A\times C:\; d(x,y) < \mu + \varepsilon} \]
+  Si ha che proiettando $P$ sulle prime componenti troviamo $A$ e
+  proiettandolo sulla seconda troviamo $C$ (in generale però $P \neq A
+  \times C$.  Siccome $\forall (x,y) \in P\; d^g(x,y) = d(x,y) \le \mu
+  + \varepsilon$ (perché la metrica è intrinseca) possiamo dire che
+  $\forall (x,y) \exists \gamma_{(x,y)}$ tale che $\len ^d \gamma \le
+  \mu + 2 \varepsilon$. Scegliamo una curva per ogni coppia di punti e
+  definiamo
+  \[ \Gamma = \set{\gamma _{(x,y)} :\; (x,y) \in P} \]
+  Senza perdere di generalità possiamo chiedere che le curve
+  $\gamma_{(x,y)}$ si %TODO parametrizzazione
 \end{proof}
 
-
+\newpage
 \begin{mydef}[Convessità di Menger]
   Uno spazio metrico $M$ si dice convesso secondo Menger se, dati
   comunque $x,y \in M$ distinti esiste $z\neq x,y$ tale che
