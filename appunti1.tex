@@ -713,9 +713,9 @@ quella di $\pa{C_s(M),d_H}$
 Dimostriamo ora un risultato sull'esistenza di geodetiche in $(M,d)$
 spazio metrico completo
 \begin{mylem}
-  Dato $K\subseteq M$ compatto nella topologia indotta dalla metrica
-  $d^g$ allora $\forall x,y \in K$ esiste la geodetica che li
-  congiunge.
+  Dato $K\subseteq M$ compatto connesso nella topologia indotta dalla
+  metrica $d^g$ allora $\forall x,y \in K$ esiste la geodetica che li
+  congiunge nella metrica indotta da $d$.
 \end{mylem}
 \begin{proof}
   Osservo che $K$ è compatto anche nella topologia indotta da $d$
@@ -770,6 +770,36 @@ una ``rete'': sia $R  = \bigcup _{n \in \mathbb{Z}} \set{(n,y) \mid y
   \in \mathbb{R}} \subseteq \mathbb{R^2}$ con la metrica euclidea. I
 punti $(0,0)$ e $(1,1)$ possono essere congiunti con due geodetiche
 distinte %TODO disegno
+
+Vediamo ora che, con opportune ipotesi, nella distanza di Hausdorff
+esiste sempre la geodetica fra insiemi compatti, ma ne possono
+esistere più che numerabili.
+
+\begin{mypro}
+  Se in $M$ le palle chiuse sono compatte e $\Omega \subseteq M$ è un
+  chiuso connesso (TODO: più qualcosa tipo convessità) allora esiste
+  sempre la geodetica fra $A,C \in K(\Omega)$.
+\end{mypro}
+\begin{proof}
+  È evidente, per la disuguaglianza triangolare, che la geodetica si
+  può cercare in\footnote{Per ora cerco la geodetica in $C_s(\Omega)$,
+    poi dimostrerò che tale geodetica in realtà ha valori in
+    $K(\Omega)$}
+  \[ \set{D \in C_s(\Omega) \mid \; d_H(A,D) \le d_H(A,C) = \mu} \]
+  Dalla relazione $d_H(A,D) \le \mu \Rightarrow D \subseteq A + \bar B
+  _\mu$, ricordando che (per compattezza) $A \subseteq B(x_0,\rho)$
+  (per qualche $x_0 \in \Omega$, $\rho >0$) si ha che possiamo cercare
+  i punti di una geodetica fra i sottoinsiemi di
+  \[ \tilde \Omega = \Omega \cap \pa{\obar{B(x_0,\rho)} + \bar B _\mu}
+  = \Omega \cap \pa{ \obar{ B (x_0, \rho + \mu) }} \]
+  Ma $\tilde \Omega$ è compatto per ipotesi e quindi, per il lemma
+  precedente, esiste una geodetica in $C_s(\tilde \Omega)$, osservando
+  che $C_s(\tilde \Omega) = K(\tilde \Omega) \subseteq K(\Omega)$
+  (perché sottinsiemi chiusi in un compatto) si ha che la geodetica
+  trovata ha valori in $K(\Omega)$.
+\end{proof}
+
+
 
 \newpage
 \begin{mydef}[Convessità di Menger]
