@@ -522,7 +522,15 @@ Chiamiamo $\Gamma (x,y) = \set{\gamma:\; \bra{a,b} \to M \mid
   Comunque scegliamo $x,y \in M$.
 \end{myoss}
 
-In generale non vale l'uguaglianza, e cambia anche la
+\begin{myoss}
+\label{oss:topologiagedoeticafine}
+  Da $d^g \ge d$ otteniamo che la topologia generata da $d^g$ è più
+  fine di quella generata da $d$ e, di conseguenza, se un insieme è
+  compatto con la distanza $d^g$ allora lo è anche con la distanza
+  $d$.
+\end{myoss}
+
+In generale non vale l'uguaglianza $d = d^g$, e cambia anche la
 topologia. Mostro che un compatto opportuno $M \subseteq \mathbb{R}^2$
 con la metrica euclidea indotta non è compatto nella topologia delle
 geodetiche.
@@ -702,6 +710,67 @@ quella di $\pa{C_s(M),d_H}$
   Mandando $\varepsilon$ a zero si ha l'altra implicazione.
 \end{proof}
 
+Dimostriamo ora un risultato sull'esistenza di geodetiche in $(M,d)$
+spazio metrico completo
+\begin{mylem}
+  Dato $K\subseteq M$ compatto nella topologia indotta dalla metrica
+  $d^g$ allora $\forall x,y \in K$ esiste la geodetica che li
+  congiunge.
+\end{mylem}
+\begin{proof}
+  Osservo che $K$ è compatto anche nella topologia indotta da $d$
+  (vedi osservazione \ref{oss:topologiagedoeticafine}).
+
+  Sia $\mu = d^g(x,y)$ e $\pa{\gamma _n}_{n \in \mathbb{N}} \subseteq
+  \Gamma (x,y)$ una successione di curve continue tali che $\len
+  \gamma _n \le \mu + \frac{1}{2^n}$. A meno di riparametrizzare posso
+  chidere che $\forall n \in \mathbb{N}$ sia $\gamma _n :\;
+  \bra{0,\mu} \to K$ con $\len ^d \gamma _{|\bra{s,t}} = \frac{\len ^d
+    \gamma _n}{\mu}\pa{t-s} = \alpha _\gamma \pa{s-t}$, osservo che
+  $\alpha _\gamma = \frac{\len ^d \gamma _n}{\mu} \le 2$.
+
+  Le funzioni $\pa{\gamma _n}_{n \in \mathbb{N}}$ sono equicontinue
+  (perché tutte Lipschitziane di constante minore di $2$),
+  equilimitate (perché a valori in $K$ compatto) e definite sul
+  compatto $\bra{0,\mu}$. Quindi, per il teorema di Ascoli-Arzelà
+  esiste una sottosuccessione $\pa{\gamma _{n_k}} _{n_k \in
+    \mathbb{N}}$ convergente uniformemente ad una funzione $\gamma$.
+
+  È evidente che $\gamma \in \Gamma (x,y)$, ci basta dimostare che
+  $\len ^d \gamma = \mu$. Sia quindi $\set{ t_0 < t_1<... < t_n}
+  \subseteq \bra{0,\mu}$, per ogni $\varepsilon > 0$ sia $\bar k$ tale
+  che per ogni $k >\bar k$ $\norm{\gamma_{n_k} - \gamma} <
+  \frac{\varepsilon}{n}$, allora
+  \begin{align*}
+  \sum _{i=1} ^n d\pa{\gamma(t_{i-1}),\gamma(t_i)} & \le \sum _{i=1}
+  ^n\bra{ d\pa{\gamma(t_{i-1}),\gamma_{n_k}(t_{i-1})} +
+    d\pa{\gamma_{n_k}(t_{i-1}), \gamma_{n_k}(t_i)} + d\pa{\gamma_{n_k}(t_i,
+      \gamma(t_i)} } \\ 
+  & \le \sum _{i=1} ^n \bra{ 2\frac{\varepsilon}{n} +
+    d\pa{\gamma_{n_k}(t_{i-1}), \gamma_{n_k}(t_i)}} \\
+  & \le 2\varepsilon + \len^d \gamma _{n_k} \le 2 \varepsilon + \mu +
+  \frac{1}{2^{n_k}}
+  \end{align*}
+  Mandando $k \to \infty$ e $\varepsilon \to 0$ si ottiene quindi
+  \[ \sum _{i=1} ^n d\pa{\gamma(t_{i-1}),\gamma(t_i)} \le \mu \]
+  Facendo il $\sup$ su tutti i sottinsiemi finiti di $\bra{0,\mu}$
+  otteniamo quindi
+  \[ \len ^d \gamma \le \mu \]
+  D'altra parte $\mu = d^g (x,y)$, quindi $\len ^d (\gamma) = \mu$ e
+  $\gamma$ è la geodetica cercata.
+\end{proof}
+
+Quindi una condizione sufficiente per l'esistenza di geodetiche è che
+lo spazio metrico sia compatto e intrinseco, per esempio $C_s(\Omega)$
+con $\Omega$ compatto e $d$ intrinseca.
+
+Ovviamente le geodetiche possono non essere uniche, basta pensare ad
+una ``rete'': sia $R  = \bigcup _{n \in \mathbb{Z}} \set{(n,y) \mid y
+  \in \mathbb{R}} \cup \bigcup _{n \in \mathbb{Z}} \set{(x,n) \mid x
+  \in \mathbb{R}} \subseteq \mathbb{R^2}$ con la metrica euclidea. I
+punti $(0,0)$ e $(1,1)$ possono essere congiunti con due geodetiche
+distinte %TODO disegno
+
 \newpage
 \begin{mydef}[Convessità di Menger]
   Uno spazio metrico $M$ si dice convesso secondo Menger se, dati
@@ -802,6 +871,8 @@ Cose possibili da fare:
 \begin{itemize}
 \item Vedere quando, nelle definizioni di $d_H$ gli $\inf$ e $\sup$ si
   possono trasformare in $\min$ e $\max$.
+\item se per un $x \in M$ e $\forall \rho > 0$ l'insieme $\set{ y \mid
+    d(x,y) \le \rho}$ è compatto allora $(M,d)$ è completo
 \end{itemize}
 
 
