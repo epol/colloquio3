@@ -760,8 +760,8 @@ Per i prossimi risultati userò questi fatti facilemente dimostrabili:
 \begin{mylem}
   Se $\tilde \gamma \in \Gamma (x,y)$ con $\len ^d (\tilde \gamma) = L
   < \infty$ e $\tilde \gamma : \; \bra {a,b} \to M$ allora si può
-  riparametrizzare $\tilde gamma$ in $\gamma : \bra{0,L} \to M$ con la
-  proprietà $\len ^d(\gamma_{| \bra{0,t}} = t$.
+  riparametrizzare $\tilde \gamma$ in $\gamma : \bra{0,L} \to M$ con la
+  proprietà $\len ^d(\gamma_{| \bra{0,t}}) = t$.
 \end{mylem}
 % \begin{proof}
 %   Considero la funzione $t:\bra{a,b} \to \bra{0,L}$ tale che $t(s) =
@@ -901,7 +901,7 @@ spazio metrico completo
 
   Le funzioni $\pa{\gamma _n}_{n \in \mathbb{N}}$ sono equicontinue
   (perché tutte Lipschitziane di constante minore di $2$),
-  equilimitate (perché a valori in $K$ compatto) e definite sul
+  equilimitate (perché a valori in $C_s(K)$ compatto) e definite sul
   compatto $\bra{0,\mu}$. Quindi, per il teorema di Ascoli-Arzelà
   esiste una sottosuccessione $\pa{\gamma _{n_k}} _{n_k \in
     \mathbb{N}}$ convergente uniformemente ad una funzione $\gamma$.
@@ -937,9 +937,26 @@ con $\Omega$ compatto e $d$ intrinseca.
 Ovviamente le geodetiche possono non essere uniche, basta pensare ad
 una ``rete'': sia $R  = \bigcup _{n \in \mathbb{Z}} \set{(n,y) \mid y
   \in \mathbb{R}} \cup \bigcup _{n \in \mathbb{Z}} \set{(x,n) \mid x
-  \in \mathbb{R}} \subseteq \mathbb{R^2}$ con la metrica euclidea. I
+  \in \mathbb{R}} \subseteq \mathbb{R}^2$ con la metrica euclidea. I
 punti $(0,0)$ e $(1,1)$ possono essere congiunti con due geodetiche
 distinte %TODO disegno
+
+\begin{figure}[h]
+  \centering
+  \begin{pdfpic}
+    \begin{pspicture}(0,0)(10,10)
+      \psgrid[subgriddiv=0, gridlabels=0pt, gridwidth=0.02cm](-1,-1)(3,3)
+      \psdot[dotsize=0.2cm](0,0)
+      \rput(-0.5,0.2){$(0,0)$}
+      \psdot[dotsize=0.2cm](1,1)
+      \rput(1.5,1.2){$(1,1)$}
+      \psline[linewidth=0.05cm]{->}(0,0)(0,1)(1,1)
+      \psline[linewidth=0.05cm]{->}(0,0)(1,0)(1,1)
+    \end{pspicture}
+  \end{pdfpic}
+  \caption{Le due geodetiche tra $(0,0)$ e $(1,1)$}
+  \label{fig:doppiageodeticagriglia}
+\end{figure}
 
 Nel cercare l'esistenza di geodetiche può tornare utile il segunte
 lemma
