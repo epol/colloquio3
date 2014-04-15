@@ -771,32 +771,55 @@ una ``rete'': sia $R  = \bigcup _{n \in \mathbb{Z}} \set{(n,y) \mid y
 punti $(0,0)$ e $(1,1)$ possono essere congiunti con due geodetiche
 distinte %TODO disegno
 
+Nel cercare l'esistenza di geodetiche può tornare utile il segunte
+lemma
+\begin{mylem}
+  Dati $x,y \in M$ esiste una geodetica tra di loro in $M$ se e solo
+  se esiste in $B(x,d^g(x,y) + \delta)$ con $\delta > 0$
+  qualsiasi.
+\end{mylem}
+\begin{proof}
+  Il ``solo se'' è facile, infatti tutti i punti di una geodetica in
+  $M$ avranno distanza minore di $d^g(x,y)$ da $x$ e quindi staranno
+  nella palla.
+
+  Supponiamo, quindi, che esista la geodetica in in $B := B(x,d^g(x,y) +
+  \delta)$ per un qualche $\delta > 0$. Questa sarà una
+  geodetica anche in $M$ se e solo se $d_{|B}^g (x,y) = d^g(x,y)$, ma
+  $\forall 0 < \varepsilon < \delta$ esiste, in $M$, una curva di
+  lunghezza minore di $d^g(x,y) + \varepsilon$, per lo stesso
+  ragionamento del punto precedente tutti i punti devono stare in $B$
+  e quindi $d_{|B}^g (x,y) < d^g(x,y) + \varepsilon$, passando
+  all'estremo inferiore si ha la tesi.
+\end{proof}
+
+
 Vediamo ora che, con opportune ipotesi, nella distanza di Hausdorff
 esiste sempre la geodetica fra insiemi compatti, ma ne possono
 esistere più che numerabili.
 
 \begin{mypro}
-  Se in $M$ le palle chiuse sono compatte e $\Omega \subseteq M$ è un
-  chiuso connesso (TODO: più qualcosa tipo convessità) allora esiste
-  sempre la geodetica fra $A,C \in K(\Omega)$.
+  Se in $M$ le palle chiuse sono compatte allora esiste sempre la
+  geodetica fra $A,C \in K(M)$.
 \end{mypro}
 \begin{proof}
-  È evidente, per la disuguaglianza triangolare, che la geodetica si
-  può cercare in\footnote{Per ora cerco la geodetica in $C_s(\Omega)$,
-    poi dimostrerò che tale geodetica in realtà ha valori in
-    $K(\Omega)$}
-  \[ \set{D \in C_s(\Omega) \mid \; d_H(A,D) \le d_H(A,C) = \mu} \]
-  Dalla relazione $d_H(A,D) \le \mu \Rightarrow D \subseteq A + \bar B
-  _\mu$, ricordando che (per compattezza) $A \subseteq B(x_0,\rho)$
-  (per qualche $x_0 \in \Omega$, $\rho >0$) si ha che possiamo cercare
-  i punti di una geodetica fra i sottoinsiemi di
-  \[ \tilde \Omega = \Omega \cap \pa{\obar{B(x_0,\rho)} + \bar B _\mu}
-  = \Omega \cap \pa{ \obar{ B (x_0, \rho + \mu) }} \]
-  Ma $\tilde \Omega$ è compatto per ipotesi e quindi, per il lemma
-  precedente, esiste una geodetica in $C_s(\tilde \Omega)$, osservando
-  che $C_s(\tilde \Omega) = K(\tilde \Omega) \subseteq K(\Omega)$
-  (perché sottinsiemi chiusi in un compatto) si ha che la geodetica
-  trovata ha valori in $K(\Omega)$.
+  Per il lemma precedente la geodetica si può cercare in\footnote{Per
+    ora cerco la geodetica in $C_s(M)$, poi dimostrerò che tale
+    geodetica in realtà ha valori in $K(M)$}
+  \[ \set{D \in C_s(M) \mid \; d_H(A,D) \le d_H(A,C) + \delta= \mu +
+    \delta } \]
+
+  Dalla relazione $d_H(A,D) \le \mu + \delta \Rightarrow D \subseteq A
+  + \bar B _{\mu + \delta}$, ricordando che (per compattezza) $A \subseteq
+  B(x_0,\rho)$ (per qualche $x_0 \in M$, $\rho >0$) si ha che possiamo
+  cercare i punti di una geodetica fra i sottoinsiemi di
+  \[ \Omega = \obar{B(x_0,\rho)} + \bar B _{\mu + \delta} = \obar{ B
+    (x_0, \rho + \mu + \delta) } \]
+
+  Ma $\Omega$ è compatto per ipotesi e quindi, per il lemma
+  precedente, esiste una geodetica in $C_s(\Omega)$, osservando che
+  $C_s(\Omega) = K(\Omega) \subseteq K(M)$ (perché sottinsiemi chiusi
+  in un compatto) si ha che la geodetica trovata ha valori in $K(M)$.
 \end{proof}
 
 Come preannunciato le geodetiche possono essere anche più che
