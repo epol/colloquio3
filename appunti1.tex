@@ -1062,86 +1062,88 @@ numerabili. Vediamo un esempio
 \end{myes}
 
 
-\newpage
-\begin{mydef}[Convessità di Menger]
-  Uno spazio metrico $M$ si dice convesso secondo Menger se, dati
-  comunque $x,y \in M$ distinti esiste $z\neq x,y$ tale che
-  \[ d(x,z) + d(z,y) = d(x,y) \]
-\end{mydef}
 
 
-Sotto opportune ipotesi uno spazio è convesso secondo Menger se e solo
-se la metrica è intrinseca ed esiste sempre la geodetica fra due
-punti. Cioè vale il seguente teorema:
+% \newpage
+% \begin{mydef}[Convessità di Menger]
+%   Uno spazio metrico $M$ si dice convesso secondo Menger se, dati
+%   comunque $x,y \in M$ distinti esiste $z\neq x,y$ tale che
+%   \[ d(x,z) + d(z,y) = d(x,y) \]
+% \end{mydef}
 
-\begin{myteo}[{\cite[Teorema 2.6.2]{papadopoulos2013metric}}]
-  Sia $M,d$ uno spazio metrico in cui ogni palla chiusa è
-  compatta. Allora le seguenti condizioni sono equivalenti:
-  \begin{enumerate}
-  \item $M$ è convesso secondo Menger
-  \item $\forall x,y \in M$ esiste $z\in M$ tale che 
-    \[ d(x,z) = d(y,z) = \frac{1}{2} d(x,y) \]
-  \item $\forall x,y \in M$ e $\forall \lambda \in \bra{0,1}$ esiste
-    $z\in M$ tale che $d(x,z) = \lambda d(x,y)$, $d(y,z) = (1-\lambda)
-    d(x,y)$ 
-  \item Dati $x,y \in M$ esiste $\gamma \in \Gamma(x,y)$ tale che
-    $\len ^d (\gamma) = d(x,y)$
-  \end{enumerate}
-\end{myteo}
+
+% Sotto opportune ipotesi uno spazio è convesso secondo Menger se e solo
+% se la metrica è intrinseca ed esiste sempre la geodetica fra due
+% punti. Cioè vale il seguente teorema:
+
+% \begin{myteo}[{\cite[Teorema 2.6.2]{papadopoulos2013metric}}]
+%   Sia $M,d$ uno spazio metrico in cui ogni palla chiusa è
+%   compatta. Allora le seguenti condizioni sono equivalenti:
+%   \begin{enumerate}
+%   \item $M$ è convesso secondo Menger
+%   \item $\forall x,y \in M$ esiste $z\in M$ tale che 
+%     \[ d(x,z) = d(y,z) = \frac{1}{2} d(x,y) \]
+%   \item $\forall x,y \in M$ e $\forall \lambda \in \bra{0,1}$ esiste
+%     $z\in M$ tale che $d(x,z) = \lambda d(x,y)$, $d(y,z) = (1-\lambda)
+%     d(x,y)$ 
+%   \item Dati $x,y \in M$ esiste $\gamma \in \Gamma(x,y)$ tale che
+%     $\len ^d (\gamma) = d(x,y)$
+%   \end{enumerate}
+% \end{myteo}
+% % \begin{proof}
+% %   TODO
+% % \end{proof}
+
+% Vogliamo applicare il teorema precedente a $K(\Omega),d_H$ per
+% dimostrare che se $d$ è intrinseca dove esiste sempre la geodetica fra
+% due punti allora anche $d_H$ è intrinseca ed esiste sempre la
+% geodetica fra due insiemi.
+
+% \begin{mylem}\cite[Proposizione 2.16]{DuciMennucci2007}
+%   Sia $\Omega$ completo. Dati $A,C \in K(\Omega)$ con $d_H(A,C) <
+%   \infty$ per ogni $\lambda \in \bra{0,1}$ esiste $D\in K(\Omega)$
+%   tale che
+%   \[ d_H(A,D) = \lambda d_H(A,C) \; , \;\;  d_H(D,C) = (1-\lambda)
+%   d_H(A,C) \] 
+% \end{mylem}
 % \begin{proof}
-%   TODO
+%   Sia $\mu = d_H(A,C)$
+
+%   Consideriamo l'insieme
+%   \[ D := \set{z\mid \exists x \in A, y\in C, d(x,y) \le \mu, d(x,z)
+%     \le \lambda \mu, d(y,z) \le (1 - \lambda) \mu }\]
+%   Questo insieme è non vuoto, infatti (per compattezza di $A,C$)
+%   esistono sempre $x,y$ tali che $d(x,y) \le \mu$, allora $z$ che
+%   soddisfi le condizioni esiste perché $d$ è intrinseca e ci basta
+%   considerare una geodetica tra $x$ e $y$.
+
+%   Dimostro che $d(A,D) \le \lambda \mu$: per come abbiamo definito $D$
+%   si ha che $\forall z \in D\; d_A(z) \le \lambda \mu$, quindi
+%   \[ \sup _{z\in D} d_A(z) \le \lambda \mu \] D'altra parte, dato
+%   $x\in A$ esiste $y\in B$ tale che $d(x,y) \le \mu$, allora esiste
+%   una geodetica tra $x$ e $y$ e quindi anche un punto $z$ tale che
+%   $d(x,z) \le \lambda \mu$ da cui
+%   \[ \sup _{x \in A} d_D(x) \le \lambda \mu \]
+%   Quindi concludiamo $d_H(A,D) \le \lambda \mu$, con un ragionamento
+%   analogo possiamo concludere che $d_H(D,C) \le (1 - \lambda) \mu$.
+%   A questo punto osserviamo che nella relazione
+%   \[ \mu = d_H(A,C) \le d_H(A,D) + d_H(D,C) \le \lambda \mu + (1 -
+%   \lambda) \mu = \mu \]
+%   I segni di disuguaglianza devono essere uguaglianze e quindi
+%   otteniamo $d_H(A,D) = \lambda \mu$ e $d_H(D,C) = (1 - \lambda)
+%   \mu)$.
+
+%   Ci basta ora dimostrare che $D$ è compatto.
 % \end{proof}
 
-Vogliamo applicare il teorema precedente a $K(\Omega),d_H$ per
-dimostrare che se $d$ è intrinseca dove esiste sempre la geodetica fra
-due punti allora anche $d_H$ è intrinseca ed esiste sempre la
-geodetica fra due insiemi.
-
-\begin{mylem}\cite[Proposizione 2.16]{DuciMennucci2007}
-  Sia $\Omega$ completo. Dati $A,C \in K(\Omega)$ con $d_H(A,C) <
-  \infty$ per ogni $\lambda \in \bra{0,1}$ esiste $D\in K(\Omega)$
-  tale che
-  \[ d_H(A,D) = \lambda d_H(A,C) \; , \;\;  d_H(D,C) = (1-\lambda)
-  d_H(A,C) \] 
-\end{mylem}
-\begin{proof}
-  Sia $\mu = d_H(A,C)$
-
-  Consideriamo l'insieme
-  \[ D := \set{z\mid \exists x \in A, y\in C, d(x,y) \le \mu, d(x,z)
-    \le \lambda \mu, d(y,z) \le (1 - \lambda) \mu }\]
-  Questo insieme è non vuoto, infatti (per compattezza di $A,C$)
-  esistono sempre $x,y$ tali che $d(x,y) \le \mu$, allora $z$ che
-  soddisfi le condizioni esiste perché $d$ è intrinseca e ci basta
-  considerare una geodetica tra $x$ e $y$.
-
-  Dimostro che $d(A,D) \le \lambda \mu$: per come abbiamo definito $D$
-  si ha che $\forall z \in D\; d_A(z) \le \lambda \mu$, quindi
-  \[ \sup _{z\in D} d_A(z) \le \lambda \mu \] D'altra parte, dato
-  $x\in A$ esiste $y\in B$ tale che $d(x,y) \le \mu$, allora esiste
-  una geodetica tra $x$ e $y$ e quindi anche un punto $z$ tale che
-  $d(x,z) \le \lambda \mu$ da cui
-  \[ \sup _{x \in A} d_D(x) \le \lambda \mu \]
-  Quindi concludiamo $d_H(A,D) \le \lambda \mu$, con un ragionamento
-  analogo possiamo concludere che $d_H(D,C) \le (1 - \lambda) \mu$.
-  A questo punto osserviamo che nella relazione
-  \[ \mu = d_H(A,C) \le d_H(A,D) + d_H(D,C) \le \lambda \mu + (1 -
-  \lambda) \mu = \mu \]
-  I segni di disuguaglianza devono essere uguaglianze e quindi
-  otteniamo $d_H(A,D) = \lambda \mu$ e $d_H(D,C) = (1 - \lambda)
-  \mu)$.
-
-  Ci basta ora dimostrare che $D$ è compatto.
-\end{proof}
-
-\begin{mynot}
-  È semplice vedere che $d_H$ intrinseca ed esiste la geodetica
-  $\Rightarrow$ $d$ intrinseca ed esiste la geodetica. Quindi dobbiamo
-  chiedere che $d$ sia intrinseca.
-\end{mynot}
+% \begin{mynot}
+%   È semplice vedere che $d_H$ intrinseca ed esiste la geodetica
+%   $\Rightarrow$ $d$ intrinseca ed esiste la geodetica. Quindi dobbiamo
+%   chiedere che $d$ sia intrinseca.
+% \end{mynot}
 
 
-Reference: \cite[p.12-14]{DuciMennucci2007}
+% Reference: \cite[p.12-14]{DuciMennucci2007}
 
 
 \newpage
