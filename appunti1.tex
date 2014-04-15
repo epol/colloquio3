@@ -12,6 +12,12 @@
 \usepackage[utf8x]{inputenc}
 \usepackage[italian]{babel}
 
+\usepackage{pdftricks}
+\begin{psinputs}
+   \usepackage{pstricks}
+   \usepackage{multido}
+\end{psinputs}
+
 \usepackage{ulem}
 
 \setlength{\parindent}{0in}
@@ -494,6 +500,8 @@ Sia $K(\Omega) = \set{K\subseteq \Omega :\; K \text{ compatto}}$.
   Limite di insiemi connessi è connesso.
 \end{mycor}
 
+TODO: per il chiusi non vale, esempio iperboli
+
 TODO: l'area invece non è così.
 
 \section{Geodetiche}
@@ -536,6 +544,7 @@ con la metrica euclidea indotta non è compatto nella topologia delle
 geodetiche.
 
 \begin{myes}[{\cite[Esempio 2.1]{DuciMennucci2007}}]
+\label{es:topologiageodeticadiversa}
   Sia $E = \bra{0,1} \times \pa{ \set{0} \cup \set{ \frac{1}{n} \mid n
       > 0} }$ e $\psi(\rho,\theta) = \rho
   \pa{\cos(\theta),\sin(\theta)}$. Considero quindi $M = \psi(E)$.
@@ -543,6 +552,167 @@ geodetiche.
   $M$ è unione di segmenti di lunghezza $1$, passanti per l'origine
   con inclinazione decrescente che tendono al segmento orrizzontale
   (accumolandosi). %TODO: disegno
+
+  \begin{figure}[h]
+    \centering
+    \begin{pdfpic}
+      \begin{pspicture}(0,0)(10,10)
+        \psline[linewidth=0.04cm](0.0,0.0)(8.0,0.0)
+        \psline[linewidth=0.02cm](0.0,0.0)(4.322418,6.731768)
+        \psline[linewidth=0.02cm](0.0,0.0)(7.020660,3.835404)
+        \psline[linewidth=0.02cm](0.0,0.0)(7.559656,2.617558)
+        \psline[linewidth=0.02cm](0.0,0.0)(7.751299,1.979232)
+        \psline[linewidth=0.02cm](0.0,0.0)(7.840533,1.589355)
+        \psline[linewidth=0.02cm](0.0,0.0)(7.889146,1.327169)
+        \psline[linewidth=0.02cm](0.0,0.0)(7.918506,1.138974)
+        \psline[linewidth=0.02cm](0.0,0.0)(7.937581,0.997398)
+        \psline[linewidth=0.02cm](0.0,0.0)(7.950668,0.887061)
+        \psline[linewidth=0.02cm](0.0,0.0)(7.960033,0.798667)
+        \psline[linewidth=0.02cm](0.0,0.0)(7.966965,0.726271)
+        \psline[linewidth=0.02cm](0.0,0.0)(7.972238,0.665895)
+        \psline[linewidth=0.02cm](0.0,0.0)(7.976343,0.614778)
+        \psline[linewidth=0.02cm](0.0,0.0)(7.979601,0.570943)
+        \psline[linewidth=0.02cm](0.0,0.0)(7.982229,0.532938)
+        \psline[linewidth=0.02cm](0.0,0.0)(7.984380,0.499675)
+        \psline[linewidth=0.02cm](0.0,0.0)(7.986163,0.470317)
+        \psline[linewidth=0.02cm](0.0,0.0)(7.987657,0.444216)
+        \psline[linewidth=0.02cm](0.0,0.0)(7.988922,0.420858)
+        \psline[linewidth=0.02cm](0.0,0.0)(7.990002,0.399833)
+        \psline[linewidth=0.02cm](0.0,0.0)(7.990931,0.380808)
+        \psline[linewidth=0.02cm](0.0,0.0)(7.991737,0.363511)
+        \psline[linewidth=0.02cm](0.0,0.0)(7.992440,0.347717)
+        \psline[linewidth=0.02cm](0.0,0.0)(7.993057,0.333237)
+        \psline[linewidth=0.02cm](0.0,0.0)(7.993601,0.319915)
+        \psline[linewidth=0.02cm](0.0,0.0)(7.994084,0.307616)
+        \psline[linewidth=0.02cm](0.0,0.0)(7.994514,0.296229)
+        \psline[linewidth=0.02cm](0.0,0.0)(7.994899,0.285654)
+        \psline[linewidth=0.02cm](0.0,0.0)(7.995244,0.275807)
+        \psline[linewidth=0.02cm](0.0,0.0)(7.995556,0.266617)
+        \psline[linewidth=0.02cm](0.0,0.0)(7.995838,0.258020)
+        \psline[linewidth=0.02cm](0.0,0.0)(7.996094,0.249959)
+        \psline[linewidth=0.02cm](0.0,0.0)(7.996327,0.242387)
+        \psline[linewidth=0.02cm](0.0,0.0)(7.996540,0.235260)
+        \psline[linewidth=0.02cm](0.0,0.0)(7.996735,0.228540)
+        \psline[linewidth=0.02cm](0.0,0.0)(7.996914,0.222194)
+        \psline[linewidth=0.02cm](0.0,0.0)(7.997078,0.216190)
+        \psline[linewidth=0.02cm](0.0,0.0)(7.997230,0.210502)
+        \psline[linewidth=0.02cm](0.0,0.0)(7.997370,0.205106)
+        \psline[linewidth=0.02cm](0.0,0.0)(7.997500,0.199979)
+        \psline[linewidth=0.02cm](0.0,0.0)(7.997621,0.195103)
+        \psline[linewidth=0.02cm](0.0,0.0)(7.997733,0.190458)
+        \psline[linewidth=0.02cm](0.0,0.0)(7.997837,0.186030)
+        \psline[linewidth=0.02cm](0.0,0.0)(7.997934,0.181803)
+        \psline[linewidth=0.02cm](0.0,0.0)(7.998025,0.177763)
+        \psline[linewidth=0.02cm](0.0,0.0)(7.998110,0.173899)
+        \psline[linewidth=0.02cm](0.0,0.0)(7.998189,0.170200)
+        \psline[linewidth=0.02cm](0.0,0.0)(7.998264,0.166655)
+        \psline[linewidth=0.02cm](0.0,0.0)(7.998334,0.163254)
+        \psline[linewidth=0.02cm](0.0,0.0)(7.998400,0.159989)
+        \psline[linewidth=0.02cm](0.0,0.0)(7.998462,0.156853)
+        \psline[linewidth=0.02cm](0.0,0.0)(7.998521,0.153837)
+        \psline[linewidth=0.02cm](0.0,0.0)(7.998576,0.150934)
+        \psline[linewidth=0.02cm](0.0,0.0)(7.998628,0.148140)
+        \psline[linewidth=0.02cm](0.0,0.0)(7.998678,0.145447)
+        \psline[linewidth=0.02cm](0.0,0.0)(7.998725,0.142850)
+        \psline[linewidth=0.02cm](0.0,0.0)(7.998769,0.140344)
+        \psline[linewidth=0.02cm](0.0,0.0)(7.998811,0.137924)
+        \psline[linewidth=0.02cm](0.0,0.0)(7.998851,0.135587)
+        \psline[linewidth=0.02cm](0.0,0.0)(7.998889,0.133327)
+        \psline[linewidth=0.02cm](0.0,0.0)(7.998925,0.131142)
+        \psline[linewidth=0.02cm](0.0,0.0)(7.998959,0.129027)
+        \psline[linewidth=0.02cm](0.0,0.0)(7.998992,0.126979)
+        \psline[linewidth=0.02cm](0.0,0.0)(7.999023,0.124995)
+        \psline[linewidth=0.02cm](0.0,0.0)(7.999053,0.123072)
+        \psline[linewidth=0.02cm](0.0,0.0)(7.999082,0.121207)
+        \psline[linewidth=0.02cm](0.0,0.0)(7.999109,0.119399)
+        \psline[linewidth=0.02cm](0.0,0.0)(7.999135,0.117643)
+        \psline[linewidth=0.02cm](0.0,0.0)(7.999160,0.115938)
+        \psline[linewidth=0.02cm](0.0,0.0)(7.999184,0.114282)
+        \psline[linewidth=0.02cm](0.0,0.0)(7.999207,0.112672)
+        \psline[linewidth=0.02cm](0.0,0.0)(7.999228,0.111108)
+        \psline[linewidth=0.02cm](0.0,0.0)(7.999249,0.109586)
+        \psline[linewidth=0.02cm](0.0,0.0)(7.999270,0.108105)
+        \psline[linewidth=0.02cm](0.0,0.0)(7.999289,0.106664)
+        \psline[linewidth=0.02cm](0.0,0.0)(7.999307,0.105260)
+        \psline[linewidth=0.02cm](0.0,0.0)(7.999325,0.103893)
+        \psline[linewidth=0.02cm](0.0,0.0)(7.999343,0.102561)
+        \psline[linewidth=0.02cm](0.0,0.0)(7.999359,0.101263)
+        \psline[linewidth=0.02cm](0.0,0.0)(7.999375,0.099997)
+        \psline[linewidth=0.02cm](0.0,0.0)(7.999390,0.098763)
+        \psline[linewidth=0.02cm](0.0,0.0)(7.999405,0.097559)
+        \psline[linewidth=0.02cm](0.0,0.0)(7.999419,0.096383)
+        \psline[linewidth=0.02cm](0.0,0.0)(7.999433,0.095236)
+        \psline[linewidth=0.02cm](0.0,0.0)(7.999446,0.094115)
+        \psline[linewidth=0.02cm](0.0,0.0)(7.999459,0.093021)
+        \psline[linewidth=0.02cm](0.0,0.0)(7.999472,0.091952)
+        \psline[linewidth=0.02cm](0.0,0.0)(7.999483,0.090907)
+        \psline[linewidth=0.02cm](0.0,0.0)(7.999495,0.089886)
+        \psline[linewidth=0.02cm](0.0,0.0)(7.999506,0.088887)
+        \psline[linewidth=0.02cm](0.0,0.0)(7.999517,0.087910)
+        \psline[linewidth=0.02cm](0.0,0.0)(7.999527,0.086955)
+        \psline[linewidth=0.02cm](0.0,0.0)(7.999538,0.086020)
+        \psline[linewidth=0.02cm](0.0,0.0)(7.999547,0.085105)
+        \psline[linewidth=0.02cm](0.0,0.0)(7.999557,0.084209)
+        \psline[linewidth=0.02cm](0.0,0.0)(7.999566,0.083332)
+        \psline[linewidth=0.02cm](0.0,0.0)(7.999575,0.082473)
+        \psline[linewidth=0.02cm](0.0,0.0)(7.999584,0.081631)
+        \psline[linewidth=0.02cm](0.0,0.0)(7.999592,0.080807)
+        \psline[linewidth=0.02cm](0.0,0.0)(7.999600,0.079999)
+        \psline[linewidth=0.02cm](0.0,0.0)(7.999608,0.079207)
+        \psline[linewidth=0.02cm](0.0,0.0)(7.999616,0.078430)
+        \psline[linewidth=0.02cm](0.0,0.0)(7.999623,0.077669)
+        \psline[linewidth=0.02cm](0.0,0.0)(7.999630,0.076922)
+        \psline[linewidth=0.02cm](0.0,0.0)(7.999637,0.076189)
+        \psline[linewidth=0.02cm](0.0,0.0)(7.999644,0.075471)
+        \psline[linewidth=0.02cm](0.0,0.0)(7.999651,0.074765)
+        \psline[linewidth=0.02cm](0.0,0.0)(7.999657,0.074073)
+        \psline[linewidth=0.02cm](0.0,0.0)(7.999663,0.073393)
+        \psline[linewidth=0.02cm](0.0,0.0)(7.999669,0.072726)
+        \psline[linewidth=0.02cm](0.0,0.0)(7.999675,0.072071)
+        \psline[linewidth=0.02cm](0.0,0.0)(7.999681,0.071428)
+        \psline[linewidth=0.02cm](0.0,0.0)(7.999687,0.070796)
+        \psline[linewidth=0.02cm](0.0,0.0)(7.999692,0.070175)
+        \psline[linewidth=0.02cm](0.0,0.0)(7.999698,0.069564)
+        \psline[linewidth=0.02cm](0.0,0.0)(7.999703,0.068965)
+        \psline[linewidth=0.02cm](0.0,0.0)(7.999708,0.068375)
+        \psline[linewidth=0.02cm](0.0,0.0)(7.999713,0.067796)
+        \psline[linewidth=0.02cm](0.0,0.0)(7.999718,0.067226)
+        \psline[linewidth=0.02cm](0.0,0.0)(7.999722,0.066666)
+        \psline[linewidth=0.02cm](0.0,0.0)(7.999727,0.066115)
+        \psline[linewidth=0.02cm](0.0,0.0)(7.999731,0.065573)
+        \psline[linewidth=0.02cm](0.0,0.0)(7.999736,0.065040)
+        \psline[linewidth=0.02cm](0.0,0.0)(7.999740,0.064515)
+        \psline[linewidth=0.02cm](0.0,0.0)(7.999744,0.063999)
+        \psline[linewidth=0.02cm](0.0,0.0)(7.999748,0.063491)
+        \psline[linewidth=0.02cm](0.0,0.0)(7.999752,0.062991)
+        \psline[linewidth=0.02cm](0.0,0.0)(7.999756,0.062499)
+        \psline[linewidth=0.02cm](0.0,0.0)(7.999760,0.062015)
+        \psline[linewidth=0.02cm](0.0,0.0)(7.999763,0.061538)
+        \psline[linewidth=0.02cm](0.0,0.0)(7.999767,0.061068)
+        \psline[linewidth=0.02cm](0.0,0.0)(7.999770,0.060605)
+        \psline[linewidth=0.02cm](0.0,0.0)(7.999774,0.060150)
+        \psline[linewidth=0.02cm](0.0,0.0)(7.999777,0.059701)
+        \psline[linewidth=0.02cm](0.0,0.0)(7.999781,0.059259)
+        \psline[linewidth=0.02cm](0.0,0.0)(7.999784,0.058823)
+        \psline[linewidth=0.02cm](0.0,0.0)(7.999787,0.058394)
+        \psline[linewidth=0.02cm](0.0,0.0)(7.999790,0.057971)
+        \psline[linewidth=0.02cm](0.0,0.0)(7.999793,0.057553)
+        \psline[linewidth=0.02cm](0.0,0.0)(7.999796,0.057142)
+        \psline[linewidth=0.02cm](0.0,0.0)(7.999799,0.056737)
+        \psline[linewidth=0.02cm](0.0,0.0)(7.999802,0.056338)
+        \psline[linewidth=0.02cm](0.0,0.0)(7.999804,0.055944)
+        \psline[linewidth=0.02cm](0.0,0.0)(7.999807,0.055555)
+        \psline[linewidth=0.02cm](0.0,0.0)(7.999810,0.055172)
+        \psline[linewidth=0.02cm](0.0,0.0)(7.999812,0.054794)
+        \psline[linewidth=0.02cm](0.0,0.0)(7.999815,0.054421)
+        \psline[linewidth=0.02cm](0.0,0.0)(7.999817,0.054054)
+        \psline[linewidth=0.02cm](0.0,0.0)(7.999820,0.053691)
+      \end{pspicture}
+    \end{pdfpic}
+
+    \caption{L'insieme dell'esempio \ref{es:topologiageodeticadiversa}}
+    \label{fig:topologiageodeticadiversa}
+  \end{figure}
 
   $M$ è compatto nella metrica euclidea, nella metrica indotta dalle
   geodetiche, però, $M$ non è più compatto, infatti i punti $x_n =
@@ -833,6 +1003,36 @@ numerabili. Vediamo un esempio
     0 \le y \le 1}$ e $D_t = \set{(1,y) \mid \; 0 \le y \le
     \frac{3}{2}} \cup \set{ (x,0) \mid \; 1 \le x \le t}$ al variare
   di $t \in \bra{1,\frac{\sqrt{5}}{2}}$.
+
+  \begin{figure}[h]
+    \centering
+    
+    \begin{pdfpic}
+   \begin{pspicture}(0,0)(3,3)
+     \psline[linewidth=0.04cm](0.0,0.0)(0.0,2.0)
+     \rput(-0.3,2){$A$}
+     \psline[linewidth=0.04cm](2.0,0.0)(2.0,1.0)
+     \rput(2.3,1){$C$}
+     \psline[linewidth=0.04cm](1.0,0.0)(1.0,1.5)
+     \psline[linewidth=0.04cm](0.98,0.0)(1.1,0.0)
+     \rput(1.35,0.1){$D_t$}
+     \psarc[linewidth=0.02cm,linestyle=dashed](0.0,2.0){1.118}{360.0}{180.0}
+     \psarc[linewidth=0.02cm,linestyle=dashed](0.0,0.0){1.118}{180.0}{360.0}
+     \psline[linewidth=0.02cm,linestyle=dashed](-1.118,0)(-1.118,2)
+     \psline[linewidth=0.02cm,linestyle=dashed](+1.118,0)(+1.118,2)
+     \psarc[linewidth=0.02cm,linestyle=dashed](2.0,1.0){1.118}{360.0}{180.0}
+     \psarc[linewidth=0.02cm,linestyle=dashed](2.0,0.0){1.118}{180.0}{360.0}
+     \psline[linewidth=0.02cm,linestyle=dashed](0.88197,0)(0.88197,1)
+     \psline[linewidth=0.02cm,linestyle=dashed](3.118,0)(3.118,1)
+   \end{pspicture}
+\end{pdfpic}
+
+
+
+    \caption{Gli insiemi $A,C,D_t$ e $A + \bar B _{\frac{\sqrt{5}}{2}},
+        C + \bar B _{\frac{\sqrt{5}}{2}}$}
+      \label{fig:esempioinfinitegeodetiche}
+  \end{figure}
   %TODO: disegno
   Allora $\forall t$ si ha
   \[ d_H(A, D_t) = d_H (C, D_t) = \frac{\sqrt{5}}{2} = \frac{1}{2}
