@@ -934,12 +934,14 @@ Quindi una condizione sufficiente per l'esistenza di geodetiche è che
 lo spazio metrico sia compatto e intrinseco, per esempio $C_s(\Omega)$
 con $\Omega$ compatto e $d$ intrinseca.
 
+\begin{myes}
+\label{es:duegeodetiche}  
 Ovviamente le geodetiche possono non essere uniche, basta pensare ad
 una ``rete'': sia $R  = \bigcup _{n \in \mathbb{Z}} \set{(n,y) \mid y
   \in \mathbb{R}} \cup \bigcup _{n \in \mathbb{Z}} \set{(x,n) \mid x
   \in \mathbb{R}} \subseteq \mathbb{R}^2$ con la metrica euclidea. I
 punti $(0,0)$ e $(1,1)$ possono essere congiunti con due geodetiche
-distinte %TODO disegno
+distinte 
 
 \begin{figure}[h]
   \centering
@@ -954,9 +956,11 @@ distinte %TODO disegno
       \psline[linewidth=0.05cm]{->}(0,0)(1,0)(1,1)
     \end{pspicture}
   \end{pdfpic}
-  \caption{Le due geodetiche tra $(0,0)$ e $(1,1)$}
+  \caption{Le due geodetiche tra $(0,0)$ e $(1,1)$ dell'esempio \ref{es:duegeodetiche}}
   \label{fig:doppiageodeticagriglia}
 \end{figure}
+\end{myes}
+
 
 Nel cercare l'esistenza di geodetiche può tornare utile il segunte
 lemma
@@ -1145,6 +1149,20 @@ numerabili. Vediamo un esempio
 
 % Reference: \cite[p.12-14]{DuciMennucci2007}
 
+\section{Media basata sulle distanze}
+
+Sia $(M,d)$ spazio metrico.
+
+Dati $a_1,a_2,... a_n \in M$ considero la quanità, al variare di $a
+\in m$
+\[ m_A (a) = \sum _{i = 1} ^n d(a,a_i)^2 \]
+
+Ha senso discutere se esiste $a$ e, nel caso, se è unico. Osservo che
+non si ha necessariamente l'unicità, mi basta considerare nella
+distanza geodetica indotta due punti che possono essere collegati da
+più di una geodetica, allora i punti medi delle geodetiche saranno
+minimi per tale quantità, nell'esempio \ref{es:duegeodetiche} i punti
+$(0,1)$ e $(1,0)$ sono i minimi di $m_A$.
 
 \newpage
 
