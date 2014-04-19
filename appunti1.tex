@@ -1066,6 +1066,43 @@ numerabili. Vediamo un esempio
 \end{myes}
 
 
+Vediamo un caso in cui, invece, la geodetica esiste ed è unica
+\begin{myes}
+  Sia $V$ uno spazio di Banach strettamenete convesso, allora presi
+  comunque $x,y \in V$ l'unica geodetica è il segmento che li unisce.
+\end{myes}
+\begin{proof}
+  È facile verificare che il segmento che congiunge due punti è una
+  geodetica, infatti questo può essere scritto come $\lambda \to
+  \lambda x + \pa{1 - \lambda} y$ e la lunghezza è $\norm{x-y}$
+  infatti $\forall \lambda _1, \lambda _2$
+  \[ \norm{ \bra{ \lambda _1 x + \pa{ 1 - \lambda _1} y } - \bra{
+      \lambda _2 x + \pa{ 1 - \lambda _2} y } } = \norm{\pa{\lambda _1
+      - \lambda _2 } \pa{ x - y}} = \pa{ \lambda _1 - \lambda _2}
+  \norm { x -y} \]
+
+  Per dimostrare che è unica ci basta dimostrare che il punto medio è
+  unico (si conclude iterando il ragionamento e poi per
+  continuità). Supponiamo, a meno di translare e riscalare, che $y =
+  -x$ e $\norm{x} = 1$, allora $d(x,y) = 2$ e il punto medio è $0$.
+
+  Sia $\Gamma(x,y) \ni \gamma :\; \bra{-1,1} \to V$ un'altra geodetica
+  (quindi $\len ^d (\gamma) = 2$), senza perdere di generalità
+  possiamo supporre che $\gamma$ sia tale che $\len ^d \gamma_{\mid
+    \bra{t,s}} = s -t$.
+
+  Sia quindi $z = \gamma(0)$, per come abbiamo scelto la
+  parametrizzazione (ed essendo $\gamma$ geodetica) si deve avere
+  $\norm{z-x} = \norm{z-y} = 1$. Per la disuguaglianza triangolare
+  possiamo scrivere
+  \[ \norm{z+x} \le \norm{z-y} + \norm{y+x} = 1 \]
+  Supponiamo, per assurdo, che $z \neq 0$, allora $\norm{\pa{x+z} +
+    \pa{x-z}} = \norm{2z} >0$, quindi i due punti $x+z$ e $x-z$ sono
+  distinti e appartengono alla sfera unitaria, per la stretta
+  convessità si ha che $1 > \norm{\frac{(x+z) + (x-z)}{2} } = \norm{x}
+  = 1$, da cui l'assurdo.
+\end{proof}
+
 
 
 % \newpage
