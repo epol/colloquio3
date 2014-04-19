@@ -1186,6 +1186,23 @@ Vediamo un caso in cui, invece, la geodetica esiste ed è unica
 
 % Reference: \cite[p.12-14]{DuciMennucci2007}
 
+\section{Distanza su spazi quozienti}
+
+Sia $(M,d)$ uno spazio metrico e $G$ un gruppo che agisce su $M$,
+definiamo una distanza su $\sfrac{M}{G}$ nel seguente modo
+\[ \bar d (\bra{x}, \bra{y}) = \inf _{\tilde x \in \bra{x} , \tilde y
+  \in \bra {y}} d(\tilde x , \tilde y) = \inf _ {g,h \in G} d(g(x),
+h(y)) \]
+
+\begin{mydef}
+  Si dice che $d$ è invariante rispetto a $G$ se
+\[ \forall g \in G,\; \forall x,y \in M \;\; d(g(x),g(y)) = d(x,y) \]
+\end{mydef}
+
+Allora, se $d$ è invariante rispetto a $G$, possiamo scrivere
+\[ \bar d (\bra{x}, \bra{y} = \inf _ {g,h \in G} d(g(x), h(y)) =
+\inf _{g \in G} d(x,g(y)) \]
+
 \section{Media basata sulle distanze}
 
 Sia $(M,d)$ spazio metrico.
