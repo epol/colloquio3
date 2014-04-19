@@ -1194,14 +1194,113 @@ definiamo una distanza su $\sfrac{M}{G}$ nel seguente modo
   \in \bra {y}} d(\tilde x , \tilde y) = \inf _ {g,h \in G} d(g(x),
 h(y)) \]
 
+Si ottiene facilmente che $\bar d$ è simmetrica, vedremo che le altre
+proprietà di una distanza non saranno sempre verificate.
+
 \begin{mydef}
   Si dice che $d$ è invariante rispetto a $G$ se
 \[ \forall g \in G,\; \forall x,y \in M \;\; d(g(x),g(y)) = d(x,y) \]
 \end{mydef}
 
 Allora, se $d$ è invariante rispetto a $G$, possiamo scrivere
-\[ \bar d (\bra{x}, \bra{y} = \inf _ {g,h \in G} d(g(x), h(y)) =
+\[ \bar d (\bra{x}, \bra{y}) = \inf _ {g,h \in G} d(g(x), h(y)) =
 \inf _{g \in G} d(x,g(y)) \]
+
+Quella che abbiamo definito potrebbe non essere una distanza, si pensi
+ad esempio $\mathbb{R}$ con $G = \mathbb{Q}$ che agisce con la somma,
+allora $\bar d \pa{ \bra{0} , \bra{\sqrt{2}} } = 0$ ma $\bra{0} \neq
+\bra{\sqrt{2}}$.
+
+Una condizione necessaria è che le orbite siano chiuse, sia infatti
+$\bra{x}$ un'orbita non chiusa e $y \not\in \bra{x}$ un suo punto di
+accumulazione, allora se $\pa{ x_n} _{n \in \mathbb{N}} \subseteq
+\bra{x}$ è tale che $x_n \to _n y$ si ha $d(x_n,y) \to _n 0$ e quindi
+$\bar d(\bra{x},\bra{y} = 0$.
+
+Questa non è però una condizione sufficiente, per esempio
+\begin{myes}
+  Consideriamo in $\mathbb{R}^2$ l'azione di $\mathbb{R}^+$ definita
+  da
+  \[ \beta \to \pa{ \pa{x,y} \to \pa{\beta x , \frac{1}{\beta}y } } \]
+  Le orbite sono delle parabole con asintoti lungo gli assi (e quindi
+  sono chiuse), in particolare $\pa{1,1} \neq \pa{1,-1}$ ma
+  \[ \bar d( \bra{ \pa{ 1,1} } , \bra{ \pa {1, -1}} ) \le \inf _{\beta
+    \in \mathbb{R}^+ } d\pa{ \pa{ \beta , \frac{1}{\beta} } , \pa{
+      \beta , - \frac{1}{\beta}} } = \inf _{ \beta \in \mathbb{R}^+ }
+  \frac{2}{\beta} = 0 \]
+\end{myes}
+
+Una condizione sufficiente per richiedere che $\bar d (\bra{x} , \bra
+{y} ) = 0 \Leftrightarrow \bra{x} = \bra{y}$ è che le orbite siano
+compatte
+\begin{mypro}
+  Se le orbite sono compatte allora $\bra d (\bra{x},\bra{y}) = 0
+  \Leftrightarrow \bra{x} = \bra{y}$.
+\end{mypro}
+\begin{proof}
+  \`E banale vedere che $\bar d (\bra{x}, \bra{x} ) = 0$.
+
+  Siano $\bra{x}, \bra{y} \in \sfrac{M}{G}$ tali che $\bra d
+  (\bra{x},\bra{y}) = 0$ e siano $\pa{x_n}_ {n\in \mathbb{N}}
+  \subseteq \bra{x}$ e $\pa{y_n}_ {n\in \mathbb{N}} \subseteq \bra{y}$
+  tali che $d(x_n,y_n) < \frac{1}{2^n}$, per compattezza possiamo
+  trovare $\pa{n_k} _{k\in \mathbb{N}}$ tale che $\pa{x_{n_k}}_{k\in
+    \mathbb{N}}$ e $\pa{y_{n_k}}_{k\in \mathbb{N}}$ siano convergenti,
+  siano $\bar x \in \bra{x}$ e $\bar y\in \bra{y}$ i rispettivi
+  limiti, allora necessariamente $\bar x = \bar y$ per la relazione
+  sulle distanze e quindi $\bra{x} \cap \bra{y} \neq \emptyset$ da cui
+  $\bra{x} = \bra{y}$.
+\end{proof}
+
+Anche chiedendo la compattezza delle orbite la funzione $\bar d$
+potrebbe non rispettare la disuguaglianza triangolare
+\begin{myes}
+  Sia $M = \set{ -2 , -1, 1, 2}$, $G =
+  \sfrac{\mathbb{Z}}{2\mathbb{Z}}$ che agisce tramite $\varphi$ con
+  \[ \varphi _0 = \id \;\;\; \varphi _1 (-2) = -2 ,\; \varphi _1 (-1)
+  = 1 ,\; \varphi _1 (1) = -1 ,\; \varphi _1 (2) = 2 \]
+  Allora $\bar d ( \bra{-2}, \bra{2}) = 4$, ma
+  \[ \bar d (\bra{-2} , \bra{1} ) + \bar d (\bra{1} , \bra{2} ) = 1 + 1
+  = 2 < 4 = \bar d ( \bra{-2}, \bra{2}) \]
+  Quindi la disuguaglianza triangolare non è verificata.
+\end{myes}
+
+La disuguaglianza triangolare è invece verificata senza aggiungere
+ipotesi sulle orbite ma chiedenso ``solo'' che la distanza sia
+invariante rispetto a $G$
+\begin{mypro}
+  Se $d$ è invariante rispetto a $G$ allora vale la disuguaglianza
+  triangolare per $\bar d$.
+\end{mypro}
+\begin{proof}
+  Siano $\bra{x}, \bra{y}, \bra{z} \in \sfrac{M}{G}$, allora $\forall
+  g,h \in G$ si ha
+  \[ d(x,g(z)) \le d(x,h(y)) + d(hy,g(z)) = d(x,h(y)) +
+  d(y,h^{-1}g(z) \]
+  Facendo prima l'$\inf$ su $h\in G$ e poi l'$\inf$ su $g \in G$ si
+  ottiene la disuguaglianza cercata.
+\end{proof}
+
+In realtà, quando $d$ è invariante rispetto a $G$, ci basta chiedere
+che le orbite siano chiuse per ottenere che $\bar d$ è una distanza.
+
+\begin{mypro}
+  Se $d$ è invariante rispetto a $G$ e le orbite sono chiuse allora
+  $\bar d$ è una distanza
+\end{mypro}
+\begin{proof}
+  Abbiamo già visto che vale la simmetria e la triangolare, ci basta
+  dimostare che $\bra d (\bra{x},\bra{y}) = 0 \Leftrightarrow \bra{x}
+  = \bra{y}$, ancora una volta $\Leftarrow$ è facile, dimostriamo
+  l'altra implicazione.
+
+  Siano $\bra{x}, \bra{y}$ tali che $\bar d ( \bra{x} , \bra{y}) = 0$,
+  sappiamo che questo significa che
+  \[ \inf _{g \in G} d(x,g(y)) = 0 \]
+  Ma questo significa che $x$ è aderente a $\set{g(y)\mid g \in G} =
+  \bra{y}$, ma $\bra{y}$ è chiuso per ipotesi e quindi $x \in \bra{y}$
+  da cui $\bra{x} = \bra{y}$ che è la tesi.
+\end{proof}
 
 \section{Media basata sulle distanze}
 
