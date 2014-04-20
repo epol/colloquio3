@@ -1302,6 +1302,71 @@ che le orbite siano chiuse per ottenere che $\bar d$ è una distanza.
   da cui $\bra{x} = \bra{y}$ che è la tesi.
 \end{proof}
 
+Quindi lavoriamo nell'ipotesi che $d$ sia invariante per l'azione di
+$G$ e che le orbite di $G$ siano chiuse in modo che $\bar d$ sia una
+distanza.
+
+Vediamo cosa possiamo dire delle curve su $\sfrac{M}{G}$, sulle
+geodetiche e sulla distanza indotta $\bar d ^g$.
+
+Iniziamo osservando che $\sfrac{M}{G}$ ``contiene'' le curve di $M$,
+formalemente:
+\begin{mylem}
+  \[ \forall x,y \in M \; \Gamma(x,y) \to \Gamma(\bra{x}, \bra{y}) \]
+  Tramite la composizione con la proiezione $\pi$ da $M$ in $\sfrac{M}{G}$
+  (che è una funzione continua)
+  \[ 
+     \xymatrix{I \ar[r]^\gamma \ar[dr] _{\bar \gamma}& M \ar[d]^\pi \\
+              & \sfrac{M}{G}  
+            }
+            \]
+  Detta $\bar \gamma$ la curva ottenuta si ha inoltre
+  \[ \len ^{\bar d} \pa{ \bar \gamma} \le \len ^d \pa{\gamma } \]
+\end{mylem}
+\begin{proof}
+  L'unica cosa da dimostrare è che $\len ^{\bar d} \pa{ \bar \gamma}
+  \le \len ^d \pa{\gamma }$.
+  
+  Sia $\set{ t_0 < t_1 < ... < t_n } \subseteq I$, allora
+  \[ \sum _{i = 1} ^n \bar d ( \bar \gamma ( t_{i-1}) , \bar \gamma
+  (t_i) ) = \sum _{i = 1} ^n \bar d ( \bra{\gamma ( t_{i-1}) } , \bra{
+    \gamma (t_i)} ) \le \sum _{i = 1} ^n d ( \gamma ( t_{i-1}) ,
+  \gamma (t_i) )  \le \len ^d (\gamma) \]
+  Passando al $\sup$ sulle parti finite di $I$ si ha la tesi.
+\end{proof}
+
+Con questo possiamo dimostrare
+\begin{mypro}
+  Se la metrica $d$ è intrinseca allora anche $\bar d$ è intrinseca.
+\end{mypro}
+\begin{proof}
+  Siano $\bra{x}, \bra{y} \in \sfrac{M}{G}$, possiamo suppore (a meno
+  di cambiare i rappresentanti) che $d(x,y) < \bar d (\bra{x}, \bra{y}
+  ) + \varepsilon$ dove abbiamo scelto $\varepsilon > 0$.
+
+  Per ipotesi esiste $\gamma \in \Gamma( x,y)$ tale che $\len ^d
+  \gamma < d(x,y) + \varepsilon$, usando il lemma precedente
+  concludiamo
+  \[ \len ^{\bar d} (\bar \gamma) \le \len ^d (\gamma) < d(x,y) +
+  \varepsilon < \bar d (\bra{x}, \bra{y}) + 2\varepsilon \]
+  Ma possiamo fare lo stesso ragionamento $\forall \varepsilon >0$ da
+  cui la tesi.
+\end{proof}
+
+\begin{mypro}
+  Se le orbite sono compatte e $d$ è intrinseco allora l'esistenza
+  delle geodetiche in $M$ implica l'esistenza delle geodetiche in
+  $\sfrac{M}{G}$
+\end{mypro}
+\begin{proof}
+  Basta seguire la dimostrazione precedente osservando che possiamo
+  scegliere $x,y \in M$ tali che $d(x,y) = \bar d (\bra{x}, \bra{y})$
+  per la compattezza delle orbite e $\gamma \in \Gamma\pa{x,y}$ tale che
+  $\len ^d \gamma = d(x,y)$ per l'esistenza delle geodetiche.
+\end{proof}
+
+TODO: è vero che $\obar{d^g} = \bar d ^g$?
+
 \section{Media basata sulle distanze}
 
 Sia $(M,d)$ spazio metrico.
