@@ -1306,6 +1306,46 @@ Quindi lavoriamo nell'ipotesi che $d$ sia invariante per l'azione di
 $G$ e che le orbite di $G$ siano chiuse in modo che $\bar d$ sia una
 distanza.
 
+Ci chiediamo se la topologia definita da $\bar d$ in $\sfrac{M}{G}$
+coincida con la topologia quoziente indotta dalla topologia su $M$
+data da $d$.
+\begin{mypro}
+  Se $d$ è invariante per l'azione di $G$ e le orbite sono chiuse
+  allora la topologia quoziente di $\sfrac{M}{G}$ coincide con la
+  topologia data da $\bar d$.
+\end{mypro}
+\begin{proof}
+  Sia $\tau$ la topologia data da $\bar d$ e $\tau _Q$ la topologia
+  quoziente della topologia su $M$.
+
+  Dalla relazione $\bar d ( \bra{x}, \bra{y} ) \le d(x,y)$ si ha che
+  la proiezione $\pi : M \to \sfrac{M}{G}$ è 1-Lipshitz, quindi
+  continua, siccome $\tau _Q$ è la topologia più fine che rende
+  continua tale funzione allora $\tau \subseteq \tau _Q$.
+
+  Sia $A \in \tau _Q$, allora $\pi ^{-1}(A)$ è aperto. Per ogni
+  $\bra{x} \in A$ consideriamo un $x \in \pi^{-1}(\bra{x}) \subseteq
+  \pi ^{-1}(A)$, deve quindi esistere $\varepsilon >0$ tale che
+  $B(x,\varepsilon) \subseteq \pi ^{-1}(A)$. Voglio dimostrare che
+  $B(\bra{x}, \varepsilon ) \subseteq A$.
+
+  Se, per assurdo, $\exists \bra{y} \in B(\bra{x}, \varepsilon )
+  \setminus A$, detta $\delta = \bar d (\bra{x}, \bra{y}) <
+  \varepsilon$ si ha che, per definizione di $\bra d$, $\exists g \in
+  G$ tale che $d(x,g(y)) < \delta + \frac{\varepsilon - \delta}{2} <
+  \varepsilon$, ma allora $g(y) \in B(x,\varepsilon) \subseteq \pi
+  ^{-1} (A)$ da cui $\bra{y} = \bra{g(y)} \in A$ e quindi l'assurdo
+  perché avevamo supposto $\bra{y} \not\in A$.
+\end{proof}
+
+\begin{myoss}
+  Nella dimostrazione precedente abbiamo usato il fatto che le orbite
+  siano chiuse solo per dire che $\bar d$ è una distanza, se non lo
+  chiediamo allora lavoriamo con una pseudometrica, ma la
+  dimostrazione funziona lo stesso e quindi le topologie coincidono
+  anche in questo caso.
+\end{myoss}
+
 Vediamo cosa possiamo dire delle curve su $\sfrac{M}{G}$, sulle
 geodetiche e sulla distanza indotta $\bar d ^g$.
 
@@ -1313,8 +1353,8 @@ Iniziamo osservando che $\sfrac{M}{G}$ ``contiene'' le curve di $M$,
 formalemente:
 \begin{mylem}
   \[ \forall x,y \in M \; \Gamma(x,y) \to \Gamma(\bra{x}, \bra{y}) \]
-  Tramite la composizione con la proiezione $\pi$ da $M$ in $\sfrac{M}{G}$
-  (che è una funzione continua)
+  Tramite la composizione con la proiezione $\pi$ da $M$ in
+  $\sfrac{M}{G}$ (che è una funzione continua)
   \[ 
      \xymatrix{I \ar[r]^\gamma \ar[dr] _{\bar \gamma}& M \ar[d]^\pi \\
               & \sfrac{M}{G}  
