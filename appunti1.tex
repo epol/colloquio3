@@ -75,6 +75,7 @@
 \DeclareMathOperator{\len}{len}
 
 \DeclareMathOperator{\gl}{GL}
+\DeclareMathOperator{\aff}{Aff}
 
 
 \title{Colloquio 3 - appunti1}
@@ -1418,16 +1419,16 @@ TODO: è vero che $\obar{d^g} = \bar d ^g$?
 
 \subsection{Quozienti su insiemi di forme di $\mathbb{R}^N$}
 
-Vorremo considerare le forme di $\mathbb{R}^N$ a meno di particolari
+Vorrei considerare le forme di $\mathbb{R}^N$ a meno di particolari
 trasformazioni come rotazioni e translazioni.
 
-Dato $G \subseteq \gl(\mathbb{R}^N)$ voglio definire $M(A)$ al
+Dato $G \subseteq \aff(\mathbb{R}^N)$ voglio definire $M(A)$ al
 variare di $M \in G$ e $A \in C_s(\mathbb{R}^N)$. Un modo è:
 \[ M(A) = \set{ Ma \mid a \in A } \]
 
 Ho quindi, fissato $A \in C_s(\mathbb{R}^N)$ un'applicazione $G \to
 C_s(\mathbb{R}^N)$, mi chiedo quando è continua. Un gruppo $G$ a cui
-sono particolarmente interssato è il gruppo delle rotazioni, ma già
+sono particolarmente interessato è il gruppo delle rotazioni, ma già
 questa azione non è necessariamente continua
 \begin{myes}
   Con $N = 2$ sia $A = \set{(0,x) \mid x \in \mathbb{R}}$, allora
@@ -1436,7 +1437,7 @@ questa azione non è necessariamente continua
   E quindi l'azione non è continua in $\id$.
 \end{myes}
 
-L'imitiamoci, allora a considerare i compatti $A \in K(\mathbb{R}^N)$.
+Mi limito, allora, a considerare i compatti $A \in K(\mathbb{R}^N)$.
 
 \begin{mypro}
   Se $A \in K(\mathbb{R}^N)$ allora $\forall G < \gl (\mathbb{R}^N)$
@@ -1461,6 +1462,62 @@ L'imitiamoci, allora a considerare i compatti $A \in K(\mathbb{R}^N)$.
   quindi ci basta verificare la continuità in $\id$.
 \end{proof}
 
+Per le translazioni in realtà non serve la compattezza della forma
+\begin{mypro}
+  Se $A \in C_s(\mathbb{R}^N)$ allora la funzione $f: \mathbb{R}^N \to
+  C_s(\mathbb{R}^N)$ tale che $f(t) = A + t := \set { a + t \mid a \in
+    A}$ è continua.
+\end{mypro}
+\begin{proof}
+  È ovvio che l'immagine sia in $C_s(\mathbb{R}^N)$ perché il traslato
+  di un chiuso è ancora chiuso.
+  
+  Mi basta dimostrare, essendo $\mathbb{R}^N$ un gruppo, che $f$ è
+  continua in $\ubar{0}$.
+  
+  Usando un ragionamento analogo al precedente:
+  \[ d_H(A, A+t) \le \sup _{x \in A} d(x, x+t) = \sup _{x \in A}
+  \norm{x-(x+t)} = \norm{t} \]
+  Da cui la tesi.
+\end{proof}
+
+\begin{mycor}
+  Scelto $A \in K(\mathbb{R}^N)$ la funzione $f:\; \aff( \mathbb{R}^N)
+  \to K(\mathbb{R}^N)$ tale che $f(M) = M(A)$ è continua.
+\end{mycor}
+
+Voglio ora cercare di applicare i risultati ottenuti per le distanze
+su spazi quoziente al quoziente di $K(\mathbb{R}^N)$ sulle rotazioni e
+translazioni.
+
+\begin{mylem}
+  La distanza di Hausdorff su $K(\mathbb{R}^N)$ è invariante per
+  l'azione del gruppo delle isometrie di $\mathbb{R}^N$
+\end{mylem}
+\begin{proof}
+  Si vede facilmene usando che la distanza $d$ su $\mathbb{R}^N$ è
+  invariante per le isometrie.
+\end{proof}
+
+Voglio ora dimostrare che le orbite sono chiuse, cioè contengono tutti
+i loro punti di accumulazione.
+
+\begin{mylem}
+  Sia $A \in K(\mathbb{R}^N)$ e $\pa{ g_n} _{n \in \mathbb{N}}
+  \subseteq \aff( \mathbb{R}^N)$ tale che $\pa{ g_n(A) } _{n \in
+    \mathbb{N}}$ è una successione convergente, allora esiste $\delta
+  >0$ tale che, dette $\pa{ g_{n_k}} _{k\in \mathbb{N}}$ le affinità
+  che utilizzano traslazioni di norma minore di $\delta$.
+\end{mylem}
+\begin{proof}
+  Sia $\frac{\delta}{3}$ il raggio di una palla che contiene $A$
+  allora esiste $\bar n$ tale che $\forall n \ge \bar n$ si ha $g_n(A)
+  \subseteq A + \bar B _{\delta /3}$. Allora necessariamente le
+  traslazioni in $\pa{g_n}_{n \ge \bar n}$ hanno modulo minore
+  $\delta$.
+
+  TODO: controllare il $\delta /3$.
+\end{proof}
 
 \section{Media basata sulle distanze}
 
