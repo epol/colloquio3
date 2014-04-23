@@ -74,6 +74,8 @@
 \DeclareMathOperator{\id}{Id}
 \DeclareMathOperator{\len}{len}
 
+\DeclareMathOperator{\gl}{GL}
+
 
 \title{Colloquio 3 - appunti1}
 \author{Enrico Polesel}
@@ -1414,7 +1416,50 @@ Con questo possiamo dimostrare
 
 TODO: è vero che $\obar{d^g} = \bar d ^g$?
 
+\subsection{Quozienti su insiemi di forme di $\mathbb{R}^N$}
 
+Vorremo considerare le forme di $\mathbb{R}^N$ a meno di particolari
+trasformazioni come rotazioni e translazioni.
+
+Dato $G \subseteq \gl(\mathbb{R}^N)$ voglio definire $M(A)$ al
+variare di $M \in G$ e $A \in C_s(\mathbb{R}^N)$. Un modo è:
+\[ M(A) = \set{ Ma \mid a \in A } \]
+
+Ho quindi, fissato $A \in C_s(\mathbb{R}^N)$ un'applicazione $G \to
+C_s(\mathbb{R}^N)$, mi chiedo quando è continua. Un gruppo $G$ a cui
+sono particolarmente interssato è il gruppo delle rotazioni, ma già
+questa azione non è necessariamente continua
+\begin{myes}
+  Con $N = 2$ sia $A = \set{(0,x) \mid x \in \mathbb{R}}$, allora
+  $\forall R_\theta \in SO(\mathbb{R},2)$ si vede facilmente che
+  \[ d_H(A, R_\theta (A)) = + \infty \] 
+  E quindi l'azione non è continua in $\id$.
+\end{myes}
+
+L'imitiamoci, allora a considerare i compatti $A \in K(\mathbb{R}^N)$.
+
+\begin{mypro}
+  Se $A \in K(\mathbb{R}^N)$ allora $\forall G < \gl (\mathbb{R}^N)$
+  l'azione $G \to K(\mathbb{R}^N)$ è continua.
+\end{mypro}
+\begin{proof}
+  L'immagine dell'azione su $A$ dev'essere in $K(\mathbb{R}^N)$ perché
+  $M\in G$ definiscono funzioni continue in $\mathbb{R}^N$.
+
+  Sia $\norm{\cdot}$ una norma operatoriale matriciale\footnote{Cioè
+    tale che $\norm{MN} \le \norm{M}\norm{N}$ e $\norm{Mx} \le
+    \norm{M}\norm{x}$} su $G$, allora $\forall M \in G$
+  \[ d_H(A, M(A)) \le \sup _{x \in A} d(x,Mx) = \sup _{x \in A}
+  \norm{Mx -x} = \sup _{x \in A} \norm{ \pa{ M - \id} x } \le \norm{ M
+    - \id } \sup _{x \in A} \norm{x} \]
+  Dove la prima disuguaglianza è data da $d_A (M(x)) \le d (x,M(x))$
+  (e la relazione simmetrica), la seconda da come è stata scelta la
+  norma.
+
+  Per la compattezza di $A$ si ha $\sup _{x \in A} < \infty$ e quindi
+  l'applicazione è continua in $\id$, ma $G$ è un gruppo topologico e
+  quindi ci basta verificare la continuità in $\id$.
+\end{proof}
 
 
 \section{Media basata sulle distanze}
