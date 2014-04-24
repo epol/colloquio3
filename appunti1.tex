@@ -76,6 +76,7 @@
 
 \DeclareMathOperator{\gl}{GL}
 \DeclareMathOperator{\aff}{Aff}
+\DeclareMathOperator{\isom}{Isom}
 
 
 \title{Colloquio 3 - appunti1}
@@ -1503,20 +1504,68 @@ Voglio ora dimostrare che le orbite sono chiuse, cioè contengono tutti
 i loro punti di accumulazione.
 
 \begin{mylem}
+  \label{lem:traslazionipiccole}
   Sia $A \in K(\mathbb{R}^N)$ e $\pa{ g_n} _{n \in \mathbb{N}}
   \subseteq \aff( \mathbb{R}^N)$ tale che $\pa{ g_n(A) } _{n \in
     \mathbb{N}}$ è una successione convergente, allora esiste $\delta
-  >0$ tale che, dette $\pa{ g_{n_k}} _{k\in \mathbb{N}}$ le affinità
-  che utilizzano traslazioni di norma minore di $\delta$.
+  >0$ e $\bar n$ tali che, le affinità $\pa{ g_n} _{n\ge \bar n}$
+  utilizzano traslazioni di norma minore di $\delta$.
 \end{mylem}
 \begin{proof}
-  Sia $\frac{\delta}{3}$ il raggio di una palla che contiene $A$
-  allora esiste $\bar n$ tale che $\forall n \ge \bar n$ si ha $g_n(A)
-  \subseteq A + \bar B _{\delta /3}$. Allora necessariamente le
-  traslazioni in $\pa{g_n}_{n \ge \bar n}$ hanno modulo minore
-  $\delta$.
+  Sia $\frac{\delta}{2}$ il raggio di una palla che contiene $A$,
+  essendo la successione convergente esiste $\bar n$ tale che $\forall
+  n \ge \bar n$ si ha $g_n(A) \subseteq A + \bar B _{\delta
+    /2}$. Allora necessariamente le traslazioni in $\pa{g_n}_{n \ge
+    \bar n}$ hanno modulo minore $\delta$ perché $g_n(A) \subseteq
+  B(\ubar{0}, \delta)$.
+\end{proof}
 
-  TODO: controllare il $\delta /3$.
+\begin{mylem}
+  Il gruppo ortogonale 
+  \[ O(\mathbb{R},N) = \set{ M \in \gl (\mathbb{R},N) \mid M M^t =
+    \id } \]
+  è compatto $\forall N \in \mathbb{N}$.
+\end{mylem}
+\begin{proof}
+  Siccome $GL(\mathbb{R},N) \hookrightarrow \mathbb{R}^{N^2}$ ci basta
+  dimostrare che $O(\mathbb{R},N)$ è chiuso e limitato.
+  
+  La chiusura è facile, infatti il gruppo è controimmagine di
+  $\set{\id}$ tramite la funzione continua $MM^t$.
+
+  Dalla relazione
+  \[ 1 = \pa{MM^t}_{ii} = \sum _j M_{ij} M_{ij} = \sum _j M_{ij} ^2 \] 
+  Si ottiene $\forall i,j$ che $\abs{M_{ij}} \le 1$ da cui la
+  limitatezza.
+\end{proof}
+
+\begin{mypro}
+  Dato $G \subseteq \isom(\mathbb{R}^N)$ chiuso le orbite generate
+  dalla sua azione su $K(\mathbb{R}^N)$ sono chiuse.
+\end{mypro}
+\begin{proof}
+  Sia $A \in K(\mathbb{R}^N)$ e $C$ un suo punto di accumulazione, in
+  particolare esisteranno $\pa{g_n}_{n\in \mathbb{N}}$ tali che
+  $g_n(A) \to _n C$ nella metrica $d_H$. Per il lemma
+  \ref{lem:traslazionipiccole} possiamo assumere che esista $\delta >
+  0$ tale che $\forall n \in \mathbb{N}$ l'isometria $g_n$ utilizzi una
+  traslazione di norma minore di $\delta$.
+
+  Detto $\tilde G$ l'insieme delle isometrie in $G$ che usando
+  traslazioni di norma minore o uguale a $\delta$ si ha che questo è
+  ancora un insieme chiuso in $\isom\pa{\mathbb{R}^N}$ in quanto
+  sottoinsieme chiuso (perché controimmagine del chiuso
+  $\bra{-\delta,\delta}$) di $G$ che a sua volta è chiuso in
+  $\isom(\mathbb{R}^N)$. Ma inoltre questo insieme è compatto in
+  quanto contenuto in $O(\mathbb{R},N) \times \bra{-\delta,\delta}$ che
+  è compatto perché prodotto di compatti.
+  
+  Quindi, detta $f:\; \isom(\mathbb{R}^N) \to K(\mathbb{R}^N)$ con
+  $f(g) = g(A)$, si ha $\pa{ g_n(A) }_{n \in \mathbb{N}} \subseteq
+  f(\tilde G)$. Ma $\tilde G$ è compatto e quindi lo è anche $f(\tilde
+  G)$, quindi è anche chiuso, allora contiene tutti i suoi punti di
+  accumulazione e quindi anche $B$. Ma $\tilde G \subseteq G$ da cui
+  $C \in f(G)$ che è la tesi.
 \end{proof}
 
 \section{Media basata sulle distanze}
