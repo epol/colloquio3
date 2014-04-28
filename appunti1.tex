@@ -88,9 +88,7 @@
 
 \section{Distanza di Hausorff}
 
-Ipotesi: $(M,d)$ spazio metrico completo\footnote{TODO: decidere se
-  togliere l'ipotesi di completezza e metterla in tutti gli enunciati
-  che la richiedono}
+Ipotesi: $(M,d)$ spazio metrico.
 
 Ipotesi: $\Omega \subseteq M$ chiuso
 
@@ -506,7 +504,8 @@ Sia $K(\Omega) = \set{K\subseteq \Omega :\; K \text{ compatto}}$.
 
 TODO: per il chiusi non vale, esempio iperboli
 
-TODO: l'area invece non è così.
+% TODO: l'area invece non è così. Esempio rettangoli che si dimezzano
+% e si addensano
 
 \section{Geodetiche}
 
@@ -555,7 +554,7 @@ geodetiche.
 
   $M$ è unione di segmenti di lunghezza $1$, passanti per l'origine
   con inclinazione decrescente che tendono al segmento orrizzontale
-  (accumolandosi). %TODO: disegno
+  (accumolandosi). 
 
   \begin{figure}[h]
     \centering
@@ -887,25 +886,25 @@ quella di $\pa{C_s(M),d_H}$
 Dimostriamo ora un risultato sull'esistenza di geodetiche in $(M,d)$
 spazio metrico completo
 \begin{mylem}
-  Dato $K\subseteq M$ compatto connesso nella topologia indotta dalla
-  metrica $d^g$ allora $\forall x,y \in K$ esiste la geodetica che li
-  congiunge nella metrica indotta da $d$.
+  Se $M$ \`e completo e compatto nella topologia indotta dalla
+  metrica $d^g$ allora $\forall x,y \in M$ esiste la geodetica che tra
+  $x$ e $y$ nella metrica indotta da $d$.
 \end{mylem}
 \begin{proof}
-  Osservo che $K$ è compatto anche nella topologia indotta da $d$
+  Osservo che $M$ è compatto anche nella topologia indotta da $d$
   (vedi osservazione \ref{oss:topologiagedoeticafine}).
 
   Sia $\mu = d^g(x,y)$ e $\pa{\gamma _n}_{n \in \mathbb{N}} \subseteq
   \Gamma (x,y)$ una successione di curve continue tali che $\len
   \gamma _n \le \mu + \frac{1}{2^n}$. A meno di riparametrizzare posso
   chidere che $\forall n \in \mathbb{N}$ sia $\gamma _n :\;
-  \bra{0,\mu} \to K$ con $\len ^d \gamma _{|\bra{s,t}} = \frac{\len ^d
+  \bra{0,\mu} \to M$ con $\len ^d \gamma _{|\bra{s,t}} = \frac{\len ^d
     \gamma _n}{\mu}\pa{t-s} = \alpha _\gamma \pa{s-t}$, osservo che
   $\alpha _\gamma = \frac{\len ^d \gamma _n}{\mu} \le 2$.
 
   Le funzioni $\pa{\gamma _n}_{n \in \mathbb{N}}$ sono equicontinue
   (perché tutte Lipschitziane di constante minore di $2$),
-  equilimitate (perché a valori in $C_s(K)$ compatto) e definite sul
+  equilimitate (perché a valori in $C_s(M)$ compatto) e definite sul
   compatto $\bra{0,\mu}$. Quindi, per il teorema di Ascoli-Arzelà
   esiste una sottosuccessione $\pa{\gamma _{n_k}} _{n_k \in
     \mathbb{N}}$ convergente uniformemente ad una funzione $\gamma$.
@@ -1058,7 +1057,6 @@ numerabili. Vediamo un esempio
         C + \bar B _{\frac{\sqrt{5}}{2}}$}
       \label{fig:esempioinfinitegeodetiche}
   \end{figure}
-  %TODO: disegno
   Allora $\forall t$ si ha
   \[ d_H(A, D_t) = d_H (C, D_t) = \frac{\sqrt{5}}{2} = \frac{1}{2}
   d_H(A,C) \]
