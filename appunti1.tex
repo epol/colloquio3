@@ -93,6 +93,8 @@ Ipotesi: $(M,d)$ spazio metrico.
 Ipotesi: $\Omega \subseteq M$ chiuso
 
 \begin{mydef}[Distanza di un punto da un insieme]
+Dato $A \subseteq \Omega$ non vuoto definiamo:
+
 \[  d_A (x) := \inf _{y \in A} d(x,y) \] 
 \end{mydef}
 
@@ -142,8 +144,9 @@ $\leftrightarrow$ funzioni $d_A$
 
 
 \begin{mylem}
-  Se $A$ è compatto e completo allora l'$\inf$ della definizione di
-  $d_A$ è in realtà un $\min$, cioè:
+\label{lem:infmincompatto}
+  Se $A$ è compatto allora l'$\inf$ della definizione di $d_A$ è in
+  realtà un $\min$, cioè:
   \[ \forall x \in \Omega \; \exists y \in A \ :\ d(y,x) = d_A(x) \]
 \end{mylem}
 % \begin{proof}
@@ -192,9 +195,9 @@ $\leftrightarrow$ funzioni $d_A$
 \end{mynot}
 
 \begin{mynot}
-  In uno spazio vettoriale di dimensione finita il lemma vale
-  chiedenso solo che $A$ sia chiuso applicando il lemma
-  \ref{lem:pallechiusecompattemin}.
+  In uno spazio vettoriale di dimensione finita il lemma
+  \ref{lem:infmincompatto} vale chiedendo solo che $A$ sia chiuso
+  applicando il lemma \ref{lem:pallechiusecompattemin}.
 \end{mynot}
 
 
@@ -233,11 +236,15 @@ $\leftrightarrow$ funzioni $d_A$
 
 In seguito dimostrerò che $d_H$ è una funzione distanza
 
-Notazione: definiamo (con un abuso di linguaggio):
+Notazione: definisco (con un abuso di linguaggio):
 \[ A + \bar B_\varepsilon := \set{ x \in \Omega : \exists y \in A :
   d(x,y) \le \varepsilon }\]
 Questa uguaglianza vale, infatti, in $R^N$ e, più in generale, in
 spazi vettoriali reali.
+
+Osservo che se $A$ è chiuso vale
+\[ A = \bar B _{\varepsilon} = \set{ x \in \Omega \mid d_A(x) \le
+  \varepsilon} \] 
 
 
 \begin{mypro}
@@ -359,7 +366,7 @@ spazio metrico, iniziamo con la completezza:
 \end{myteo}
 \begin{proof}
   Sia $\pa{C_n}_{n\in \mathbb{N}} \subseteq C_s(\Omega)$ una successione
-  di Cauchy rispetto a $d_H$, allora esiste $\pa{N_k}_{k\in
+  di Cauchy rispetto a $d_H$, allora esiste $\pa{n_k}_{k\in
     \mathbb{N}}$ crescete tale che 
   \[ \forall n,m \ge N_k\;\; d_H(C_n,C_m) < 2^{-k} \] Scegliamo
   $x_1\in C_{N_1}$, siccome $d_H(C_{N_1},C_{N_2}) < \sfrac{1}{2}
@@ -435,7 +442,7 @@ funzione s.c.i. in $C_s(\Omega)$, inzio con un lemma.
 
 \begin{mylem}
   Dati $A,B \subseteq \Omega$ chiusi con almeno uno dei due compatto e
-  $A \cap B \neq \emptyset$ allora
+  $A \cap B = \emptyset$ allora
   \[ \inf _{x\in A} d_B(x) = \inf _{(x,y) \in A\times B} d(x,y) = \inf
   _{y\in B} d_A(y) >0 \]
 \end{mylem}
@@ -454,7 +461,7 @@ Sia $K(\Omega) = \set{K\subseteq \Omega :\; K \text{ compatto}}$.
 \end{mypro}
 \begin{proof}
   Dobbiamo dimostrare che la controimmagine di $\left(n-1,
-    +\infty\right]$ è continua qualunque sia $n>0$, questo equivale a
+    +\infty\right]$ è chiusa qualunque sia $n>0$, questo equivale a
   dimostrare che la controimmagine di $\bra{n,+\infty}$ è aperta.
 
   Chiamiamo $I = f^{-1}\pa{\bra{n,+\infty}}$.
@@ -786,7 +793,7 @@ quella di $\pa{C_s(M),d_H}$
 \end{mypro}
 \begin{proof}
   Iniziamo dimostrando che $(M,d)$ intrinseca implica $(C_s(M),d_H)$
-  inrinseca.
+  intrinseca.
 
   Siano $A,C \in C_s(M)$ e sia $\mu = d_H(A,C)$ e scegliamo
   $\varepsilon >0$, allora (per la definizione di $d_H$) possiamo dire
@@ -1211,7 +1218,7 @@ Allora, se $d$ è invariante rispetto a $G$, possiamo scrivere
 Quella che abbiamo definito potrebbe non essere una distanza, si pensi
 ad esempio $\mathbb{R}$ con $G = \mathbb{Q}$ che agisce con la somma,
 allora $\bar d \pa{ \bra{0} , \bra{\sqrt{2}} } = 0$ ma $\bra{0} \neq
-\bra{\sqrt{2}}$.
+\bra{\sqrt{2}}$, anzi si ha $d \equiv 0$.
 
 Una condizione necessaria è che le orbite siano chiuse, sia infatti
 $\bra{x}$ un'orbita non chiusa e $y \not\in \bra{x}$ un suo punto di
@@ -1236,13 +1243,13 @@ Una condizione sufficiente per richiedere che $\bar d (\bra{x} , \bra
 {y} ) = 0 \Leftrightarrow \bra{x} = \bra{y}$ è che le orbite siano
 compatte
 \begin{mypro}
-  Se le orbite sono compatte allora $\bra d (\bra{x},\bra{y}) = 0
+  Se le orbite sono compatte allora $\bar d (\bra{x},\bra{y}) = 0
   \Leftrightarrow \bra{x} = \bra{y}$.
 \end{mypro}
 \begin{proof}
   \`E banale vedere che $\bar d (\bra{x}, \bra{x} ) = 0$.
 
-  Siano $\bra{x}, \bra{y} \in \sfrac{M}{G}$ tali che $\bra d
+  Siano $\bra{x}, \bra{y} \in \sfrac{M}{G}$ tali che $\bar d
   (\bra{x},\bra{y}) = 0$ e siano $\pa{x_n}_ {n\in \mathbb{N}}
   \subseteq \bra{x}$ e $\pa{y_n}_ {n\in \mathbb{N}} \subseteq \bra{y}$
   tali che $d(x_n,y_n) < \frac{1}{2^n}$, per compattezza possiamo
@@ -1268,7 +1275,7 @@ potrebbe non rispettare la disuguaglianza triangolare
 \end{myes}
 
 La disuguaglianza triangolare è invece verificata senza aggiungere
-ipotesi sulle orbite ma chiedenso ``solo'' che la distanza sia
+ipotesi sulle orbite ma chiedendo ``solo'' che la distanza sia
 invariante rispetto a $G$
 \begin{mypro}
   Se $d$ è invariante rispetto a $G$ allora vale la disuguaglianza
@@ -1277,7 +1284,7 @@ invariante rispetto a $G$
 \begin{proof}
   Siano $\bra{x}, \bra{y}, \bra{z} \in \sfrac{M}{G}$, allora $\forall
   g,h \in G$ si ha
-  \[ d(x,g(z)) \le d(x,h(y)) + d(hy,g(z)) = d(x,h(y)) +
+  \[ d(x,g(z)) \le d(x,h(y)) + d(h(y),g(z)) = d(x,h(y)) +
   d(y,h^{-1}g(z) \]
   Facendo prima l'$\inf$ su $h\in G$ e poi l'$\inf$ su $g \in G$ si
   ottiene la disuguaglianza cercata.
@@ -1292,7 +1299,7 @@ che le orbite siano chiuse per ottenere che $\bar d$ è una distanza.
 \end{mypro}
 \begin{proof}
   Abbiamo già visto che vale la simmetria e la triangolare, ci basta
-  dimostare che $\bra d (\bra{x},\bra{y}) = 0 \Leftrightarrow \bra{x}
+  dimostare che $\bar d (\bra{x},\bra{y}) = 0 \Leftrightarrow \bra{x}
   = \bra{y}$, ancora una volta $\Leftarrow$ è facile, dimostriamo
   l'altra implicazione.
 
@@ -1333,7 +1340,7 @@ data da $d$.
 
   Se, per assurdo, $\exists \bra{y} \in B(\bra{x}, \varepsilon )
   \setminus A$, detta $\delta = \bar d (\bra{x}, \bra{y}) <
-  \varepsilon$ si ha che, per definizione di $\bra d$, $\exists g \in
+  \varepsilon$ si ha che, per definizione di $\bar d$, $\exists g \in
   G$ tale che $d(x,g(y)) < \delta + \frac{\varepsilon - \delta}{2} <
   \varepsilon$, ma allora $g(y) \in B(x,\varepsilon) \subseteq \pi
   ^{-1} (A)$ da cui $\bra{y} = \bra{g(y)} \in A$ e quindi l'assurdo
@@ -1361,9 +1368,10 @@ geodetiche e sulla distanza indotta $\bar d ^g$.
 Iniziamo osservando che $\sfrac{M}{G}$ ``contiene'' le curve di $M$,
 formalemente:
 \begin{mylem}
-  \[ \forall x,y \in M \; \Gamma(x,y) \to \Gamma(\bra{x}, \bra{y}) \]
-  Tramite la composizione con la proiezione $\pi$ da $M$ in
-  $\sfrac{M}{G}$ (che è una funzione continua)
+  Dati $x,y \in M$ Ad ogni curva $\gamma \in \Gamma(x,y)$ possiamo
+  associare una curva in $\Gamma(\bra{x}, \bra{y})$ tramite la
+  composizione con la proiezione $\pi$ da $M$ in $\sfrac{M}{G}$ (che è
+  una funzione continua)
   \[ 
      \xymatrix{I \ar[r]^\gamma \ar[dr] _{\bar \gamma}& M \ar[d]^\pi \\
               & \sfrac{M}{G}  
@@ -1440,10 +1448,15 @@ Mi limito, allora, a considerare i compatti $A \in K(\mathbb{R}^N)$.
 
 \begin{mypro}
   Se $A \in K(\mathbb{R}^N)$ allora $\forall G < \gl (\mathbb{R}^N)$
-  l'azione $G \to K(\mathbb{R}^N)$ è continua.
+  l'azione
+  \begin{align*}
+    G &\rightarrow K(\mathbb{R}^N) \\  
+    M &\rightarrow M(A)
+  \end{align*}
+  è continua.
 \end{mypro}
 \begin{proof}
-  L'immagine dell'azione su $A$ dev'essere in $K(\mathbb{R}^N)$ perché
+  L'immagine di quest'azione su dev'essere in $K(\mathbb{R}^N)$ perché
   $M\in G$ definiscono funzioni continue in $\mathbb{R}^N$.
 
   Sia $\norm{\cdot}$ una norma operatoriale matriciale\footnote{Cioè
@@ -1456,7 +1469,7 @@ Mi limito, allora, a considerare i compatti $A \in K(\mathbb{R}^N)$.
   (e la relazione simmetrica), la seconda da come è stata scelta la
   norma.
 
-  Per la compattezza di $A$ si ha $\sup _{x \in A} < \infty$ e quindi
+  Per la compattezza di $A$ si ha $\sup _{x \in A} \norm{x} < \infty$ e quindi
   l'applicazione è continua in $\id$, ma $G$ è un gruppo topologico e
   quindi ci basta verificare la continuità in $\id$.
 \end{proof}
@@ -1494,7 +1507,7 @@ translazioni.
   l'azione del gruppo delle isometrie di $\mathbb{R}^N$
 \end{mylem}
 \begin{proof}
-  Si vede facilmene usando che la distanza $d$ su $\mathbb{R}^N$ è
+  Si vede facilmente usando che la distanza $d$ su $\mathbb{R}^N$ è
   invariante per le isometrie.
 \end{proof}
 
@@ -1506,16 +1519,21 @@ i loro punti di accumulazione.
   Sia $A \in K(\mathbb{R}^N)$ e $\pa{ g_n} _{n \in \mathbb{N}}
   \subseteq \aff( \mathbb{R}^N)$ tale che $\pa{ g_n(A) } _{n \in
     \mathbb{N}}$ è una successione convergente, allora esiste $\delta
-  >0$ e $\bar n$ tali che, le affinità $\pa{ g_n} _{n\ge \bar n}$
-  utilizzano traslazioni di norma minore di $\delta$.
+  < \infty$ tale che, le affinità $\pa{ g_n} _{n\in \mathbb{N}}$ utilizzano
+  traslazioni di norma minore di $\delta$.
 \end{mylem}
 \begin{proof}
-  Sia $\frac{\delta}{2}$ il raggio di una palla che contiene $A$,
+  Sia $\varepsilon > 0$ il raggio di una palla che contiene $A$,
   essendo la successione convergente esiste $\bar n$ tale che $\forall
-  n \ge \bar n$ si ha $g_n(A) \subseteq A + \bar B _{\delta
-    /2}$. Allora necessariamente le traslazioni in $\pa{g_n}_{n \ge
-    \bar n}$ hanno modulo minore $\delta$ perché $g_n(A) \subseteq
-  B(\ubar{0}, \delta)$.
+  n \ge \bar n$ si ha $g_n(A) \subseteq A + \bar B _{\varepsilon}$, ma
+  allora se $n \ge \bar n$ si ha $g_n(A) \subseteq B(\ubar{0},
+  2\varepsilon)$.
+
+  Da questo si ha che $\forall n \ge \bar n$ la norma della
+  translazione utilizzata da $g_n$ è minore di $3 \varepsilon$, scelgo
+  quindi $\delta$ come il massimo fra $3\varepsilon$ e la norma delle
+  traslazioni usate da $g_n$ con $n< \bar n$, essendo questo un
+  insieme finito si ha $\delta < \infty$.
 \end{proof}
 
 \begin{mylem}
