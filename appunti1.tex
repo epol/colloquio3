@@ -408,6 +408,7 @@ spazio metrico, iniziamo con la completezza:
 
 Diamo un risultato di compattezza:
 \begin{myteo}[Blaschke{\cite[Teorema 4.4.6]{ambrosio2000selected}}]
+  \label{teo:spazioformecompatto}
   Se $\Omega$ è compatto allora $C_s(\Omega)$ è compatto nella metrica
   di Hausdorff
 \end{myteo}
@@ -1598,6 +1599,44 @@ distanza geodetica indotta due punti che possono essere collegati da
 più di una geodetica, allora i punti medi delle geodetiche saranno
 minimi per tale quantità, nell'esempio \ref{es:duegeodetiche} i punti
 $(0,1)$ e $(1,0)$ sono i minimi di $m_A$.
+
+TODO: m_A continua
+
+Considero il caso particolare di $M = K(\mathbb{R}^N)$ con la distanza
+di Hausdorff.
+
+\begin{mypro}
+  Dati $A_1, A_2,..., A_n \in K(\mathbb{R}^N)$ esiste $A \in
+  K(\mathbb{R}^N)$ che minimizza la funzione
+  \[ m(A) = \sum _{i =1} ^n d(A,A_i)^2 \]
+\end{mypro}
+\begin{proof}
+  Sia $0 < r< \infty$ il raggio di una palla che che contiene tutti
+  gli $A_i$ e $\Omega = B(\ubar{0},2r)$, considero la seguente
+  partizione di $K(\mathbb{R}^N)$:
+  \[ K(\mathbb{R}^N) = K(\Omega) \cup \pa{ K(\mathbb{R}^N) \setminus
+    K(\Omega)} \]
+
+  Se $A \in K(\mathbb{R}^N) \setminus K(\Omega)$ allora $\exists \bar
+  x \in A \setminus \Omega$, da questo deduco che $\forall i$
+  \[ d_H(A,A_i) \ge \sup _{x\in A} d_{A_i} (x) \ge d_{A_i} (\bar x)
+  \ge d_{B(\ubar{0},r)} (\bar x) \ge r \]
+  Quindi $m(A) \ge nr^2$.
+
+  Osservo che $\set{0} \in K(\Omega)$ e $\forall i$ si ha
+  $d_H(\set{0},A_i) \le r$. Allora $m(\set{0}) \le nr^2$.
+
+  Essendo $\Omega$ compatto per il teorema
+  \ref{teo:spazioformecompatto} anche $K(\Omega)$ è compatto e quindi
+  $m$ ristretta a $K(\Omega)$ avrà un minimo $\bar A$. Dev'essere
+  necessariamente $m(\bar A) \le m(\set{0}) \le nr^2$, quindi $\bar A$
+  è anche minimo per $m$ non ristretta, infatti ho già dimostato che
+  in $K(\mathbb{R}^N) \setminus K(\Omega)$ la funzione $m$ assume
+  valori maggiori o uguali a $nr^2$.
+\end{proof}
+
+
+
 
 \newpage
 
