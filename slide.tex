@@ -477,6 +477,188 @@ In seguito dimostreremo che $d_H$ è effettivamente una distanza
   \end{figure}
 \end{frame}
 
+\section{Distanza su spazi metrici quoziente}
+
+\subsection{Proprietà}
+
+\begin{frame}{Definizione}
+  Sia $(M,d)$ uno spazio metrico e $G$ un gruppo che agisce su $M$
+  \begin{mydef}[Distanza su $\sfrac{M}{G}$]
+    \[ \obar d (\bra{x}, \bra{y}) = \inf _{\tilde x \in \bra{x} ,
+      \tilde y \in \bra {y}} d(\tilde x , \tilde y) = \inf _ {g,h \in
+      G} d(g(x), h(y)) \]
+  \end{mydef}
+
+  Questa funzione non è necessariamente una distanza, l'unica
+  proprietà che verifica necessariamente è la simmetria
+\end{frame}
+
+\begin{frame}{Chiusura delle orbite}
+  \begin{myoss}
+    Condizione necessaria perché $\obar d$ sia una distanza è che le
+    orbite di $G$ in $M$ siano chiuse
+  \end{myoss}
+  
+  Questa condizione non basta ancora per chidere $\obar d(\bra{x},
+  \bra{y}) = 0 \Leftrightarrow \bra{x} = \bra{y}$, una condizione
+  sufficiente (ma non necessaria) è che le orbite siano
+  compatte. Questa condizione non basta, però, per avere la
+  disuguaglianza triangolare.
+\end{frame}
+
+\begin{frame}{Invarianza di $d$ rispetto a $G$}
+  \begin{mydef}
+    Si dice che $d$ è invariante rispetto all'azione di $G$ se
+    \[ \forall g \in G,\; \forall x,y \in M \;\; d(g(x),g(y)) = d(x,y) \]
+  \end{mydef}
+  Se $d$ è invariante rispetto a $G$ possiamo scrivere:
+  \[ \obar d (\bra{x}, \bra{y}) = \inf _ {g,h \in G} d(g(x), h(y)) =
+  \inf _{g \in G} d(x,g(y)) \]
+
+  \begin{mypro}
+    Se $d$ è invariante rispetto a $G$ allora $\obar d$ rispetta la
+    disuguaglianza triangolare
+  \end{mypro}
+\end{frame}
+
+\begin{frame}{Condizioni sufficienti per ottenere una distanza}
+  \begin{mypro}
+    Se $d$ è invariante rispetto a $G$ e le orbite sono chiuse allora
+    $\bar d$ è una distanza
+  \end{mypro}
+  \begin{proof}
+    L'unica proprietà da dimostrare è $\obar d(\bra{x},
+    \bra{y}) = 0 \Leftrightarrow \bra{x} = \bra{y}$, ma questa si
+    verifica facilmente osservando che la relazione
+    \[ 0 = \obar d(\bra{x},\bra{y}) = \inf _{g \in G} d(x,g(y)) \] 
+    mostra che $x$ è aderente a $\bra{y}$.
+  \end{proof}
+\end{frame}
+
+\begin{frame}{Topologia quoziente}
+  \begin{mypro}
+    Se $d$ è invariante per l'azione di $G$ e le orbite sono chiuse
+    allora la topologia quoziente di $\sfrac{M}{G}$ coincide con la
+    topologia data da $\bar d$.
+  \end{mypro}
+
+  In realtà questo vale anche senza chidere che le orbite siano
+  chiuse, ma in questo caso $\obar d$ è una pseudometrica.
+\end{frame}
+
+\begin{frame}{Passaggio di curve al quoziente}
+  \begin{mylem}
+    Ad ogni curva $\gamma \in \Gamma ( \bra{x}, \bra{y} )$ in $M$
+    possiamo associare una curva $\bra{\gamma} \in \Gamma( \bra{x},
+    \bra{y})$ tramite la proiezione al quoziente
+    \[ 
+    \xymatrix{I \ar[r]^\gamma \ar[dr] _{\obar \gamma}& M \ar[d]^\pi \\
+      & \sfrac{M}{G}  
+    }
+    \]
+    Inoltre $\len ^{\obar d} \pa{ \obar \gamma} \le \len ^d \pa{\gamma}$
+  \end{mylem}
+\end{frame}
+
+\begin{frame}{Metrica geodetica indotta di $\obar d$}
+  \begin{mypro}
+    Se la metrica $d$ è intrinseca allora anche $\bar d$ è intrinseca.
+  \end{mypro}
+  \begin{mypro}
+    Se le orbite sono compatte e $d$ è intrinseco allora l'esistenza
+    delle geodetiche in $M$ implica l'esistenza delle geodetiche in
+    $\sfrac{M}{G}$
+  \end{mypro}
+\end{frame}
+
+\subsection{Il caso delle forme di $\mathbb{R}^N$}
+
+\begin{frame}{Azione di un'affinità}
+  Considero $\mathbb{R}^N$ con la distanza euclidea.
+  \begin{mydef}
+    Dato $A \in C_s(\mathbb{R}^N)$ e $g \in \aff (\mathbb{R}^N)$
+    definisco
+    \[ g(A) = \set{ g(a) \mid a \in A } \]
+  \end{mydef}
+  Ha senso chiderersi sotto quali ipotesi questa funzione sia continua
+  nello spazio delle forme
+\end{frame}
+
+\begin{frame}{Continuità dell'azione}
+  \begin{mypro}
+    Se $A \in C_s(\mathbb{R}^N)$ allora la funzione $f: \mathbb{R}^N \to
+    C_s(\mathbb{R}^N)$ tale che $f(t) = A + t := \set { a + t \mid a \in
+      A}$ è continua.
+  \end{mypro}
+  \begin{mypro}
+    Se $A \in K(\mathbb{R}^N)$ allora $\forall G < \gl (\mathbb{R}^N)$
+    l'azione $f: G \rightarrow K(\mathbb{R}^N)$ tale che $f(M) = M(A)$
+    è continua
+  \end{mypro}
+  \begin{mycor}
+    Scelto $A \in K(\mathbb{R}^N)$ la funzione $f:\; \aff( \mathbb{R}^N)
+    \to K(\mathbb{R}^N)$ tale che $f(M) = M(A)$ è continua.
+  \end{mycor}
+\end{frame}
+
+\begin{frame}{Invarianza della distanza di Hausdorff con l'azione
+    delle isometrie}
+  \begin{myoss}
+    La distanza di Hausdorff su $K(\mathbb{R}^N)$ è invariante per
+    l'azione del gruppo delle isometrie di $\mathbb{R}^N$
+  \end{myoss}
+
+  Quindi, per dimostrare che $\obar d$ è una distanza su
+  $\sfrac{K(\mathbb{R}^N)}{G}$ mi basta ora dimostrare che le orbite
+  sono chiuse
+\end{frame}
+
+\begin{frame}{Preliminari}
+  \begin{mylem}
+    Sia $A \in K(\mathbb{R}^N)$ e $\pa{ g_n} _{n \in \mathbb{N}}
+    \subseteq \isom( \mathbb{R}^N)$ tale che $\pa{ g_n(A) } _{n \in
+      \mathbb{N}}$ è una successione convergente, allora esiste $\delta
+    < \infty$ tale che, le isometrie $\pa{ g_n} _{n\in \mathbb{N}}$
+    utilizzano traslazioni di norma minore di $\delta$.
+  \end{mylem}
+  \begin{mylem}
+    Il gruppo ortogonale 
+    \[ O(\mathbb{R},N) = \set{ M \in \gl (\mathbb{R},N) \mid M M^t =
+      \id } \]
+    è compatto $\forall N \in \mathbb{N}$.
+  \end{mylem}
+\end{frame}
+
+\begin{frame}{Chiusura delle orbite}
+  \begin{mypro}
+    Dato $G \subseteq \isom(\mathbb{R}^N)$ chiuso le orbite generate
+    dalla sua azione su $K(\mathbb{R}^N)$ sono chiuse.
+  \end{mypro}
+  \begin{proof}
+    Prendendo un punto di accumulazione si vede che i punti possono
+    essere visti come immagini di un sottogruppo compatto di $\isom
+    (\mathbb{R}^N)$ e quindi il limite appartiene all'orbita
+  \end{proof}
+  \begin{mycor}
+    Su $\sfrac{K(\mathbb{R}^N)}{G}$ la funzione $\obar d$ è
+    effettivamente una distanza
+  \end{mycor}
+\end{frame}
+
+\begin{frame}{Altre proprietà}
+  \begin{myoss}
+    Si vede facilmente che, dati $A,C \in K(\mathbb{R}^N)$, esiste $g
+    \in G$ tale che $d_H \pa{A, g(C)} = \bar d _H \pa{ \bra{A},
+      \bra{C}}$.
+  \end{myoss}
+  Inoltre, applicando i risultati precedenti
+  \begin{mycor}
+    In $\sfrac{K(\mathbb{R}^N)}{G}$ 
+    \[ \obar{d} ^g = \obar{d} \]
+  \end{mycor}
+\end{frame}
+
+
 
 
 
