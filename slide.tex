@@ -23,11 +23,13 @@
 \usepackage[utf8x]{inputenc}
 \usepackage[italian]{babel}
 
-\usepackage{pdftricks}
-\begin{psinputs}
-   \usepackage{pstricks}
-   \usepackage{multido}
-\end{psinputs}
+
+
+%\usepackage{pdftricks}
+%\begin{psinputs}
+%   \usepackage[pdf]{pstricks}
+ %  \usepackage{multido}
+%\end{psinputs}
 
 \usepackage{ulem}
 
@@ -306,9 +308,184 @@ In seguito dimostreremo che $d_H$ è effettivamente una distanza
   \end{mycor}
 \end{frame}
 
+\section{Geodetiche e metriche indotte}
+
+\subsection{Distanza geodetica indotta}
+
+\begin{frame}{Lunghezza di una curva}
+  Sia $(M,d)$ uno spazio metrico
+  \begin{mydef}
+    Data $\gamma : \; \bra{a,b} \to M$ continua definiamo
+    \[ \len^d \gamma := \sup _{\mathcal{P}_{fin}(\bra{a,b}) \ni T =
+      \set{t_1 \le t_2 \le ... \le t_n}} \sum_{i=1}^n d\pa{
+      \gamma\pa{t_{i-1}}, \gamma\pa{t_i}} \]
+  \end{mydef}
+  È facile vedere che, per la triangolare, si ha
+  \[ \len^d \gamma \ge d\pa{\gamma\pa{a}, \gamma\pa{b}} \]
+
+\end{frame}
+
+\begin{frame}{Distanza geodetica indotta}
+  Per semplicità di notazione definiamo
+  \[ \Gamma (x,y) = \set{\gamma:\; \bra{a,b} \to M \mid
+    \gamma(a) = x, \gamma(b) = y,\; \gamma \text{ continua}} \]
+  
+  \begin{mydef}[Distanza geodetica indotta]
+    \[ d^g (x,y) := \inf _{\gamma \in \Gamma(x,y)} \len^d \gamma \]
+  \end{mydef}
+
+  Si vede facilmente che $d^g \ge d$, di consegueza la topologia
+  generata da $d^g$ è più fine di quella generata da $d$.
+\end{frame}
+
+\begin{frame}{Differenza tra $d$ e $d^g$}
+  In generale non vale $d=d^g$ e la topologia indotta può essere molto
+  diversa, per esempio
+  
+  \begin{myes}%[{\cite[Esempio 2.1]{DuciMennucci2007}}]
+    Sia $E = \bra{0,1} \times \pa{ \set{0} \cup \set{ \frac{1}{n} \mid n
+        > 0} }$ e $\psi(\rho,\theta) = \rho
+    \pa{\cos(\theta),\sin(\theta)}$. Considero quindi $M = \psi(E)$.
+    
+    $M$ è unione di segmenti di lunghezza $1$, passanti per l'origine
+    con inclinazione decrescente che tendono al segmento orrizzontale
+    (accumolandosi). 
+    
+    $M$ è compatto nella metrica euclidea, nella metrica indotta dalle
+    geodetiche, però, $M$ non è più compatto, infatti i punti $x_n =
+    \psi(1,\frac{1}{n})$ non posso ammettere una sottosuccessione
+    convergente essendo, per ogni $n\neq m$, $d^g(x_n,y_m) = 2$.
+  \end{myes}
+\end{frame}
+
+\begin{frame}
+  \begin{figure}[h]
+    \includegraphics[scale=1]{noncompattogeodetiche.pdf}
+  \end{figure}
+\end{frame}
+
+\begin{frame}{Metriche intrinseche}
+  \begin{mydef}[Metrica intrinseca]
+    Se la distanza $d$ è tale che $d = d^g$ si dice che $(M,d)$ è una
+    metrica intrinseca
+  \end{mydef}
+
+  Per esempio $d^g$ è intrinseca
+  \begin{mypro}
+    $\pa{d^g}^g = d^g$
+  \end{mypro}
+\end{frame}
+
+\begin{frame}{Lemmi}
+  \begin{mylem}
+    Data $\gamma:\; \bra{a,b} \to M$ continua si ha $\forall c \in
+    \pa{a,b}$ $\len ^d (\gamma_{|\bra{a,c}}) +  \len ^d (\gamma_{|\bra{c,b}}) = 
+    \len ^d (\gamma)$
+  \end{mylem}
+  \begin{mylem}
+    Se $\tilde \gamma \in \Gamma (x,y)$ con $\len ^d (\tilde \gamma) = L
+    < \infty$ e $\tilde \gamma : \; \bra {a,b} \to M$ allora si può
+    riparametrizzare $\tilde \gamma$ in $\gamma : \bra{0,L} \to M$ con la
+    proprietà $\len ^d(\gamma_{| \bra{0,t}}) = t$.
+  \end{mylem}
+  \begin{mylem}
+    Con la riparametrizzazione del lemma precedente si ha, presi $0 \le
+    t < s \le \len ^d (\gamma)$, che $\len ^d (\gamma _{|\bra{t,s}}) = s - t$
+  \end{mylem}
+\end{frame}
+
+\begin{frame}{Geodetiche}
+  \begin{mydef}[Geodetica]
+    Dati $x,y \in M$ una curva $\gamma \in \Gamma\pa{x,y}$ è una
+    geodetica se $\len ^d \gamma = d^g(x,y)$.
+  \end{mydef}
+
+  In generale non esistono sempre le geodetiche
+  \begin{mylem}
+    Se $M$ \`e completo e compatto nella topologia indotta dalla
+    metrica $d^g$ allora $\forall x,y \in M$ esiste la geodetica che tra
+    $x$ e $y$ nella metrica indotta da $d$.
+  \end{mylem}
+\end{frame}
+
+\begin{frame}{Unicità della geodetica}
+  In generale le geodetica tra due punti non è unica
+  \begin{figure}[h]
+    \includegraphics[scale=0.4]{griglia.pdf}
+  \end{figure}
+  In altri casi si ha anche l'unicità.
+  \begin{myes}
+    Sia $V$ uno spazio di Banach strettamenete convesso, allora presi
+    comunque $x,y \in V$ l'unica geodetica è il segmento che li unisce.
+  \end{myes}
+\end{frame}
+
+\subsection{Spazi di forme}
+
+\begin{frame}{Metrica indotta}
+  \begin{mypro}
+    La metrica di $(M,d)$ è intinseca se e solo se è intrinseca la
+    metrica di $(C_s(M),d_H)$
+  \end{mypro}
+  \begin{proof}
+    Sia $d_H$ intrinseca, $x,y\in M$ e $\mu = d(x,y)$ e $\varepsilon
+    >0$ possiamo definire induttivamente sull'insieme $Q = \set{ \mu
+      \frac{k}{2^n}|\; 0< k <2^n\; k\text{ dispari}} \cup \set{0,\mu}$
+    una funzione $\tilde \gamma$ tale che $d(\tilde \gamma(t), \tilde
+    \gamma(s)) < \abs{s -t} + \varepsilon \frac{ \abs{ s-t}} {\mu}$ e
+    poi estenerla per continuità ad una curva $\gamma \in \Gamma(x,y)$
+    tale che $\len ^d (\gamma) < \mu + \varepsilon$.
+  \end{proof}
+\end{frame}
+
+
+
+\begin{frame}
+  \begin{proof}
+    Se la metrica $d$ è intrinseca e $d_H(A,C) = \mu$ scelto
+    $\varepsilon >0$ ci basta considerare delle curve $\gamma _{(x,y)}
+    \in \Gamma (x,y)$ di lunghezza minore di $\mu + 2\varepsilon$ al
+    variare di $(x,y) \in \set{ (x,y) \in A\times C:\; d(x,y) < \mu +
+      \varepsilon }$ riparametrizzate da $\bra{0, \mu + 2\varepsilon}$
+    e definire una curva in $C_s(\Omega)$ come
+    \[ \obar G(t) = \obar {\set{ \gamma_{(x,y)}(t) : (x,y) \in P }} \]
+    Questa avrà lunghezza minore di $\mu + 2\varepsilon$.
+  \end{proof}
+\end{frame}
+
+\begin{frame}{Esistenza}
+  \begin{mylem}
+    Dati $x,y \in M$ esiste una geodetica tra di loro in $M$ se e solo
+    se esiste in $B(x,d^g(x,y) + \delta)$ con $\delta > 0$
+    qualsiasi.
+  \end{mylem}
+  \begin{mypro}
+    Se in $M$ le palle chiuse sono compatte nella metrica indotta
+    allora esiste sempre la geodetica in $K(M)$ fra $A,C \in K(M)$.
+  \end{mypro}
+  \begin{proof}
+    Usando il lemma precedente mi restringo a cercare la geodetica in
+    una palla chiusa sufficientemente grande, ma questa è compatta e
+    quindi la geodetica esiste.
+  \end{proof}
+\end{frame}
+\begin{frame}{Unicità}
+  In generale nella distanza di Hausdorff non si ha l'unicità della
+  geodetica, ma in generale ne possono esistere più che numerabili
+  \begin{figure}[h]
+    \includegraphics[scale=1]{geodetichehausdorff.pdf}
+  \end{figure}
+\end{frame}
 
 
 
 
 
 \end{document}
+
+
+
+
+
+
+
