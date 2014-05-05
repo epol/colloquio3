@@ -195,6 +195,11 @@
     \[ C_s(\Omega) \cong C_d(\Omega) = \set{d_A : A \subseteq \Omega,\;
       A \neq \emptyset} \]
   \end{myoss}
+  \vfill
+  In certi casi saremo interessati a considerare solo i sottoinsiemi
+  compatti di $\Omega$ che denotiamo con:
+  \[ K(\Omega) = \set{K\subseteq \Omega :\; K \text{ compatto} \wedge
+    A \neq \emptyset} \]
 \end{frame}
 
 \subsection{Distanza di Hausdorff}
@@ -263,6 +268,45 @@ In seguito dimostreremo che $d_H$ è effettivamente una distanza
     $C_d(\Omega)$
   \end{myoss}
 \end{frame}
+
+\subsection{Proprietà}
+
+\begin{frame}{Completezza}
+  \begin{myteo}[Completezza]%{\cite[Proposizione 4.4.2]{ambrosio2000selected}}]
+    Se $(\Omega,d)$ è completo allora $\pa{C_s(\Omega),d_H}$ è completo.
+  \end{myteo}
+\end{frame}
+
+\begin{frame}{Compattezza}
+  \begin{myteo}[Blaschke]%{\cite[Teorema 4.4.6]{ambrosio2000selected}}]
+    % \label{teo:spazioformecompatto}
+    Se $\Omega$ è compatto allora $C_s(\Omega)$ è compatto nella metrica
+    di Hausdorff
+  \end{myteo}
+  \begin{proof}
+    Per il teorema precedente $C_s(\Omega)$ è completo, quindi ci basta
+    dimostrare che è anche totalmente limitato.
+    
+    Per farlo basta prendere $F = \set{f_1,...,f_n} \subseteq \Omega$ centri
+    di una $\varepsilon$-rete finita che ricopre $\Omega$ e considerare
+    $\mathcal{P}(F)$, questo insieme è ancora finito e si può dimostrare
+    che è una $\varepsilon$-rete che ricopre $C_s(\Omega)$.
+  \end{proof}
+\end{frame}
+
+\begin{frame}{Numero di componenti connesse degli insiemi in
+    $C_s(\Omega)$}
+  \begin{mypro}
+    La funzione $f:\; K(\Omega) \rightarrow \mathbb{N} \cup \set{+\infty}$
+    che ad un compatto associa il numero delle sue componenti connesse è
+    semicontinua inferiormente
+  \end{mypro}
+  \begin{mycor}
+    Limite di insiemi connessi è connesso.
+  \end{mycor}
+\end{frame}
+
+
 
 
 
