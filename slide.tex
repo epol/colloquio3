@@ -130,6 +130,11 @@
   \end{frame}
 }
 
+\section{Spazi di forme}
+
+\subsection{Distanza di un punto da un insieme e rappresentazione delle forme}
+
+
 \begin{frame}{Distanza da un insieme}
   Consideriamo $(M,d)$ spazio metrico e $\Omega \subseteq M$ spazio
   ``ambiente'' nel quale vogliamo considerare i sottoinsiemi.
@@ -165,7 +170,7 @@
   In generale l'$\inf$ della definizione della distanza $d_A$ non \`e
   un minimo, nemmeno chiedendo che $A$ sia chiuso, per esempio:
   \begin{myes}
-    In $L^2(\mathbb{N})$ considero i punti $a_n = ( 0, 0, ..., 1 +
+    In $L^2(\mathbb{N})$ consideriamo i punti $a_n = ( 0, 0, ..., 1 +
     \frac{1}{n} , 0, ...)$ dove il termine non nullo si trova
     all'$n$-esimo posto. Allora $A = \set{ a_n : n\in \mathbb{N}}$ \`e
     chiuso, ma non esiste $a_n$ tale che $d(0,a_n)$ sia minimo
@@ -177,6 +182,88 @@
   \item In $M$ le palle chiuse sono compatte
   \end{itemize}
 \end{frame}
+
+\begin{frame}{Spazio di forme}
+  Classificare le forme $A \subseteq \Omega$ equivale a considerare i
+  sottoinsiemi non vuoti di $\Omega$ a meno della chiusura, quindi
+  possiamo prendere come rappresentanti delle forme le loro chiusure,
+  cioè considerare l'insieme
+  \[ C_s(\Omega) := \set{ A \subseteq \Omega : A = \obar A \wedge A
+    \neq \emptyset } \]
+
+  \begin{myoss}
+    \[ C_s(\Omega) \cong C_d(\Omega) = \set{d_A : A \subseteq \Omega,\;
+      A \neq \emptyset} \]
+  \end{myoss}
+\end{frame}
+
+\subsection{Distanza di Hausdorff}
+
+\begin{frame}{Definizione}
+  \begin{mydef}[Distanza di Hausdorff]
+    Dati due insiemi $A,C \subseteq \Omega$ non vuoti definiamo
+    \[ d_H(A,C) = \max \set{\sup _{x\in A} d_C (x) , \sup _{x\in C}
+      d_A (x) } \]
+\end{mydef}
+
+In seguito dimostreremo che $d_H$ è effettivamente una distanza
+\end{frame}
+
+\begin{frame}{Definizioni equivalenti}
+  Definendo, per semplicità di linguaggio, usando una notazione
+  analoga a quella usata negli spazi vettoriali reali:
+  \[ A + \bar B_\varepsilon := \set{ x \in \Omega : \exists y \in A :
+    d(x,y) \le \varepsilon } \]
+  Quando $A$ è chiuso si può scrivere anche
+  \[ A = \bar B _{\varepsilon} = \set{ x \in \Omega \mid d_A(x) \le
+    \varepsilon} \] 
+  \begin{mypro}
+    Dati $A, C \subseteq \Omega$ non vuoti le seguenti definizioni
+    sono equivalenti
+    \begin{enumerate}
+    \item $ d_H (A,C) = \norm{ d_A - d_C } _\infty = \sup _{x\in \Omega}
+      \set {d_A(x) - d_C(x)}$
+    \item $d_H(A,C) = \max \set{\sup _{x\in A} d_C (x) , \sup _{x\in C}
+        d_A (x) }$
+    \item $d_H (A,C) = \inf \set{\delta : A \subseteq C + \bar B
+        _\delta \wedge C \subseteq A + \bar B_\delta} = \max \set{\inf
+        \set{\delta : A \subseteq C + \bar B _\delta }, \inf \set{\delta : C
+          \subseteq A + \bar B _\delta }}  $
+    \end{enumerate}
+  \end{mypro}
+\end{frame}
+
+\begin{frame}{La distanza di Hausdorff è una distanza}
+%  Osserviamo che la distanza di Hausdorff non distingue fra un insieme
+%  e la sua chiusura.
+  \begin{mypro}
+    Nell'insieme $C_s(\Omega)$ la funzione $d_H$ è una distanza
+  \end{mypro}
+  \begin{proof}
+    È ovvio che $d_H \ge 0$ e che $d_H(A,C) = d_H(C,A)$.
+
+    \[d_H(A,C) = 0 \Leftrightarrow  \norm{d_A - d_C}_\infty = 0
+    \Leftrightarrow d_A = d_C \Leftrightarrow \obar A = \obar C \]
+    
+    \[ \abs{d_A(x) - d_C(x)} \le \abs{d_A(x) - d_B(x)} + \abs{d_B(x) -
+      d_C(x)} \le \] \[ \le d_H(A,B) + d_H(B,C) \]
+    Da cui la tesi passando all'estremo superiore per $x\in \Omega$.
+  \end{proof}
+\end{frame}
+
+\begin{frame}{Ancora su $C_s(\Omega) \cong C _d (\Omega)$}
+  Abbiamo dimostrato che $d_H$ è una distanza su $C_s(\Omega)$ perché
+  la distanza di Hausdorff non distingue fra un insieme e la sua
+  chiusura.
+  \vfill
+  Si ha inoltre:
+  \begin{myoss}
+    La relazione $C_s(\Omega) \cong C_d(\Omega)$ è un'isometria usando
+    su $C_s(\Omega)$ la distanza di Hausdorff e la norma infinito su
+    $C_d(\Omega)$
+  \end{myoss}
+\end{frame}
+
 
 
 
