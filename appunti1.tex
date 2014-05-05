@@ -1606,46 +1606,47 @@ più di una geodetica, allora i punti medi delle geodetiche saranno
 minimi per tale quantità, nell'esempio \ref{es:duegeodetiche} i punti
 $(0,1)$ e $(1,0)$ sono i minimi di $m_A$.
 
-\begin{mypro}
-  La funzione $m_A$ è continua
-\end{mypro}
-\begin{proof}
-  Siano $a_1,a_2,... a_n \in M$, voglio dimostrare la continuità in un
-  punto $a\in M$, sia quindi $\varepsilon >0$ e consideriamo i $\tilde
-  a \in M$ tali che $d(a,\tilde a) < \varepsilon$.
+\begin{myoss}
+  La funzione $m_A$ è continua, infatti è composizione di funzioni
+  continue.
+\end{myoss}
+% \begin{proof}
+%   Siano $a_1,a_2,... a_n \in M$, voglio dimostrare la continuità in un
+%   punto $a\in M$, sia quindi $\varepsilon >0$ e consideriamo i $\tilde
+%   a \in M$ tali che $d(a,\tilde a) < \varepsilon$.
 
-  Da una parte si ha
-  \begin{align*}
-    m_A(\tilde a) =& \sum _{i = 1} ^n d(\tilde a,a_i)^2 \\\le& \sum
-    _{i = 1} ^n \pa{ d(a,a_i) + d(a,\tilde a)} ^2 \\=& \sum _{i = 1}
-    ^n d(a,a_i) ^2 + 2\sum _{i = 1} ^n d(a,a_i)d(a,\tilde a) + \sum
-    _{i = 1} ^n d(a,\tilde a)^2 \\\le& \sum _{i = 1} ^n d(a, a_i) ^2 +
-    2\varepsilon \sum _{i = 1} ^n d(a,a_i) + n\varepsilon ^2 \\=&
-    m_A(a) + \varepsilon \pa{ 2\sum _{i = 1} ^n d(a,a_i) +
-      n\varepsilon }
-  \end{align*}
+%   Da una parte si ha
+%   \begin{align*}
+%     m_A(\tilde a) =& \sum _{i = 1} ^n d(\tilde a,a_i)^2 \\\le& \sum
+%     _{i = 1} ^n \pa{ d(a,a_i) + d(a,\tilde a)} ^2 \\=& \sum _{i = 1}
+%     ^n d(a,a_i) ^2 + 2\sum _{i = 1} ^n d(a,a_i)d(a,\tilde a) + \sum
+%     _{i = 1} ^n d(a,\tilde a)^2 \\\le& \sum _{i = 1} ^n d(a, a_i) ^2 +
+%     2\varepsilon \sum _{i = 1} ^n d(a,a_i) + n\varepsilon ^2 \\=&
+%     m_A(a) + \varepsilon \pa{ 2\sum _{i = 1} ^n d(a,a_i) +
+%       n\varepsilon }
+%   \end{align*}
 
-  Dall'altra:
-  \begin{align*}
-    m_A(\tilde a) =& \sum _{i = 1} ^n d(\tilde a,a_i)^2 \\\ge& \sum
-    _{i = 1} ^n \pa{ d(a,a_i) - d(\tilde a, a) } ^2 \\=& \sum _{i = 1}
-    ^n d(a,a_i) ^2 - 2\sum _{i = 1} ^n d(a,a_i)d(\tilde a, a) + \sum
-    _{i = 1} ^n d(\tilde a , a)^2 \\\ge& \sum _{i = 1} ^n d(a,a_i) ^2
-    - 2\sum _{i = 1} ^n d(a,a_i)d(\tilde a, a) \\\ge& m_A(a) -
-    2\varepsilon \sum _{i = 1} ^n d(a,a_i)
-  \end{align*}
+%   Dall'altra:
+%   \begin{align*}
+%     m_A(\tilde a) =& \sum _{i = 1} ^n d(\tilde a,a_i)^2 \\\ge& \sum
+%     _{i = 1} ^n \pa{ d(a,a_i) - d(\tilde a, a) } ^2 \\=& \sum _{i = 1}
+%     ^n d(a,a_i) ^2 - 2\sum _{i = 1} ^n d(a,a_i)d(\tilde a, a) + \sum
+%     _{i = 1} ^n d(\tilde a , a)^2 \\\ge& \sum _{i = 1} ^n d(a,a_i) ^2
+%     - 2\sum _{i = 1} ^n d(a,a_i)d(\tilde a, a) \\\ge& m_A(a) -
+%     2\varepsilon \sum _{i = 1} ^n d(a,a_i)
+%   \end{align*}
 
-  Unendo le disugaglianze si ottiene:
-  \[ \abs{ m_A(\tilde a) - m_A(a) } \le \varepsilon \max \set{ \pa{
-      2\sum _{i = 1} ^n d(a,a_i) + n\varepsilon } , \pa{ 2 \sum _{i =
-        1} ^n d(a,a_i)} } = \varepsilon \pa{ 2\sum _{i = 1} ^n
-    d(a,a_i) + n\varepsilon } \]
+%   Unendo le disugaglianze si ottiene:
+%   \[ \abs{ m_A(\tilde a) - m_A(a) } \le \varepsilon \max \set{ \pa{
+%       2\sum _{i = 1} ^n d(a,a_i) + n\varepsilon } , \pa{ 2 \sum _{i =
+%         1} ^n d(a,a_i)} } = \varepsilon \pa{ 2\sum _{i = 1} ^n
+%     d(a,a_i) + n\varepsilon } \]
 
-  Essendo $a$ e $a_1,...,a_n$ fissati si ha che $\sum _{i = 1} ^n
-  d(a,a_i)$ è costante, lo stesso vale per $n$ e quindi $\abs{
-    m_A(\tilde a) - m_A(a) }$ può essere reso piccolo a piacere
-  mandando $\varepsilon \to 0$.
-\end{proof}
+%   Essendo $a$ e $a_1,...,a_n$ fissati si ha che $\sum _{i = 1} ^n
+%   d(a,a_i)$ è costante, lo stesso vale per $n$ e quindi $\abs{
+%     m_A(\tilde a) - m_A(a) }$ può essere reso piccolo a piacere
+%   mandando $\varepsilon \to 0$.
+% \end{proof}
 
 Considero il caso particolare di $M = K(\mathbb{R}^N)$ con la distanza
 di Hausdorff.
