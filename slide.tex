@@ -111,7 +111,7 @@
   \titlepage
 \end{frame}
 
-\begin{frame}
+\begin{frame}[plain]
  \frametitle{Indice}
  \tableofcontents
 \end{frame}
@@ -127,14 +127,14 @@
 
 \AtBeginSubsection[]
 {
-  \begin{frame}{\secname $\rightarrow$ \subsecname}
+  \begin{frame}[plain]{\secname $\rightarrow$ \subsecname}
     \tableofcontents[currentsubsection]
   \end{frame}
 }
 
 \section{Spazi di forme}
 
-\subsection{Distanza di un punto da un insieme e rappresentazione delle forme}
+\subsection{Distanza di un punto-insieme e rappresentazione delle forme}
 
 
 \begin{frame}{Distanza da un insieme}
@@ -505,11 +505,11 @@ In seguito dimostreremo che $d_H$ è effettivamente una distanza
     orbite di $G$ in $M$ siano chiuse
   \end{myoss}
   
-  Questa condizione non basta ancora per chidere $\obar d(\bra{x},
-  \bra{y}) = 0 \Leftrightarrow \bra{x} = \bra{y}$, una condizione
-  sufficiente (ma non necessaria) è che le orbite siano
-  compatte. Questa condizione non basta, però, per avere la
-  disuguaglianza triangolare.
+  % Questa condizione non basta ancora per chidere $\obar d(\bra{x},
+  % \bra{y}) = 0 \Leftrightarrow \bra{x} = \bra{y}$, una condizione
+  % sufficiente (ma non necessaria) è che le orbite siano
+  % compatte. Questa condizione non basta, però, per avere la
+  % disuguaglianza triangolare.
 \end{frame}
 
 \begin{frame}{Invarianza di $d$ rispetto a $G$}
@@ -532,13 +532,13 @@ In seguito dimostreremo che $d_H$ è effettivamente una distanza
     Se $d$ è invariante rispetto a $G$ e le orbite sono chiuse allora
     $\bar d$ è una distanza
   \end{mypro}
-  \begin{proof}
-    L'unica proprietà da dimostrare è $\obar d(\bra{x},
-    \bra{y}) = 0 \Leftrightarrow \bra{x} = \bra{y}$, ma questa si
-    verifica facilmente osservando che la relazione
-    \[ 0 = \obar d(\bra{x},\bra{y}) = \inf _{g \in G} d(x,g(y)) \] 
-    mostra che $x$ è aderente a $\bra{y}$.
-  \end{proof}
+  % \begin{proof}
+  %   L'unica proprietà da dimostrare è $\obar d(\bra{x},
+  %   \bra{y}) = 0 \Leftrightarrow \bra{x} = \bra{y}$, ma questa si
+  %   verifica facilmente osservando che la relazione
+  %   \[ 0 = \obar d(\bra{x},\bra{y}) = \inf _{g \in G} d(x,g(y)) \] 
+  %   mostra che $x$ è aderente a $\bra{y}$.
+  % \end{proof}
 \end{frame}
 
 \begin{frame}{Topologia quoziente}
@@ -598,12 +598,12 @@ In seguito dimostreremo che $d_H$ è effettivamente una distanza
   \end{mypro}
   \begin{mypro}
     Se $A \in K(\mathbb{R}^N)$ allora $\forall G < \gl (\mathbb{R}^N)$
-    l'azione $f: G \rightarrow K(\mathbb{R}^N)$ tale che $f(M) = M(A)$
+    l'azione $f: G \rightarrow K(\mathbb{R}^N)$ tale che $f(g) = g(A)$
     è continua
   \end{mypro}
   \begin{mycor}
     Scelto $A \in K(\mathbb{R}^N)$ la funzione $f:\; \aff( \mathbb{R}^N)
-    \to K(\mathbb{R}^N)$ tale che $f(M) = M(A)$ è continua.
+    \to K(\mathbb{R}^N)$ tale che $f(g) = g(A)$ è continua.
   \end{mycor}
 \end{frame}
 
@@ -640,11 +640,11 @@ In seguito dimostreremo che $d_H$ è effettivamente una distanza
     Dato $G \subseteq \isom(\mathbb{R}^N)$ chiuso le orbite generate
     dalla sua azione su $K(\mathbb{R}^N)$ sono chiuse.
   \end{mypro}
-  \begin{proof}
-    Prendendo un punto di accumulazione si vede che i punti possono
-    essere visti come immagini di un sottogruppo compatto di $\isom
-    (\mathbb{R}^N)$ e quindi il limite appartiene all'orbita
-  \end{proof}
+  % \begin{proof}
+  %   Prendendo un punto di accumulazione si vede che i punti possono
+  %   essere visti come immagini di un sottogruppo compatto di $\isom
+  %   (\mathbb{R}^N)$ e quindi il limite appartiene all'orbita
+  % \end{proof}
   \begin{mycor}
     Su $\sfrac{K(\mathbb{R}^N)}{G}$ la funzione $\obar d$ è
     effettivamente una distanza
