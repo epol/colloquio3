@@ -342,28 +342,31 @@ In seguito dimostreremo che $d_H$ è effettivamente una distanza
 \begin{frame}{Differenza tra $d$ e $d^g$}
   In generale non vale $d=d^g$ e la topologia indotta può essere molto
   diversa, per esempio
-  
-  \begin{myes}%[{\cite[Esempio 2.1]{DuciMennucci2007}}]
-    Sia $E = \bra{0,1} \times \pa{ \set{0} \cup \set{ \frac{1}{n} \mid n
-        > 0} }$ e $\psi(\rho,\theta) = \rho
-    \pa{\cos(\theta),\sin(\theta)}$. Considero quindi $M = \psi(E)$.
+
+  \begin{figure}[h]
+    \includegraphics[scale=.7]{noncompattogeodetiche.pdf}
+  \end{figure}
+  % \begin{myes}%[{\cite[Esempio 2.1]{DuciMennucci2007}}]
+  %   Sia $E = \bra{0,1} \times \pa{ \set{0} \cup \set{ \frac{1}{n} \mid n
+  %       > 0} }$ e $\psi(\rho,\theta) = \rho
+  %   \pa{\cos(\theta),\sin(\theta)}$. Considero quindi $M = \psi(E)$.
     
-    $M$ è unione di segmenti di lunghezza $1$, passanti per l'origine
-    con inclinazione decrescente che tendono al segmento orrizzontale
-    (accumolandosi). 
+  %   $M$ è unione di segmenti di lunghezza $1$, passanti per l'origine
+  %   con inclinazione decrescente che tendono al segmento orrizzontale
+  %   (accumolandosi). 
     
-    $M$ è compatto nella metrica euclidea, nella metrica indotta dalle
-    geodetiche, però, $M$ non è più compatto, infatti i punti $x_n =
-    \psi(1,\frac{1}{n})$ non posso ammettere una sottosuccessione
-    convergente essendo, per ogni $n\neq m$, $d^g(x_n,y_m) = 2$.
-  \end{myes}
+  %   $M$ è compatto nella metrica euclidea, nella metrica indotta dalle
+  %   geodetiche, però, $M$ non è più compatto, infatti i punti $x_n =
+  %   \psi(1,\frac{1}{n})$ non posso ammettere una sottosuccessione
+  %   convergente essendo, per ogni $n\neq m$, $d^g(x_n,y_m) = 2$.
+  % \end{myes}
 \end{frame}
 
-\begin{frame}
-  \begin{figure}[h]
-    \includegraphics[scale=1]{noncompattogeodetiche.pdf}
-  \end{figure}
-\end{frame}
+% \begin{frame}
+%   \begin{figure}[h]
+%     \includegraphics[scale=1]{noncompattogeodetiche.pdf}
+%   \end{figure}
+% \end{frame}
 
 \begin{frame}{Metriche intrinseche}
   \begin{mydef}[Metrica intrinseca]
@@ -379,23 +382,23 @@ In seguito dimostreremo che $d_H$ è effettivamente una distanza
 
 \subsection{Geodetiche}
 
-\begin{frame}{Lemmi}
-  \begin{mylem}
-    Data $\gamma:\; \bra{a,b} \to M$ continua si ha $\forall c \in
-    \pa{a,b}$ $\len ^d (\gamma_{|\bra{a,c}}) +  \len ^d (\gamma_{|\bra{c,b}}) = 
-    \len ^d (\gamma)$
-  \end{mylem}
-  \begin{mylem}
-    Se $\tilde \gamma \in \Gamma (x,y)$ con $\len ^d (\tilde \gamma) = L
-    < \infty$ e $\tilde \gamma : \; \bra {a,b} \to M$ allora si può
-    riparametrizzare $\tilde \gamma$ in $\gamma : \bra{0,L} \to M$ con la
-    proprietà $\len ^d(\gamma_{| \bra{0,t}}) = t$.
-  \end{mylem}
-  \begin{mylem}
-    Con la riparametrizzazione del lemma precedente si ha, presi $0 \le
-    t < s \le \len ^d (\gamma)$, che $\len ^d (\gamma _{|\bra{t,s}}) = s - t$
-  \end{mylem}
-\end{frame}
+% \begin{frame}{Lemmi}
+%   \begin{mylem}
+%     Data $\gamma:\; \bra{a,b} \to M$ continua si ha $\forall c \in
+%     \pa{a,b}$ $\len ^d (\gamma_{|\bra{a,c}}) +  \len ^d (\gamma_{|\bra{c,b}}) = 
+%     \len ^d (\gamma)$
+%   \end{mylem}
+%   \begin{mylem}
+%     Se $\tilde \gamma \in \Gamma (x,y)$ con $\len ^d (\tilde \gamma) = L
+%     < \infty$ e $\tilde \gamma : \; \bra {a,b} \to M$ allora si può
+%     riparametrizzare $\tilde \gamma$ in $\gamma : \bra{0,L} \to M$ con la
+%     proprietà $\len ^d(\gamma_{| \bra{0,t}}) = t$.
+%   \end{mylem}
+%   \begin{mylem}
+%     Con la riparametrizzazione del lemma precedente si ha, presi $0 \le
+%     t < s \le \len ^d (\gamma)$, che $\len ^d (\gamma _{|\bra{t,s}}) = s - t$
+%   \end{mylem}
+% \end{frame}
 
 \begin{frame}{Geodetiche}
   \begin{mydef}[Geodetica]
@@ -457,20 +460,20 @@ In seguito dimostreremo che $d_H$ è effettivamente una distanza
 % \end{frame}
 
 \begin{frame}{Esistenza}
-  \begin{mylem}
-    Dati $x,y \in M$ esiste una geodetica tra di loro in $M$ se e solo
-    se esiste in $B(x,d^g(x,y) + \delta)$ con $\delta > 0$
-    qualsiasi.
-  \end{mylem}
+  % \begin{mylem}
+  %   Dati $x,y \in M$ esiste una geodetica tra di loro in $M$ se e solo
+  %   se esiste in $B(x,d^g(x,y) + \delta)$ con $\delta > 0$
+  %   qualsiasi.
+  % \end{mylem}
   \begin{mypro}
     Se in $M$ le palle chiuse sono compatte nella metrica indotta
     allora esiste sempre la geodetica in $K(M)$ fra $A,C \in K(M)$.
   \end{mypro}
-  \begin{proof}
-    Usando il lemma precedente mi restringo a cercare la geodetica in
-    una palla chiusa sufficientemente grande, ma questa è compatta e
-    quindi la geodetica esiste.
-  \end{proof}
+  % \begin{proof}
+  %   Usando il lemma precedente mi restringo a cercare la geodetica in
+  %   una palla chiusa sufficientemente grande, ma questa è compatta e
+  %   quindi la geodetica esiste.
+  % \end{proof}
 \end{frame}
 \begin{frame}{Unicità}
   In generale nella distanza di Hausdorff non si ha l'unicità della
