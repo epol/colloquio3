@@ -217,12 +217,12 @@ In seguito dimostreremo che $d_H$ è effettivamente una distanza
 \end{frame}
 
 \begin{frame}{Definizioni equivalenti}
-  Definendo, per semplicità di linguaggio, usando una notazione
-  analoga a quella usata negli spazi vettoriali reali:
-  \[ A + \bar B_\varepsilon := \set{ x \in \Omega : \exists y \in A :
+  Per semplicità di linguaggio definiamo%, usando una notazione analoga
+  %a quella usata negli spazi vettoriali reali:
+  \[ A + \obar B_\varepsilon := \set{ x \in \Omega : \exists y \in A :
     d(x,y) \le \varepsilon } \]
   Quando $A$ è chiuso si può scrivere anche
-  \[ A = \bar B _{\varepsilon} = \set{ x \in \Omega \mid d_A(x) \le
+  \[ A = \obar B _{\varepsilon} = \set{ x \in \Omega \mid d_A(x) \le
     \varepsilon} \] 
   \begin{mypro}
     Dati $A, C \subseteq \Omega$ non vuoti le seguenti definizioni
@@ -232,10 +232,10 @@ In seguito dimostreremo che $d_H$ è effettivamente una distanza
       \set {d_A(x) - d_C(x)}$
     \item $d_H(A,C) = \max \set{\sup _{x\in A} d_C (x) , \sup _{x\in C}
         d_A (x) }$
-    \item $d_H (A,C) = \inf \set{\delta : A \subseteq C + \bar B
-        _\delta \wedge C \subseteq A + \bar B_\delta} = \max \set{\inf
-        \set{\delta : A \subseteq C + \bar B _\delta }, \inf \set{\delta : C
-          \subseteq A + \bar B _\delta }}  $
+    \item $d_H (A,C) = \inf \set{\delta : A \subseteq C + \obar B
+        _\delta \wedge C \subseteq A + \obar B_\delta} = \max
+      \set{\inf \set{\delta : A \subseteq C + \obar B _\delta }, \inf
+        \set{\delta : C \subseteq A + \obar B _\delta }} $
     \end{enumerate}
   \end{mypro}
 \end{frame}
@@ -246,19 +246,20 @@ In seguito dimostreremo che $d_H$ è effettivamente una distanza
   \begin{mypro}
     Nell'insieme $C_s(\Omega)$ la funzione $d_H$ è una distanza
   \end{mypro}
-  \begin{proof}
-    È ovvio che $d_H \ge 0$ e che $d_H(A,C) = d_H(C,A)$.
+  % \begin{proof}
+  %   È ovvio che $d_H \ge 0$ e che $d_H(A,C) = d_H(C,A)$.
 
-    \[d_H(A,C) = 0 \Leftrightarrow  \norm{d_A - d_C}_\infty = 0
-    \Leftrightarrow d_A = d_C \Leftrightarrow \obar A = \obar C \]
+  %   \[d_H(A,C) = 0 \Leftrightarrow  \norm{d_A - d_C}_\infty = 0
+  %   \Leftrightarrow d_A = d_C \Leftrightarrow \obar A = \obar C \]
     
-    \[ \abs{d_A(x) - d_C(x)} \le \abs{d_A(x) - d_B(x)} + \abs{d_B(x) -
-      d_C(x)} \le \] \[ \le d_H(A,B) + d_H(B,C) \]
-    Da cui la tesi passando all'estremo superiore per $x\in \Omega$.
-  \end{proof}
-\end{frame}
+  %   \[ \abs{d_A(x) - d_C(x)} \le \abs{d_A(x) - d_B(x)} + \abs{d_B(x) -
+  %     d_C(x)} \le \] \[ \le d_H(A,B) + d_H(B,C) \]
+  %   Da cui la tesi passando all'estremo superiore per $x\in \Omega$.
+  % \end{proof}
+%\end{frame}
 
-\begin{frame}{Ancora su $C_s(\Omega) \cong C _d (\Omega)$}
+%\begin{frame}{Ancora su $C_s(\Omega) \cong C _d (\Omega)$}
+  \vfill
   Abbiamo dimostrato che $d_H$ è una distanza su $C_s(\Omega)$ perché
   la distanza di Hausdorff non distingue fra un insieme e la sua
   chiusura.
@@ -285,15 +286,15 @@ In seguito dimostreremo che $d_H$ è effettivamente una distanza
     Se $\Omega$ è compatto allora $C_s(\Omega)$ è compatto nella metrica
     di Hausdorff
   \end{myteo}
-  \begin{proof}
-    Per il teorema precedente $C_s(\Omega)$ è completo, quindi ci basta
-    dimostrare che è anche totalmente limitato.
+  % \begin{proof}
+  %   Per il teorema precedente $C_s(\Omega)$ è completo, quindi ci basta
+  %   dimostrare che è anche totalmente limitato.
     
-    Per farlo basta prendere $F = \set{f_1,...,f_n} \subseteq \Omega$ centri
-    di una $\varepsilon$-rete finita che ricopre $\Omega$ e considerare
-    $\mathcal{P}(F)$, questo insieme è ancora finito e si può dimostrare
-    che è una $\varepsilon$-rete che ricopre $C_s(\Omega)$.
-  \end{proof}
+  %   Per farlo basta prendere $F = \set{f_1,...,f_n} \subseteq \Omega$ centri
+  %   di una $\varepsilon$-rete finita che ricopre $\Omega$ e considerare
+  %   $\mathcal{P}(F)$, questo insieme è ancora finito e si può dimostrare
+  %   che è una $\varepsilon$-rete che ricopre $C_s(\Omega)$.
+  % \end{proof}
 \end{frame}
 
 \begin{frame}{Numero di componenti connesse degli insiemi in
@@ -376,6 +377,8 @@ In seguito dimostreremo che $d_H$ è effettivamente una distanza
   \end{mypro}
 \end{frame}
 
+\subsection{Geodetiche}
+
 \begin{frame}{Lemmi}
   \begin{mylem}
     Data $\gamma:\; \bra{a,b} \to M$ continua si ha $\forall c \in
@@ -427,31 +430,31 @@ In seguito dimostreremo che $d_H$ è effettivamente una distanza
     La metrica di $(M,d)$ è intinseca se e solo se è intrinseca la
     metrica di $(C_s(M),d_H)$
   \end{mypro}
-  \begin{proof}
-    Sia $d_H$ intrinseca, $x,y\in M$ e $\mu = d(x,y)$ e $\varepsilon
-    >0$ possiamo definire induttivamente sull'insieme $Q = \set{ \mu
-      \frac{k}{2^n}|\; 0< k <2^n\; k\text{ dispari}} \cup \set{0,\mu}$
-    una funzione $\tilde \gamma$ tale che $d(\tilde \gamma(t), \tilde
-    \gamma(s)) < \abs{s -t} + \varepsilon \frac{ \abs{ s-t}} {\mu}$ e
-    poi estenerla per continuità ad una curva $\gamma \in \Gamma(x,y)$
-    tale che $\len ^d (\gamma) < \mu + \varepsilon$.
-  \end{proof}
+  % \begin{proof}
+  %   Sia $d_H$ intrinseca, $x,y\in M$ e $\mu = d(x,y)$ e $\varepsilon
+  %   >0$ possiamo definire induttivamente sull'insieme $Q = \set{ \mu
+  %     \frac{k}{2^n}|\; 0< k <2^n\; k\text{ dispari}} \cup \set{0,\mu}$
+  %   una funzione $\tilde \gamma$ tale che $d(\tilde \gamma(t), \tilde
+  %   \gamma(s)) < \abs{s -t} + \varepsilon \frac{ \abs{ s-t}} {\mu}$ e
+  %   poi estenerla per continuità ad una curva $\gamma \in \Gamma(x,y)$
+  %   tale che $\len ^d (\gamma) < \mu + \varepsilon$.
+  % \end{proof}
 \end{frame}
 
 
 
-\begin{frame}
-  \begin{proof}
-    Se la metrica $d$ è intrinseca e $d_H(A,C) = \mu$ scelto
-    $\varepsilon >0$ ci basta considerare delle curve $\gamma _{(x,y)}
-    \in \Gamma (x,y)$ di lunghezza minore di $\mu + 2\varepsilon$ al
-    variare di $(x,y) \in \set{ (x,y) \in A\times C:\; d(x,y) < \mu +
-      \varepsilon }$ riparametrizzate da $\bra{0, \mu + 2\varepsilon}$
-    e definire una curva in $C_s(\Omega)$ come
-    \[ \obar G(t) = \obar {\set{ \gamma_{(x,y)}(t) : (x,y) \in P }} \]
-    Questa avrà lunghezza minore di $\mu + 2\varepsilon$.
-  \end{proof}
-\end{frame}
+% \begin{frame}
+%   \begin{proof}
+%     Se la metrica $d$ è intrinseca e $d_H(A,C) = \mu$ scelto
+%     $\varepsilon >0$ ci basta considerare delle curve $\gamma _{(x,y)}
+%     \in \Gamma (x,y)$ di lunghezza minore di $\mu + 2\varepsilon$ al
+%     variare di $(x,y) \in \set{ (x,y) \in A\times C:\; d(x,y) < \mu +
+%       \varepsilon }$ riparametrizzate da $\bra{0, \mu + 2\varepsilon}$
+%     e definire una curva in $C_s(\Omega)$ come
+%     \[ \obar G(t) = \obar {\set{ \gamma_{(x,y)}(t) : (x,y) \in P }} \]
+%     Questa avrà lunghezza minore di $\mu + 2\varepsilon$.
+%   \end{proof}
+% \end{frame}
 
 \begin{frame}{Esistenza}
   \begin{mylem}
