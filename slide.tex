@@ -222,7 +222,7 @@ In seguito dimostreremo che $d_H$ è effettivamente una distanza
   \[ A + \obar B_\varepsilon := \set{ x \in \Omega : \exists y \in A :
     d(x,y) \le \varepsilon } \]
   Quando $A$ è chiuso si può scrivere anche
-  \[ A = \obar B _{\varepsilon} = \set{ x \in \Omega \mid d_A(x) \le
+  \[ A + \obar B _{\varepsilon} = \set{ x \in \Omega \mid d_A(x) \le
     \varepsilon} \] 
   \begin{mypro}
     Dati $A, C \subseteq \Omega$ non vuoti le seguenti definizioni
@@ -283,8 +283,7 @@ In seguito dimostreremo che $d_H$ è effettivamente una distanza
 \begin{frame}{Compattezza}
   \begin{myteo}[Blaschke]%{\cite[Teorema 4.4.6]{ambrosio2000selected}}]
     % \label{teo:spazioformecompatto}
-    Se $\Omega$ è compatto allora $C_s(\Omega)$ è compatto nella metrica
-    di Hausdorff
+    Se $(\Omega,d)$ è compatto allora $\pa{C_s(\Omega),d_H}$ è compatto.
   \end{myteo}
   % \begin{proof}
   %   Per il teorema precedente $C_s(\Omega)$ è completo, quindi ci basta
@@ -376,7 +375,7 @@ In seguito dimostreremo che $d_H$ è effettivamente una distanza
 
   Per esempio $d^g$ è intrinseca
   \begin{mypro}
-    $\pa{d^g}^g = d^g$
+    \[\pa{d^g}^g = d^g\]
   \end{mypro}
 \end{frame}
 
@@ -408,9 +407,9 @@ In seguito dimostreremo che $d_H$ è effettivamente una distanza
 
   In generale non esistono sempre le geodetiche
   \begin{mylem}
-    Se $M$ \`e completo e compatto nella topologia indotta dalla
-    metrica $d^g$ allora $\forall x,y \in M$ esiste la geodetica che tra
-    $x$ e $y$ nella metrica indotta da $d$.
+    Se $M$ \`e compatto nella topologia indotta dalla metrica $d^g$
+    allora $\forall x,y \in M$ esiste la geodetica che tra $x$ e $y$
+    nella metrica indotta da $d$.
   \end{mylem}
 \end{frame}
 
@@ -530,7 +529,7 @@ In seguito dimostreremo che $d_H$ è effettivamente una distanza
 \begin{frame}{Condizioni sufficienti per ottenere una distanza}
   \begin{mypro}
     Se $d$ è invariante rispetto a $G$ e le orbite sono chiuse allora
-    $\bar d$ è una distanza
+    $\obar d$ è una distanza
   \end{mypro}
   % \begin{proof}
   %   L'unica proprietà da dimostrare è $\obar d(\bra{x},
@@ -539,17 +538,17 @@ In seguito dimostreremo che $d_H$ è effettivamente una distanza
   %   \[ 0 = \obar d(\bra{x},\bra{y}) = \inf _{g \in G} d(x,g(y)) \] 
   %   mostra che $x$ è aderente a $\bra{y}$.
   % \end{proof}
+  Se non si chiede che le orbite siano chiuse vale comunque la
+  triangolare e la simmetria, si ottiene quindi una pseudometrica.
 \end{frame}
 
 \begin{frame}{Topologia quoziente}
   \begin{mypro}
     Se $d$ è invariante per l'azione di $G$ e le orbite sono chiuse
     allora la topologia quoziente di $\sfrac{M}{G}$ coincide con la
-    topologia data da $\bar d$.
+    topologia data da $\obar d$.
   \end{mypro}
 
-  In realtà questo vale anche senza chidere che le orbite siano
-  chiuse, ma in questo caso $\obar d$ è una pseudometrica.
 \end{frame}
 
 \begin{frame}{Passaggio di curve al quoziente}
