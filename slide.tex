@@ -658,7 +658,43 @@ In seguito dimostreremo che $d_H$ è effettivamente una distanza
   \end{mycor}
 \end{frame}
 
+\section{Media basata sulle distanze}
 
+\subsection{Caso generale}
+
+\begin{frame}{Definizione}
+  Sia, al solito, $(M,d)$ uno spazio metrico
+  \begin{mydef}
+    Dati $a_1,a_2,... a_n \in M$ diciamo che $\obar a$ è \textbf{un}
+    punto medio se è un minimo per la funzione
+    \[ m_A (a) = \sum _{i = 1} ^n d(a,a_i)^2 \]
+  \end{mydef}
+  
+  Ha senso discutere l'esistenza e l'unicità di tale punto caso per
+  caso, infatti potrebbe non esistere e, quando esiste, potrebbe non
+  essere unico.
+
+  \begin{myoss}
+    La funzione $m_A$ è continua.
+  \end{myoss}
+\end{frame}
+
+\subsection{Spazi di forme}
+
+\begin{frame}{Spazi di forme}
+  \begin{mypro}
+    Dati $A_1, A_2,..., A_n \in K(\mathbb{R}^N)$ esiste $A \in
+    K(\mathbb{R}^N)$ che minimizza la funzione
+    \[ m(A) = \sum _{i =1} ^n d(A,A_i)^2 \]
+  \end{mypro}
+
+  \begin{mypro}
+    Dato $G < \isom (\mathbb{R}^N)$ e $A_1,...,A_n \in K(\mathbb{R}^N)$
+    esiste $A \in K(\mathbb{R}^N)$ che minimizza la funzione 
+    \[ \obar m(\bra{A}) = \sum _{i =1} ^n \obar
+    d_H(\bra{A},\bra{A_i})^2 \]
+  \end{mypro}
+\end{frame}
 
 
 
