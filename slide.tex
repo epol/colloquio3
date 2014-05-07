@@ -147,7 +147,7 @@ vision]{Distanza di Hausdorff e applicazioni in computer vision}
     \[  d_A (x) := \inf _{y \in A} d(x,y) \] 
   \end{mydef}
   
-  Con questo possiamo definire lo spazio di forme
+  Con questo possiamo rappresentare lo spazio di forme
   
   \[ C_d(\Omega) = \set{d_A : A \subseteq \Omega,\; A \neq \emptyset} \]
 \end{frame}
@@ -181,7 +181,7 @@ vision]{Distanza di Hausdorff e applicazioni in computer vision}
   L'$\inf$ diventa un minimo se:
   \begin{itemize}
   \item $A$ \`e compatto
-  \item In $M$ le palle chiuse sono compatte
+  \item In $M$ le palle chiuse sono compatte e $A$ è chiuso
   \end{itemize}
 \end{frame}
 
@@ -334,7 +334,7 @@ In seguito dimostreremo che $d_H$ è effettivamente una distanza
     \[ d^g (x,y) := \inf _{\gamma \in \Gamma(x,y)} \len^d \gamma \]
   \end{mydef}
 
-  Si vede facilmente che $d^g \ge d$, di consegueza la topologia
+  Si vede facilmente che $d^g \ge d$, di conseguenza la topologia
   generata da $d^g$ è più fine di quella generata da $d$.
 \end{frame}
 
@@ -420,7 +420,7 @@ In seguito dimostreremo che $d_H$ è effettivamente una distanza
   \end{figure}
   In altri casi si ha anche l'unicità.
   \begin{myes}
-    Sia $V$ uno spazio di Banach strettamenete convesso, allora presi
+    Sia $V$ uno spazio di Banach strettamente convesso, allora presi
     comunque $x,y \in V$ l'unica geodetica è il segmento che li unisce.
   \end{myes}
 \end{frame}
@@ -429,7 +429,7 @@ In seguito dimostreremo che $d_H$ è effettivamente una distanza
 
 \begin{frame}{Metrica indotta}
   \begin{mypro}
-    La metrica di $(M,d)$ è intinseca se e solo se è intrinseca la
+    La metrica di $(M,d)$ è intrinseca se e solo se è intrinseca la
     metrica di $(C_s(M),d_H)$
   \end{mypro}
   % \begin{proof}
@@ -504,7 +504,7 @@ In seguito dimostreremo che $d_H$ è effettivamente una distanza
     orbite di $G$ in $M$ siano chiuse
   \end{myoss}
   
-  % Questa condizione non basta ancora per chidere $\obar d(\bra{x},
+  % Questa condizione non basta ancora per chiedere $\obar d(\bra{x},
   % \bra{y}) = 0 \Leftrightarrow \bra{x} = \bra{y}$, una condizione
   % sufficiente (ma non necessaria) è che le orbite siano
   % compatte. Questa condizione non basta, però, per avere la
@@ -585,7 +585,7 @@ In seguito dimostreremo che $d_H$ è effettivamente una distanza
     definisco
     \[ g(A) = \set{ g(a) \mid a \in A } \]
   \end{mydef}
-  Ha senso chiderersi sotto quali ipotesi questa funzione sia continua
+  Ha senso chiedersi sotto quali ipotesi questa funzione sia continua
   nello spazio delle forme
 \end{frame}
 
