@@ -24,7 +24,6 @@
 \usepackage[italian]{babel}
 
 
-
 %\usepackage{pdftricks}
 %\begin{psinputs}
 %   \usepackage[pdf]{pstricks}
@@ -94,18 +93,24 @@
 
 
 
-
+\begin{document}
 
 
 \title[Distanza di Hausdorff e applicazioni in computer
-vision]{Distanza di Hausdorff e applicazioni in computer vision}
-%\subtitle[Unified Zone]{Gestione dei servizi offerti da UZ: Unified Zone}
-\author{Enrico Polesel}
+vision]{Distanza di Hausdorff e alcune applicazioni in computer
+  vision}
+\subtitle{Proprietà degli spazi di forme}
+%\author{Enrico Polesel}
 \institute[Scuola Normale Superiore]{Scuola Normale Superiore}
-\date{20 marzo 2014}
+\date{14 maggio 2014}
+
+\author[Enrico Polesel]{\begin{tabular}{r@{ }l}
+Autore: &  Enrico Polesel \\ 
+Relatore: & Andrea Mennucci
+\end{tabular}
+}
 
 
-\begin{document}
 
 \begin{frame}[plain]
   \titlepage
@@ -274,13 +279,14 @@ In seguito dimostreremo che $d_H$ è effettivamente una distanza
 
 \subsection{Proprietà}
 
-\begin{frame}{Completezza}
+\begin{frame}{Completezza e compattezza}
   \begin{myteo}[Completezza]%{\cite[Proposizione 4.4.2]{ambrosio2000selected}}]
     Se $(\Omega,d)$ è completo allora $\pa{C_s(\Omega),d_H}$ è completo.
   \end{myteo}
-\end{frame}
+  \vfill
+%\end{frame}
 
-\begin{frame}{Compattezza}
+%\begin{frame}{Compattezza}
   \begin{myteo}[Blaschke]%{\cite[Teorema 4.4.6]{ambrosio2000selected}}]
     % \label{teo:spazioformecompatto}
     Se $(\Omega,d)$ è compatto allora $\pa{C_s(\Omega),d_H}$ è compatto.
@@ -413,17 +419,17 @@ In seguito dimostreremo che $d_H$ è effettivamente una distanza
   \end{mylem}
 \end{frame}
 
-\begin{frame}{Unicità della geodetica}
-  In generale le geodetica tra due punti non è unica
-  \begin{figure}[h]
-    \includegraphics[scale=0.4]{griglia.pdf}
-  \end{figure}
-  In altri casi si ha anche l'unicità.
-  \begin{myes}
-    Sia $V$ uno spazio di Banach strettamente convesso, allora presi
-    comunque $x,y \in V$ l'unica geodetica è il segmento che li unisce.
-  \end{myes}
-\end{frame}
+% \begin{frame}{Unicità della geodetica}
+%   In generale le geodetica tra due punti non è unica
+%   \begin{figure}[h]
+%     \includegraphics[scale=0.4]{griglia.pdf}
+%   \end{figure}
+%   In altri casi si ha anche l'unicità.
+%   \begin{myes}
+%     Sia $V$ uno spazio di Banach strettamente convesso, allora presi
+%     comunque $x,y \in V$ l'unica geodetica è il segmento che li unisce.
+%   \end{myes}
+% \end{frame}
 
 \subsection{Spazi di forme}
 
@@ -498,18 +504,18 @@ In seguito dimostreremo che $d_H$ è effettivamente una distanza
   proprietà che verifica necessariamente è la simmetria
 \end{frame}
 
-\begin{frame}{Chiusura delle orbite}
-  \begin{myoss}
-    Condizione necessaria perché $\obar d$ sia una distanza è che le
-    orbite di $G$ in $M$ siano chiuse
-  \end{myoss}
+% \begin{frame}{Chiusura delle orbite}
+%   \begin{myoss}
+%     Condizione necessaria perché $\obar d$ sia una distanza è che le
+%     orbite di $G$ in $M$ siano chiuse
+%   \end{myoss}
   
-  % Questa condizione non basta ancora per chiedere $\obar d(\bra{x},
-  % \bra{y}) = 0 \Leftrightarrow \bra{x} = \bra{y}$, una condizione
-  % sufficiente (ma non necessaria) è che le orbite siano
-  % compatte. Questa condizione non basta, però, per avere la
-  % disuguaglianza triangolare.
-\end{frame}
+%   % Questa condizione non basta ancora per chiedere $\obar d(\bra{x},
+%   % \bra{y}) = 0 \Leftrightarrow \bra{x} = \bra{y}$, una condizione
+%   % sufficiente (ma non necessaria) è che le orbite siano
+%   % compatte. Questa condizione non basta, però, per avere la
+%   % disuguaglianza triangolare.
+% \end{frame}
 
 \begin{frame}{Invarianza di $d$ rispetto a $G$}
   \begin{mydef}
@@ -551,28 +557,28 @@ In seguito dimostreremo che $d_H$ è effettivamente una distanza
 
 \end{frame}
 
-\begin{frame}{Passaggio di curve al quoziente}
-  \begin{mylem}
-    Ad ogni curva $\gamma \in \Gamma ( \bra{x}, \bra{y} )$ in $M$
-    possiamo associare una curva $\bra{\gamma} \in \Gamma( \bra{x},
-    \bra{y})$ tramite la proiezione al quoziente
-    \[ 
-    \xymatrix{I \ar[r]^\gamma \ar[dr] _{\obar \gamma}& M \ar[d]^\pi \\
-      & \sfrac{M}{G}  
-    }
-    \]
-    Inoltre $\len ^{\obar d} \pa{ \obar \gamma} \le \len ^d \pa{\gamma}$
-  \end{mylem}
-\end{frame}
+% \begin{frame}{Passaggio di curve al quoziente}
+%   \begin{mylem}
+%     Ad ogni curva $\gamma \in \Gamma ( \bra{x}, \bra{y} )$ in $M$
+%     possiamo associare una curva $\bra{\gamma} \in \Gamma( \bra{x},
+%     \bra{y})$ tramite la proiezione al quoziente
+%     \[ 
+%     \xymatrix{I \ar[r]^\gamma \ar[dr] _{\obar \gamma}& M \ar[d]^\pi \\
+%       & \sfrac{M}{G}  
+%     }
+%     \]
+%     Inoltre $\len ^{\obar d} \pa{ \obar \gamma} \le \len ^d \pa{\gamma}$
+%   \end{mylem}
+% \end{frame}
 
 \begin{frame}{Metrica geodetica indotta di $\obar d$}
   \begin{mypro}
     Se la metrica $d$ è intrinseca allora anche $\bar d$ è intrinseca.
   \end{mypro}
   \begin{mypro}
-    Se le orbite sono compatte e $d$ è intrinseco allora l'esistenza
-    delle geodetiche in $M$ implica l'esistenza delle geodetiche in
-    $\sfrac{M}{G}$
+    Se le orbite sono compatte e $(M,d)$ è intrinseco allora
+    l'esistenza delle geodetiche in $M$ implica l'esistenza delle
+    geodetiche in $\sfrac{M}{G}$
   \end{mypro}
 \end{frame}
 
@@ -663,9 +669,10 @@ In seguito dimostreremo che $d_H$ è effettivamente una distanza
   \end{mycor}
 \end{frame}
 
-\section{Media basata sulle distanze}
+\section{Ricerca di un ``punto medio''}
 
-\subsection{Caso generale}
+
+\subsection{Media basata sulle distanze}
 
 \begin{frame}{Definizione}
   Sia, al solito, $(M,d)$ uno spazio metrico
@@ -684,7 +691,7 @@ In seguito dimostreremo che $d_H$ è effettivamente una distanza
   \end{myoss}
 \end{frame}
 
-\subsection{Spazi di forme}
+%\subsection{Spazi di forme}
 
 \begin{frame}{Spazi di forme}
   \begin{mypro}
@@ -771,11 +778,11 @@ In seguito dimostreremo che $d_H$ è effettivamente una distanza
 
 \begin{frame}{Clustering}
   Poniamoci come obbiettivo, quindi, trovare $M_1,...,M_k \in
-  K(\mathbb{R}^N)$ minimo di $f$.
+  K(\mathbb{R}^N)$ che siano un minimo di $f$.
   
   \vfill
 
-  Tale approcio ha due difetti:
+  Tale approccio ha due difetti:
   \begin{itemize}
   \item il numero di forme $k$ è un dato in ingresso
   \item il problema così posto è NP-hard

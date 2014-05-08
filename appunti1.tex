@@ -179,7 +179,7 @@ $\leftrightarrow$ funzioni $d_A$
 
 \begin{mynot}
   Se $A$ non è compatto ma è un chiuso allora, in generale, il lemma
-  precedente non è verificato. Costriuisco un controesempio in $l^2$
+  precedente non è verificato. Costruisco un controesempio in $l^2$
   
   Sia, per $n\in \mathbb{N}$ $a_n$ la successione con $1+\frac{1}{n}$
   all'$n$-esimo posto e $0$ altrove. Sia $A = \set{a_n : n\in
@@ -436,10 +436,10 @@ Diamo un risultato di compattezza:
 \end{proof}
 
 La compattezza di $C_s(\Omega)$ è molto comoda, infatti ci dice che
-tutte le funzioni semicontinue inferiormente ammettono minimo.
+tutte le funzioni semicontinua inferiormente ammettono minimo.
 
 Mostro, per esempio, che il numero di componenti connesse è una
-funzione s.c.i. in $C_s(\Omega)$, inzio con un lemma.
+funzione s.c.i. in $C_s(\Omega)$, inizio con un lemma.
 
 \begin{mylem}
   Dati $A,B \subseteq \Omega$ chiusi con almeno uno dei due compatto e
@@ -491,7 +491,7 @@ Sia $K(\Omega) = \set{K\subseteq \Omega :\; K \text{ compatto}}$.
 
   Iteriamo questa costruzione dividendo ogni volta un chiuso che
   contiene più di una componente connessa fermandoci quando otteniamo
-  $n$ insiemi. Possiamo arrivare ad otterne $n$ perché, per ipotesi,
+  $n$ insiemi. Possiamo arrivare ad ottenere $n$ perché, per ipotesi,
   $A$ ha almeno $n$ componenti connesse. Inoltre, per costruzione, $A
   = A_1 \cup A_2 \cup ... \cup A_n$.
 
@@ -518,7 +518,7 @@ TODO: per il chiusi non vale, esempio iperboli
 \section{Geodetiche}
 
 Sia ancora $(M,d)$ uno spazio metrico dove vogliamo definire le
-geodetiche, per farlo inziamo definendo la lunghezza di una curva
+geodetiche, per farlo iniziamo definendo la lunghezza di una curva
 $\gamma :\; \bra{a,b} \to M$
 \begin{mydef}[Lunghezza di una curva]
   \[ \len^d \gamma := \sup _{\mathcal{P}_{fin}(\bra{a,b}) \ni T =
@@ -536,7 +536,7 @@ Chiamiamo $\Gamma (x,y) = \set{\gamma:\; \bra{a,b} \to M \mid
 \begin{myoss}
   Dalla triangolare otteniamo che 
   \[ \forall \gamma \in \Gamma(x,y) \; \len^d \gamma \ge d(x,y) \]
-  Passando all'$\inf$ ottentiamo quindi
+  Passando all'$\inf$ otteniamo quindi
   \[ d^g(x,y) \ge d(x,y) \]
   Comunque scegliamo $x,y \in M$.
 \end{myoss}
@@ -561,7 +561,7 @@ geodetiche.
   \pa{\cos(\theta),\sin(\theta)}$. Considero quindi $M = \psi(E)$.
 
   $M$ è unione di segmenti di lunghezza $1$, passanti per l'origine
-  con inclinazione decrescente che tendono al segmento orrizzontale
+  con inclinazione decrescente che tendono al segmento orizzontale
   (accumolandosi). 
 
   \begin{figure}[h]
@@ -761,7 +761,7 @@ Questo non esclude che in alcuni casi $d = d^g$, per esempio
   metrica intrinseca
 \end{mydef}
 
-Per i prossimi risultati userò questi fatti facilemente dimostrabili:
+Per i prossimi risultati userò questi fatti facilmente dimostrabili:
 \begin{mylem}
   Data $\gamma:\; \bra{a,b} \to M$ continua si ha $\forall c \in
   \pa{a,b}$
@@ -789,7 +789,7 @@ Per i prossimi risultati userò questi fatti facilemente dimostrabili:
 E ora un risultato sulla relazione tra intrinsecità di $(M,d)$ e
 quella di $\pa{C_s(M),d_H}$
 \begin{mypro}
-  La metrica di $(M,d)$ è intinseca se e solo se è intrinseca la
+  La metrica di $(M,d)$ è intrinseca se e solo se è intrinseca la
   metrica di $(C_s(M),d_H)$
 \end{mypro}
 \begin{proof}
@@ -905,7 +905,7 @@ spazio metrico completo
   Sia $\mu = d^g(x,y)$ e $\pa{\gamma _n}_{n \in \mathbb{N}} \subseteq
   \Gamma (x,y)$ una successione di curve continue tali che $\len
   \gamma _n \le \mu + \frac{1}{2^n}$. A meno di riparametrizzare posso
-  chidere che $\forall n \in \mathbb{N}$ sia $\gamma _n :\;
+  chiedere che $\forall n \in \mathbb{N}$ sia $\gamma _n :\;
   \bra{0,\mu} \to M$ con $\len ^d \gamma _{|\bra{s,t}} = \frac{\len ^d
     \gamma _n}{\mu}\pa{t-s} = \alpha _\gamma \pa{s-t}$, osservo che
   $\alpha _\gamma = \frac{\len ^d \gamma _n}{\mu} \le 2$.
@@ -917,7 +917,7 @@ spazio metrico completo
   esiste una sottosuccessione $\pa{\gamma _{n_k}} _{n_k \in
     \mathbb{N}}$ convergente uniformemente ad una funzione $\gamma$.
 
-  È evidente che $\gamma \in \Gamma (x,y)$, ci basta dimostare che
+  È evidente che $\gamma \in \Gamma (x,y)$, ci basta dimostrare che
   $\len ^d \gamma = \mu$. Sia quindi $\set{ t_0 < t_1<... < t_n}
   \subseteq \bra{0,\mu}$, per ogni $\varepsilon > 0$ sia $\bar k$ tale
   che per ogni $k >\bar k$ $\norm{\gamma_{n_k} - \gamma} <
@@ -934,7 +934,7 @@ spazio metrico completo
   \end{align*}
   Mandando $k \to \infty$ e $\varepsilon \to 0$ si ottiene quindi
   \[ \sum _{i=1} ^n d\pa{\gamma(t_{i-1}),\gamma(t_i)} \le \mu \]
-  Facendo il $\sup$ su tutti i sottinsiemi finiti di $\bra{0,\mu}$
+  Facendo il $\sup$ su tutti i sottoinsiemi finiti di $\bra{0,\mu}$
   otteniamo quindi
   \[ \len ^d \gamma \le \mu \]
   D'altra parte $\mu = d^g (x,y)$, quindi $\len ^d (\gamma) = \mu$ e
@@ -973,7 +973,7 @@ distinte
 \end{myes}
 
 
-Nel cercare l'esistenza di geodetiche può tornare utile il segunte
+Nel cercare l'esistenza di geodetiche può tornare utile il seguente
 lemma
 \begin{mylem}
   Dati $x,y \in M$ esiste una geodetica tra di loro in $M$ se e solo
@@ -1020,7 +1020,7 @@ esistere più che numerabili.
 
   Ma $\Omega$ è compatto per ipotesi e quindi, per il lemma
   precedente, esiste una geodetica in $C_s(\Omega)$, osservando che
-  $C_s(\Omega) = K(\Omega) \subseteq K(M)$ (perché sottinsiemi chiusi
+  $C_s(\Omega) = K(\Omega) \subseteq K(M)$ (perché sottoinsiemi chiusi
   in un compatto) si ha che la geodetica trovata ha valori in $K(M)$.
 \end{proof}
 
@@ -1078,7 +1078,7 @@ numerabili. Vediamo un esempio
 
 Vediamo un caso in cui, invece, la geodetica esiste ed è unica
 \begin{myes}
-  Sia $V$ uno spazio di Banach strettamenete convesso, allora presi
+  Sia $V$ uno spazio di Banach strettamente convesso, allora presi
   comunque $x,y \in V$ l'unica geodetica è il segmento che li unisce.
 \end{myes}
 \begin{proof}
@@ -1093,7 +1093,7 @@ Vediamo un caso in cui, invece, la geodetica esiste ed è unica
 
   Per dimostrare che è unica ci basta dimostrare che il punto medio è
   unico (si conclude iterando il ragionamento e poi per
-  continuità). Supponiamo, a meno di translare e riscalare, che $y =
+  continuità). Supponiamo, a meno di traslare e riscalare, che $y =
   -x$ e $\norm{x} = 1$, allora $d(x,y) = 2$ e il punto medio è $0$.
 
   Sia $\Gamma(x,y) \ni \gamma :\; \bra{-1,1} \to V$ un'altra geodetica
@@ -1300,7 +1300,7 @@ che le orbite siano chiuse per ottenere che $\bar d$ è una distanza.
 \end{mypro}
 \begin{proof}
   Abbiamo già visto che vale la simmetria e la triangolare, ci basta
-  dimostare che $\bar d (\bra{x},\bra{y}) = 0 \Leftrightarrow \bra{x}
+  dimostrare che $\bar d (\bra{x},\bra{y}) = 0 \Leftrightarrow \bra{x}
   = \bra{y}$, ancora una volta $\Leftarrow$ è facile, dimostriamo
   l'altra implicazione.
 
@@ -1367,7 +1367,7 @@ Vediamo cosa possiamo dire delle curve su $\sfrac{M}{G}$, sulle
 geodetiche e sulla distanza indotta $\bar d ^g$.
 
 Iniziamo osservando che $\sfrac{M}{G}$ ``contiene'' le curve di $M$,
-formalemente:
+formalmente:
 \begin{mylem}
   Dati $x,y \in M$ Ad ogni curva $\gamma \in \Gamma(x,y)$ possiamo
   associare una curva in $\Gamma(\bra{x}, \bra{y})$ tramite la
@@ -1398,7 +1398,7 @@ Con questo possiamo dimostrare
   Se la metrica $d$ è intrinseca allora anche $\bar d$ è intrinseca.
 \end{mypro}
 \begin{proof}
-  Siano $\bra{x}, \bra{y} \in \sfrac{M}{G}$, possiamo suppore (a meno
+  Siano $\bra{x}, \bra{y} \in \sfrac{M}{G}$, possiamo supporre (a meno
   di cambiare i rappresentanti) che $d(x,y) < \bar d (\bra{x}, \bra{y}
   ) + \varepsilon$ dove abbiamo scelto $\varepsilon > 0$.
 
@@ -1428,7 +1428,7 @@ TODO: è vero che $\obar{d^g} = \bar d ^g$?
 \subsection{Quozienti su insiemi di forme di $\mathbb{R}^N$}
 
 Vorrei considerare le forme di $\mathbb{R}^N$ a meno di particolari
-trasformazioni come rotazioni e translazioni.
+trasformazioni come rotazioni e traslazioni.
 
 Dato $G \subseteq \aff(\mathbb{R}^N)$ voglio definire $M(A)$ al
 variare di $M \in G$ e $A \in C_s(\mathbb{R}^N)$. Un modo è:
@@ -1475,7 +1475,7 @@ Mi limito, allora, a considerare i compatti $A \in K(\mathbb{R}^N)$.
   quindi ci basta verificare la continuità in $\id$.
 \end{proof}
 
-Per le translazioni in realtà non serve la compattezza della forma
+Per le traslazioni in realtà non serve la compattezza della forma
 \begin{mypro}
   Se $A \in C_s(\mathbb{R}^N)$ allora la funzione $f: \mathbb{R}^N \to
   C_s(\mathbb{R}^N)$ tale che $f(t) = A + t := \set { a + t \mid a \in
@@ -1501,7 +1501,7 @@ Per le translazioni in realtà non serve la compattezza della forma
 
 Voglio ora cercare di applicare i risultati ottenuti per le distanze
 su spazi quoziente al quoziente di $K(\mathbb{R}^N)$ sulle rotazioni e
-translazioni.
+traslazioni.
 
 \begin{mylem}
   La distanza di Hausdorff su $K(\mathbb{R}^N)$ è invariante per
@@ -1531,7 +1531,7 @@ i loro punti di accumulazione.
   2\varepsilon)$.
 
   Da questo si ha che $\forall n \ge \bar n$ la norma della
-  translazione utilizzata da $g_n$ è minore di $3 \varepsilon$, scelgo
+  traslazione utilizzata da $g_n$ è minore di $3 \varepsilon$, scelgo
   quindi $\delta$ come il massimo fra $3\varepsilon$ e la norma delle
   traslazioni usate da $g_n$ con $n< \bar n$, essendo questo un
   insieme finito si ha $\delta < \infty$.
@@ -1595,7 +1595,7 @@ i loro punti di accumulazione.
 
 Sia $(M,d)$ spazio metrico.
 
-Dati $a_1,a_2,... a_n \in M$ considero la quanità, al variare di $a
+Dati $a_1,a_2,... a_n \in M$ considero la qualità, al variare di $a
 \in m$
 \[ m_A (a) = \sum _{i = 1} ^n d(a,a_i)^2 \]
 
@@ -1676,7 +1676,7 @@ di Hausdorff.
   \ref{teo:spazioformecompatto} anche $K(\Omega)$ è compatto e quindi
   $m$ ristretta a $K(\Omega)$ avrà un minimo $\bar A$. Dev'essere
   necessariamente $m(\bar A) \le m(\set{0}) \le nr^2$, quindi $\bar A$
-  è anche minimo per $m$ non ristretta, infatti ho già dimostato che
+  è anche minimo per $m$ non ristretta, infatti ho già dimostrato che
   in $K(\mathbb{R}^N) \setminus K(\Omega)$ la funzione $m$ assume
   valori maggiori o uguali a $nr^2$.
 \end{proof}
@@ -1719,7 +1719,7 @@ sottogruppo chiuso delle isometrie di $\mathbb{R}^N$.
   Detta $\pi:\; K(\mathbb{R}^N) \to \sfrac{K(\mathbb{R}^N)}{G}$ la
   proiezione sul quoziente ho che, essendo $K(\Omega)$ compatto, anche
   $\pi\pa{K(\Omega)}$ è compatto e, quindi, $\bar m$ ammette minimo in
-  tale insieme, per quanto dimostato prima questo è anche un minimo
+  tale insieme, per quanto dimostrato prima questo è anche un minimo
   globale.
 \end{proof}
 
@@ -1778,7 +1778,7 @@ A questo punto definiamo la funzione obbiettivo come
 A questo punto possiamo porci come obbiettivo il minimizzare tale
 funzione obbiettivo al variare di $M_1,...,M_k \in K(\mathbb{R}^N)$.
 
-Tale approcio ha due difetti:
+Tale approccio ha due difetti:
 \begin{itemize}
 \item il numero di forme $k$ è un dato in ingresso
 \item il problema così posto è NP-hard
