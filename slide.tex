@@ -702,6 +702,65 @@ In seguito dimostreremo che $d_H$ è effettivamente una distanza
 \end{frame}
 
 
+\section{Applicazioni}
+
+\subsection{$k$-mean clustering}
+
+\begin{frame}{Diagramma di Voronoi}
+  \begin{mydef}[Diagramma di Voronoi]
+    Dato $(M,d)$ spazio metrico e $x_1,...,x_k \in M$ punti distinti
+    definiamo diagramma di Voronoi il partizionamento
+    \[ R_j = \set{ x\in M : \forall 1 \le i \le k \;\; d(x,x_j) \le
+      d(x,x_i) } \]
+  \end{mydef}
+\end{frame}
+
+\begin{frame}{Il problema}
+  Supponiamo di avere $k$ tipi di forme (compatte) e $n$ campioni
+  $\mathcal{A} = \set{ A_1, A_2,..., A_n} \in K(\mathbb{R}^N)$ di esse,
+  vorremmo dividerli in $k$ insiemi $S_1,...,S_k$, uno per tipo. Che
+  proprietà deve avere tale partizione?
+\end{frame}
+
+\begin{frame}{Un criterio di ottimalità}
+  Per ogni insieme $S_j$ di punti vogliamo intanto scegliere un
+  rappresentate, per farlo scegliamo un punto medio basato sulla
+  distanza, sia esso $M_j$. Ha senso ora calcolare
+  \[ m_j = \sum _{A\in S_j} d(M_j,S_j)^2 \]
+  
+  \vfill
+
+  Ci aspettiamo che un criterio di ottimalità sia la quantità
+  \[ \sum _{j=1} ^k m_j \]
+\end{frame}
+
+\begin{frame}{Definizione del clustering}
+  Se $M_1,...,M_k$ sono dei candidati rappresentanti, partizioniamo lo
+  spazio nel diagramma di Voronoi $R_1,...,R_k$ e quindi i campioni in
+  \[ S_j = \mathcal{A} \cap R_j \]
+  
+  \vfill
+
+  A questo punto definiamo la funzione obbiettivo come
+  \[ f(M_1,...,M_k) = \sum _{j = 1} ^k m_j = \sum _{j = 1} ^k \pa{ \sum
+    _{A \in S_j} d(A,M_j)^2 } \]
+\end{frame}
+
+\begin{frame}{Clustering}
+  Poniamoci come obbiettivo, quindi, trovare $M_1,...,M_k \in
+  K(\mathbb{R}^N)$ minimo di $f$.
+  
+  \vfill
+
+  Tale approcio ha due difetti:
+  \begin{itemize}
+  \item il numero di forme $k$ è un dato in ingresso
+  \item il problema così posto è NP-hard
+  \end{itemize}
+\end{frame}
+
+
+
 
 
 \end{document}
