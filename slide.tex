@@ -704,7 +704,30 @@ In seguito dimostreremo che $d_H$ è effettivamente una distanza
 
 \section{Applicazioni}
 
-\subsection{$k$-mean clustering}
+\subsection{Riconoscimento di forme}
+
+\begin{frame}{Il problema}
+  Siano $\mathcal{A} = \set{ A_1,...,A_n} \subseteq K(\mathbb{R^N})$
+  forme di uno stesso tipo, data $A \in K(\mathbb{R}^N)$ ci chiediamo
+  quanto sia simile alle forme in $\mathcal{A}$.
+\end{frame}
+
+\begin{frame}{La soluzione}
+  Definiamo quindi una forma ``media'' (chiamiamola $\obar A$) come
+  una delle medie basate sulla distanza di $\mathcal{A}$ e una
+  varianza empirica come:
+
+  \[ S^2 = \frac{1}{N-1} \sum _{i=1} ^n d_H(A_i , \obar A)^2 =
+  \frac{1}{N-1} m(\obar A) \]
+
+  Avendo quindi una media $\obar A$ e una varianza (empirica) $S$
+  possiamo costruire un test statistico per dire quanto $A$ è simile
+  alle forme di $\mathcal{A}$ in cui confrontiamo $d_H(\obar A, A)$
+  con $S$.
+\end{frame}
+
+
+\subsection{Classificazione di forme}
 
 \begin{frame}{Diagramma di Voronoi}
   \begin{mydef}[Diagramma di Voronoi]
