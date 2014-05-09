@@ -366,7 +366,7 @@ spazio metrico, iniziamo con la completezza:
 \end{myteo}
 \begin{proof}
   Sia $\pa{C_n}_{n\in \mathbb{N}} \subseteq C_s(\Omega)$ una successione
-  di Cauchy rispetto a $d_H$, allora esiste $\pa{n_k}_{k\in
+  di Cauchy rispetto a $d_H$, allora esiste $\pa{N_k}_{k\in
     \mathbb{N}}$ crescete tale che 
   \[ \forall n,m \ge N_k\;\; d_H(C_n,C_m) < 2^{-k} \] Scegliamo
   $x_1\in C_{N_1}$, siccome $d_H(C_{N_1},C_{N_2}) < \sfrac{1}{2}
@@ -739,21 +739,24 @@ Questo non esclude che in alcuni casi $d = d^g$, per esempio
   Basta dimostrare che $\forall x,y \in M$ si ha $\pa{d^g}^g(x,y) \le
   d^g(x,y)$.
 
-  Sia $\tilde\gamma \in \Gamma(x,y)$ tale che $\len ^d \tilde\gamma <
+  Sia $\gamma \in \Gamma(x,y)$ tale che $\len ^d \gamma <
   d^g(x,y) + \varepsilon$, voglio stimare la sua lunghezza in $d^g$,
-  prendo quindi $\set{t_0,t_1,...,t_n} \subseteq \bra{a,b}$ tale che
-  \[ \sum _{i=1} ^n d^g(\tilde\gamma(t_{i-1}),\tilde\gamma(t_i)) \ge
-  \len ^{d^g} \tilde\gamma - \varepsilon \] Per la relazione $d\le
-  d^g$ ho:
-  \[ \len ^{d^g} \tilde\gamma \le \varepsilon + \sum _{i=1} ^n
-  d^g(\tilde\gamma(t_{i-1}),\tilde\gamma(t_i)) \le \varepsilon + \sum
-  _{i=1} ^n d(\tilde\gamma(t_{i-1}),\tilde\gamma(t_i)) \le \varepsilon
-  + \len ^d \tilde\gamma < 2 \varepsilon + d^g(x,y) \]
+  sia quindi $\set{t_0,t_1,...,t_n} \subseteq \bra{a,b}$.
+
+  Per definizione di $d^g$ si ha che $\forall 1\le t \le n$
+  \[ d^g(\gamma( t_{i-1}) , \gamma (t_i) ) \le \len ^d \gamma _{| \bra
+    { t_{i-1} , t_i} } \]
 
   Quindi
-  \[ \pa{d^g}^g (x,y) = \inf _{\gamma \in \Gamma(x,y)} \len ^{d^g}
-  \gamma \le \len ^{d^g} \tilde\gamma \le 2 \varepsilon + d^g(x,y) \]
-  Mandando $\varepsilon \to 0$ si ha la tesi.
+  \[ \sum _{i=1} ^n d^g(\gamma(t_{i-1}),\gamma(t_i)) \le \sum _{i=1}
+  ^n \len ^d \gamma_{|\bra{t_{i-1},t_i}} = \len ^d \gamma < d^g(x,y)
+  + \varepsilon  \]
+
+  La relazione continua a valere passando al $\sup$ sui sottoinsiemi
+  finiti di $\bra{a,b}$ da cui
+  \[ \len ^{d^g} \gamma < d^g(x,y) + \varepsilon \Rightarrow
+  \pa{d^g}^g (x,y) \le d^g(x,y) + \varepsilon \]
+  Da cui la tesi mandando $\varepsilon \to 0$.
 \end{proof}
 
 \begin{mydef}[Metrica intrinseca]
@@ -894,9 +897,9 @@ quella di $\pa{C_s(M),d_H}$
 Dimostriamo ora un risultato sull'esistenza di geodetiche in $(M,d)$
 spazio metrico completo
 \begin{mylem}
-  Se $M$ \`e completo e compatto nella topologia indotta dalla
-  metrica $d^g$ allora $\forall x,y \in M$ esiste la geodetica che tra
-  $x$ e $y$ nella metrica indotta da $d$.
+  Se $M$ \`e compatto nella topologia indotta dalla metrica $d^g$
+  allora $\forall x,y \in M$ esiste la geodetica che tra $x$ e $y$
+  nella metrica indotta da $d$.
 \end{mylem}
 \begin{proof}
   Osservo che $M$ è compatto anche nella topologia indotta da $d$
@@ -1232,7 +1235,7 @@ Questa non è però una condizione sufficiente, per esempio
   Consideriamo in $\mathbb{R}^2$ l'azione di $\mathbb{R}^+$ definita
   da
   \[ \beta \to \pa{ \pa{x,y} \to \pa{\beta x , \frac{1}{\beta}y } } \]
-  Le orbite sono delle parabole con asintoti lungo gli assi (e quindi
+  Le orbite sono delle iperboli con asintoti lungo gli assi (e quindi
   sono chiuse), in particolare $\pa{1,1} \neq \pa{1,-1}$ ma
   \[ \bar d( \bra{ \pa{ 1,1} } , \bra{ \pa {1, -1}} ) \le \inf _{\beta
     \in \mathbb{R}^+ } d\pa{ \pa{ \beta , \frac{1}{\beta} } , \pa{
