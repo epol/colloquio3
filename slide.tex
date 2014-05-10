@@ -157,22 +157,6 @@ Relatore: & Andrea Mennucci
   \[ C_d(\Omega) = \set{d_A : A \subseteq \Omega,\; A \neq \emptyset} \]
 \end{frame}
 
-\begin{frame}{Proprietà della distanza da un insieme}
-  \begin{mypro}[Proprietà della distanza punto-insieme]
-    \begin{itemize}
-    \item La funzione $x \rightarrow d_A(x)$ è 1-Lipschitz (e quindi
-      continua)
-    \item $d_{A\cup B}(x) = \min\set{d_A(x),d_B(x)}$
-    \item $\set{x:d_A(x) = 0} = \obar A$
-    \item $d_A \equiv 0 \Rightarrow A$ è denso in $\Omega$
-    \item $d_{\obar A} = d_A$
-    \item $A\subseteq B \Rightarrow d_A \ge d_B$
-    \item $\obar{ A} \subseteq \obar B \Leftrightarrow d_A \ge d_B$
-    \item $d_A = d_B \Leftrightarrow \obar A = \obar B$
-    \end{itemize}
-  \end{mypro}
-\end{frame}
-
 \begin{frame}{Quando $d_A$ \`e in realt\`a un minimo}
   In generale l'$\inf$ della definizione della distanza $d_A$ non \`e
   un minimo, nemmeno chiedendo che $A$ sia chiuso, per esempio:
@@ -188,6 +172,22 @@ Relatore: & Andrea Mennucci
   \item $A$ \`e compatto
   \item In $M$ le palle chiuse sono compatte e $A$ è chiuso
   \end{itemize}
+\end{frame}
+
+\begin{frame}{Proprietà della distanza da un insieme}
+  \begin{mypro}[Proprietà della distanza punto-insieme]
+    \begin{itemize}
+    \item La funzione $x \rightarrow d_A(x)$ è 1-Lipschitz (e quindi
+      continua)
+    \item $d_{A\cup B}(x) = \min\set{d_A(x),d_B(x)}$
+    \item $\set{x:d_A(x) = 0} = \obar A$
+    \item $d_A \equiv 0 \Rightarrow A$ è denso in $\Omega$
+    \item $d_{\obar A} = d_A$
+    \item $A\subseteq B \Rightarrow d_A \ge d_B$
+    \item $\obar{ A} \subseteq \obar B \Leftrightarrow d_A \ge d_B$
+    \item $d_A = d_B \Leftrightarrow \obar A = \obar B$
+    \end{itemize}
+  \end{mypro}
 \end{frame}
 
 \begin{frame}{Spazio di forme}
