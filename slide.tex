@@ -726,8 +726,8 @@ In seguito dimostreremo che $d_H$ è effettivamente una distanza
   una delle medie basate sulla distanza di $\mathcal{A}$ e una
   varianza empirica come:
 
-  \[ S^2 = \frac{1}{N-1} \sum _{i=1} ^n d_H(A_i , \obar A)^2 =
-  \frac{1}{N-1} m(\obar A) \]
+  \[ S^2 = \frac{1}{n-1} \sum _{i=1} ^n d_H(A_i , \obar A)^2 =
+  \frac{1}{n-1} m(\obar A) \]
 
   Avendo quindi una media $\obar A$ e una varianza (empirica) $S$
   possiamo costruire un test statistico per dire quanto $A$ è simile
@@ -773,13 +773,13 @@ In seguito dimostreremo che $d_H$ è effettivamente una distanza
   
   \vfill
 
-  A questo punto definiamo la funzione obbiettivo come
+  A questo punto definiamo la funzione obiettivo come
   \[ f(M_1,...,M_k) = \sum _{j = 1} ^k m_j = \sum _{j = 1} ^k \pa{ \sum
     _{A \in S_j} d(A,M_j)^2 } \]
 \end{frame}
 
 \begin{frame}{Clustering}
-  Poniamoci come obbiettivo, quindi, trovare $M_1,...,M_k \in
+  Poniamoci come obiettivo, quindi, trovare $M_1,...,M_k \in
   K(\mathbb{R}^N)$ che siano un minimo di $f$.
   
   \vfill
